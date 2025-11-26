@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>controls/electric/inverter</value>
+  </params>
+
+  <model include="Switch3.xml"/>
+
+  <animation>
+    <object-name>Lever</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property alias="../../../../params/value"/>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lever</object-name>
+    <property alias="../../params/value"/>
+    <factor>-32</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+</PropertyList>
+
+
+

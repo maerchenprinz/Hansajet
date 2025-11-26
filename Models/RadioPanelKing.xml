@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <animation include="CockpitShadowAnimation.xml"/>
+  <animation include="CockpitRangeAnimation.xml"/>
+
+  <model>
+    <path>Aircraft/Instruments-3d/kx165/kx165-1.xml</path>
+    <name>NavCom1</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.076</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Instruments-3d/kx165/kx165-2.xml</path>
+    <name>NavCom2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.128</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Radio/kr87-1.xml</path>
+    <name>ADF1</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.170</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Radio/kr87-2.xml</path>
+    <name>ADF2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.205</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Annunciator.xml</path>
+    <name>CompassController</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.40</z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+

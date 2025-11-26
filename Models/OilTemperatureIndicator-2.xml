@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <value>engines/engine[1]/oil-temperature-degf</value>
+  </params>
+
+  <path>OilTemperatureIndicator.ac</path>
+
+  <animation include="DualHandGaugeEmissionInclude.xml"/>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/value"/>
+    <factor>-0.5</factor>
+    <offset-deg>13.5</offset-deg>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+</PropertyList>

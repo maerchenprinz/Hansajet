@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>instrumentation/overhead-panel/dc-instr-source</value>
+    <position>instrumentation/overhead-panel/dc-instr-source-position</position>
+  </params>
+
+  <model include="Knob1.xml"/>
+  <animation include="Knob5PosDecrPickAnimation.xml"/>
+  <animation include="Knob5PosIncrPickAnimation.xml"/>
+  <animation include="Knob10PosRotateAnimation.xml"/>
+
+</PropertyList>
+
+
+

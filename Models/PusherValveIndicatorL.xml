@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>systems/antistall/pusher-valve[0]</value>
+    <test>controls/antistall/pusher-valve-test[0]</test>
+  </params>
+
+  <path>ControlLight-Green.ac</path>
+
+  <animation include="ControlLightLightSelectAnimation.xml"/>
+  <animation include="ControlLightPickAnimation.xml"/>
+  <animation include="ControlLightTranslateAnimation.xml"/>
+
+</PropertyList>

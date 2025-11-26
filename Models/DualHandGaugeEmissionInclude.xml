@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>Needle</object-name>
+  <object-name>SmallHand</object-name>
+  <emission include="InstrumentLightEmissionInclude.xml"/>
+</PropertyList>

@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>systems/anti-ice/window-heat-overheat[0]</value>
+    <test>controls/anti-ice/window-heat-overheat-test[0]</test>
+  </params>
+
+  <path>ControlLight-Red.ac</path>
+
+  <animation include="ControlLightLightSelectAnimation.xml"/>
+  <animation include="ControlLightPickAnimation.xml"/>
+  <animation include="ControlLightTranslateAnimation.xml"/>
+
+</PropertyList>

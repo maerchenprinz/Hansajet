@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>controls/antistall/indicator-system</value>
+  </params>
+
+  <model include="Switch3.xml"/>
+  <animation include="SwitchLeverPickAnimation.xml"/>
+  <animation include="SwitchLeverRotateAnimation.xml"/>
+
+</PropertyList>
+
+

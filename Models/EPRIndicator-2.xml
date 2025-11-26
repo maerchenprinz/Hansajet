@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <value>fdm/jsbsim/propulsion/engine[1]/epr-corrected</value>
+  </params>
+
+  <path>EPRIndicator.ac</path>
+
+  <animation include="DualHandGaugeEmissionInclude.xml"/>
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/value"/>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>0.0</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>0.0</dep>
+      </entry>
+      <entry>
+        <ind>2.5</ind>
+        <dep>-337.5</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+</PropertyList>

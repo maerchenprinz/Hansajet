@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <particlesystem>
+    <type>normal</type>
+    <name>light</name>
+    <texture>LightGradient.png</texture>
+    <emissive>true</emissive>
+    <lighting>true</lighting>
+
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+
+    <attach>local</attach>
+
+    <placer>
+      <type>point</type>
+    </placer>
+
+    <shooter>
+      <theta-min-deg>270.0</theta-min-deg>
+      <theta-max-deg>270.0</theta-max-deg>
+      <phi-min-deg>0</phi-min-deg>
+      <phi-max-deg>0</phi-max-deg>
+      <speed-mps>
+        <value>10</value>
+<!--
+        <property>/b</property>
+        <factor>1</factor>
+-->
+      </speed-mps>
+      <rotation-speed>
+        <x-max-deg-sec>0</x-max-deg-sec>
+        <x-min-deg-sec>0</x-min-deg-sec>
+        <y-max-deg-sec>0</y-max-deg-sec>
+        <y-min-deg-sec>0</y-min-deg-sec>
+        <z-max-deg-sec>0</z-max-deg-sec>
+        <z-min-deg-sec>0</z-min-deg-sec>
+      </rotation-speed>
+    </shooter>
+
+    <counter>
+      <particles-per-sec>
+        <value>5</value>
+      </particles-per-sec>
+    </counter>
+
+    <align>billboard</align>
+
+    <particle>
+      <start>
+        <color>
+          <red>
+            <value>1.0</value>
+          </red>
+          <green>
+            <value>1.0</value>
+          </green>
+          <blue>
+            <value>1.0</value>
+          </blue>
+          <alpha>
+            <value>0.01</value>
+          </alpha>
+        </color>
+        <size>
+          <value>0.1</value>
+        </size>
+      </start>
+      <end>
+        <color>
+          <red>
+            <value>1.0</value>
+          </red>
+          <green>
+            <value>1.0</value>
+          </green>
+          <blue>
+            <value>1.0</value>
+          </blue>
+          <alpha>
+            <value>0.300</value>
+          </alpha>
+        </color>
+        <size>
+          <value>10</value>
+        </size>
+      </end>
+      <life-sec>
+        <value>3.0</value>
+      </life-sec>
+      <mass-kg>10.0</mass-kg>
+      <radius-m>0.01</radius-m>
+    </particle>
+
+    <program>
+      <fluid>water</fluid>
+      <gravity>false</gravity>
+      <wind>false</wind>
+    </program>
+
+  </particlesystem>
+
+</PropertyList>

@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <fuel-indicator-select>controls/fuel/fuel-indicator-left</fuel-indicator-select>
+  </params>
+
+  <path>Aircraft/Hansajet/Models/Switch.ac</path>
+
+  <animation include="SwitchMaterialEmissionInclude.xml"/>
+
+  <offsets>
+      <roll-deg>-16</roll-deg>
+  </offsets>
+  <animation>
+    <object-name>Switch</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property alias="../../../../params/fuel-indicator-select"/>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <property alias="../../params/fuel-indicator-select"/>
+    <factor>32</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>-0.0312774</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.00519287</z-m>
+    </center>
+  </animation>
+
+</PropertyList>
+
+

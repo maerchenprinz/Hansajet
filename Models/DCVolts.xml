@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <value>instrumentation/overhead-panel/dc-volts</value>
+  </params>
+
+  <path>DCVolts.ac</path>
+
+  <animation include="SimpleGaugeEmissionInclude.xml"/>
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/value"/>
+    <factor>-2.8</factor>
+    <offset-deg>42</offset-deg>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.0148246</z-m>
+    </center>
+  </animation>
+
+</PropertyList>

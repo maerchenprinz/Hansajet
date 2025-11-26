@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <type>translate</type>
+  <object-name>Knob</object-name>
+  <property alias="../../params/value"/>
+  <factor>-0.005</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</PropertyList>

@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <value>fdm/jsbsim/propulsion/total-fuel-consumed-kg</value>
+  </params>
+
+  <path>FuelUsed.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>Scale10000</object-name>
+    <object-name>Scale1000</object-name>
+    <object-name>Scale100</object-name>
+    <object-name>Scale10</object-name>
+    <object-name>Scale1</object-name>
+    <emission include="InstrumentLightEmissionInclude.xml"/>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Scale10000</object-name>
+    <property alias="../../params/value"/>
+    <factor>-0.00001</factor>
+    <step>10000</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Scale1000</object-name>
+    <property alias="../../params/value"/>
+    <factor>-0.0001</factor>
+    <step>1000</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Scale100</object-name>
+    <property alias="../../params/value"/>
+    <factor>-0.001</factor>
+    <step>100</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Scale10</object-name>
+    <property alias="../../params/value"/>
+    <factor>-0.01</factor>
+    <step>10</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Scale1</object-name>
+    <property alias="../../params/value"/>
+    <factor>-0.1</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+</PropertyList>
+
+

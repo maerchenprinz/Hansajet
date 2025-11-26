@@ -1,0 +1,147 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <nose>gear/gear[0]/position-norm</nose>
+    <left>gear/gear[1]/position-norm</left>
+    <right>gear/gear[2]/position-norm</right>
+    <test>controls/gear/test</test>
+    <!-- FIXME: attach to correct electrical bus -->
+    <power>systems/electrical/bus[0]/voltage-v</power>
+  </params>
+
+  <path>GearIndicator.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object-name>Nose</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="../../../../params/test"/>
+        <greater-than>
+          <property alias="../../../../../params/nose"/>
+          <value>0.99</value>
+        </greater-than>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Left</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="../../../../params/test"/>
+        <greater-than>
+          <property alias="../../../../../params/left"/>
+          <value>0.99</value>
+        </greater-than>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Right</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="../../../../params/test"/>
+        <greater-than>
+          <property alias="../../../../../params/right"/>
+          <value>0.99</value>
+        </greater-than>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Unsafe</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="../../../../params/test"/>
+        <and>
+          <greater-than>
+            <property alias="../../../../../../params/nose"/>
+            <value>0.01</value>
+          </greater-than>
+          <less-than>
+            <property alias="../../../../../../params/nose"/>
+            <value>0.99</value>
+          </less-than>
+        </and>
+        <and>
+          <greater-than>
+            <property alias="../../../../../../params/left"/>
+            <value>0.01</value>
+          </greater-than>
+          <less-than>
+            <property alias="../../../../../../params/left"/>
+            <value>0.99</value>
+          </less-than>
+        </and>
+        <and>
+          <greater-than>
+            <property alias="../../../../../../params/left"/>
+            <value>0.01</value>
+          </greater-than>
+          <less-than>
+            <property alias="../../../../../../params/left"/>
+            <value>0.99</value>
+          </less-than>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>TestButton</object-name>
+    <property alias="../../params/test"/>
+    <factor>-0.006</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>TestButton</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property alias="../../../../params/test"/>
+        <value>1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property alias="../../../../../params/test"/>
+          <value>0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+
+</PropertyList>

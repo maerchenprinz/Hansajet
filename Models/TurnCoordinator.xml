@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <off>instrumentation/slip-skid-ball[0]/serviceable</off>
+    <indicated-slip>instrumentation/slip-skid-ball[0]/indicated-slip-skid</indicated-slip>
+  </params>
+
+  <path>TurnCoordinator.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>Hand</object-name>
+    <object-name>Altitude10000</object-name>
+    <object-name>Tube</object-name>
+    <emission include="InstrumentLightEmissionInclude.xml"/>
+  </animation>
+    
+  <animation>
+    <type>select</type>
+    <object-name>Off</object-name>
+    <condition>
+      <property alias="../../../params/off"/>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Ball</object-name>
+    <property alias="../../params/indicated-slip"/>
+    <factor>5.729</factor>
+    <min-deg>-5</min-deg>
+    <max-deg>5</max-deg>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0.25</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+</PropertyList>
+
+

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!--
+  Collins 313N-3 COMM NAV Radio Controller
+  Modeled after HFB 320 Hansa Jet Operations Manual, 
+  - Section 10.5
+  - Section 11
+  Functions and items not marked with a reference to the manual
+  are pure imagination or trial-and-error
+
+  (c) Torsten Dreyer - Torsten@no-spam-t3r.de (ignore no-spam-)
+-->
+
+
+<PropertyList>
+  <params>
+    <up-l-vor type="int">-1</up-l-vor>
+    <squelch type="double">0.3</squelch>
+
+    <nav-frq>instrumentation/nav[1]/frequencies/selected-mhz</nav-frq>
+    <is-loc>instrumentation/nav[1]/frequencies/is-localizer-frequency</is-loc>
+    <signal-quality>instrumentation/nav[1]/signal-quality-norm</signal-quality>
+    <mag-bearing-from>instrumentation/nav[1]/radials/actual-deg</mag-bearing-from>
+    <bearing-output>instrumentation/nav[1]/mag-bearing-to-deg</bearing-output>
+
+    <bearing-valid>instrumentation/nav[1]/bearing-valid</bearing-valid>
+    <test-position>instrumentation/nav[1]/test-position</test-position>
+  </params>
+
+  <!-- create bearing valid property -->
+  <!-- bearing signal is valid if
+       + has power
+       + not a localizer-frequency
+       + in-range or test set to UP/L-VOR
+  -->
+  <logic>
+    <name>LOC Bearing Valid</name>
+    <input>
+      <and>
+        <!--property alias=/"params/power"/-->
+        <not><property alias="/params/is-loc"/></not>
+        <or>
+          <greater-than>
+            <property alias="/params/signal-quality"/>
+            <value alias="/params/squelch"/>
+          </greater-than>
+          <equals>
+            <property alias="/params/test-position"/>
+            <value alias="/params/up-l-vor"/>
+          </equals>
+        </or>
+      </and>
+    </input>
+    <output alias="/params/bearing-valid"/>
+  </logic>
+
+
+  <!-- create the bearing-property -->
+  <!-- validity is provided by LOC Bearing Valid above
+       if test test to UP/L-VOR: constant 180 deg
+       otherwise received radial+180deg
+   -->
+  <filter>
+    <name>Bearing Computer</name>
+    <type>gain</type>
+    <gain>1.0</gain>
+    <input>
+      <condition>
+        <equals>
+          <property alias="/params/test-position"/>
+          <value alias="/params/up-l-vor"/>
+        </equals>
+      </condition>
+      <value>180.0</value>
+    </input>
+    <input>
+      <property alias="/params/mag-bearing-from"/>
+      <offset>180.0</offset> <!-- normalized at output -->
+    </input>
+    <output alias="/params/bearing-output"/>
+    <period>
+      <min>0.0</min>
+      <max>360.0</max>
+    </period>
+  </filter>
+
+</PropertyList>

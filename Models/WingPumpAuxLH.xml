@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<!--
+  Tank layout:
+  Left Tip:   tank[0]
+  Left Wing:  tank[1]
+  Fuselage:   tank[2]
+  Right Wing: tank[3]
+  Right Tip:  tank[4]
+-->
+<PropertyList>
+
+  <params>
+    <value>systems/fuel/fuel-pump[4]/enabled</value>
+  </params>
+
+  <model include="Switch3.xml"/>
+  <animation include="SwitchLeverPickAnimation.xml"/>
+  <animation include="SwitchLeverRotateAnimation.xml"/>
+
+</PropertyList>
+
+
+

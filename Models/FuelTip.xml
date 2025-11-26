@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<!--
+  Tank layout:
+  Left Tip:   tank[0]
+  Left Wing:  tank[1]
+  Fuselage:   tank[2]
+  Right Wing: tank[3]
+  Right Tip:  tank[4]
+-->
+<PropertyList>
+  <params>
+    <left>consumables/fuel/tank[0]/level-lbs</left>
+    <right>consumables/fuel/tank[4]/level-lbs</right>
+    <fuel-indicator-left>controls/fuel/fuel-indicator-left</fuel-indicator-left>
+  </params>
+
+  <path>FuelTip.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>Left</object-name>
+    <object-name>Right</object-name>
+    <emission include="InstrumentLightEmissionInclude.xml"/>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Left</object-name>
+    <condition>
+      <property alias="../../../params/fuel-indicator-left"/>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Right</object-name>
+    <condition>
+      <not>
+        <property alias="../../../../params/fuel-indicator-left"/>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Left</object-name>
+    <property alias="../../params/left"/>
+    <interpolation>
+      <entry>
+        <ind>0</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>20</ind>
+        <dep>10</dep>
+      </entry>
+      <entry>
+        <ind>1100</ind>
+        <dep>290</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Right</object-name>
+    <property alias="../../params/right"/>
+    <interpolation>
+      <entry>
+        <ind>0</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>20</ind>
+        <dep>10</dep>
+      </entry>
+      <entry>
+        <ind>1100</ind>
+        <dep>290</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+</PropertyList>
+
+

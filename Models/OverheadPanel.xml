@@ -1,0 +1,984 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <path>Aircraft/Hansajet/Models/OverheadPanel.ac</path>
+
+  <animation include="CockpitShadowAnimation.xml"/>
+  <animation include="CockpitRangeAnimation.xml"/>
+
+  <animation>
+    <type>material</type>
+    <object-name>OverheadPanel</object-name>
+    <emission include="CockpitLightEmissionInclude.xml"/>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Labels</object-name>
+    <object-name>Lines</object-name>
+    <emission include="InstrumentLightEmissionInclude.xml"/>
+  </animation>
+
+  <!-- AC/DC Panel -->
+  <model>
+    <path>Aircraft/Hansajet/Models/Inv1_2_Off.xml</path>
+    <name>Inv1_2_Off</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.135704</y-m>
+      <z-m>0.337801</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Batt1Off.xml</path>
+    <name>Batt1Off</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.122363</y-m>
+      <z-m>0.337801</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Batt2Off.xml</path>
+    <name>Batt2Off</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.108994</y-m>
+      <z-m>0.337801</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/ExtPwr.xml</path>
+    <name>GenDC_BATT</name>
+    <offsets>
+      <x-m>0.0057827</x-m>
+      <y-m>-0.138195</y-m>
+      <z-m>0.337184</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/GenDC_BATT.xml</path>
+    <name>GenDC_BATT</name>
+    <offsets>
+      <x-m>0.00118093</x-m>
+      <y-m>-0.121002</y-m>
+      <z-m>0.277813</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/DCVolts.xml</path>
+    <name>DCVolts</name>
+    <offsets>
+      <x-m>0.00118093</x-m>
+      <y-m>-0.044002</y-m>
+      <z-m>0.277813</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/ACAmps.xml</path>
+    <name>ACAmps</name>
+    <offsets>
+      <x-m>0.00118093</x-m>
+      <y-m>0.0440022</y-m>
+      <z-m>0.277813</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/ACVolts.xml</path>
+    <name>ACVolts</name>
+    <offsets>
+      <x-m>0.00118093</x-m>
+      <y-m>0.121002</y-m>
+      <z-m>0.277813</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Gen1Knob.xml</path>
+    <name>Gen1Knob</name>
+    <offsets>
+      <x-m>0.0021</x-m>
+      <y-m>-0.0825021</y-m>
+      <z-m>0.33573</z-m>
+      <roll-deg>36</roll-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Gen2Knob.xml</path>
+    <name>Gen2Knob</name>
+    <offsets>
+      <x-m>0.0021</x-m>
+      <y-m>-0.0425021</y-m>
+      <z-m>0.33573</z-m>
+      <roll-deg>36</roll-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Alt1Knob.xml</path>
+    <name>Alt1Knob</name>
+    <offsets>
+      <x-m>0.0021</x-m>
+      <y-m>0.0625021</y-m>
+      <z-m>0.33573</z-m>
+      <roll-deg>72</roll-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Crash.xml</path>
+    <name>Alt1Knob</name>
+    <offsets>
+      <x-m>0.0021</x-m>
+      <y-m>0.01</y-m>
+      <z-m>0.33573</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Alt2Knob.xml</path>
+    <name>Alt2Knob</name>
+    <offsets>
+      <x-m>0.0021</x-m>
+      <y-m>0.102502</y-m>
+      <z-m>0.33573</z-m>
+      <roll-deg>72</roll-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/DCInstrKnob.xml</path>
+    <name>DCInstrKnob</name>
+    <offsets>
+      <x-m>0.0021</x-m>
+      <y-m>-0.0825021</y-m>
+      <z-m>0.27573</z-m>
+      <roll-deg>72</roll-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/ACInstrKnob.xml</path>
+    <name>ACInstrKnob</name>
+    <offsets>
+      <x-m>0.0021</x-m>
+      <y-m>0.0825021</y-m>
+      <z-m>0.27573</z-m>
+      <roll-deg>162</roll-deg>
+    </offsets>
+  </model>
+
+  <!-- Switch Panel -->
+  <!-- Light -->
+  <model>
+    <path>Aircraft/Hansajet/Models/LandingLightLH.xml</path>
+    <name>LandingLightLH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.132</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/LandingLightRH.xml</path>
+    <name>LandingLightRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.110</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TaxiLight.xml</path>
+    <name>TaxiLight</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.088</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/NavLights.xml</path>
+    <name>NavLight</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.066</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AntiCollLight.xml</path>
+    <name>AntiCollLight</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.044</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/WingInspLight.xml</path>
+    <name>WingInspLight</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.022</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/CockpitLight.xml</path>
+    <name>CockpitLight</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.000</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/CabinLight.xml</path>
+    <name>CabinLight</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.022</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/CabinLightDim.xml</path>
+    <name>CabinLightDim</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.044</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/EHCompLight.xml</path>
+    <name>E_HCompLight</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.066</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FastenSeatBeltsLight.xml</path>
+    <name>FastenSeatBeltsLight</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.088</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/NoSmokingLight.xml</path>
+    <name>NoSmokingLight</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.110</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/WarningLightsDim.xml</path>
+    <name>WarningLightsDim</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.132</y-m>
+      <z-m>0.232</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Heating -->
+  <model>
+    <path>Aircraft/Hansajet/Models/WindshieldHeatingLH.xml</path>
+    <name>WingshieldHeatingLH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.132</y-m>
+      <z-m>0.202</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/WindshieldOverheatIndicatorL.xml</path>
+    <name>WindshieldOverheatIndicatorL</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.132</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/WindshieldHeatingRH.xml</path>
+    <name>WingshieldHeatingRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.099</y-m>
+      <z-m>0.202</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/WindshieldOverheatIndicatorR.xml</path>
+    <name>WindshieldOverheatIndicatorL</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.099</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TestOverheatButton.xml</path>
+    <name>TestOverheatButton</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.116</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/SideWindowsHeating.xml</path>
+    <name>SideWindowsHeating</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.066</y-m>
+      <z-m>0.202</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/SideWindowsHeatingControllerL.xml</path>
+    <name>SideWindowsHeatingControllerL</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.050</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TestSideWindowsHeatingController.xml</path>
+    <name>TestSideWindowsHeatingController</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.066</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/SideWindowsHeatingControllerR.xml</path>
+    <name>SideWindowsHeatingControllerR</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.082</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/EngIntakeHeatingLH.xml</path>
+    <name>EngIntakeHeatingLH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.034</y-m>
+      <z-m>0.202</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/EngIntakeHeatingRH.xml</path>
+    <name>EngIntakeHeatingRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.017</y-m>
+      <z-m>0.202</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/PitotTubesHeating.xml</path>
+    <name>PitotTubesHeating</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.010</y-m>
+      <z-m>0.202</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/PitotTubesHeatingIndicatorLH.xml</path>
+    <name>PitotTubesHeatingIndicatorLH</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.004</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/PitotTubesHeatingIndicatorTAIL.xml</path>
+    <name>PitotTubesHeatingIndicatorTAIL</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0.010</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/PitotTubesHeatingIndicatorRH.xml</path>
+    <name>PitotTubesHeatingIndicatorRH</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0.024</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/StaticPortsHeating.xml</path>
+    <name>StaticPortsHeating</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.044</y-m>
+      <z-m>0.202</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AntiIcing.xml</path>
+    <name>AntiIcing</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.078</y-m>
+      <z-m>0.202</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/DeIcingEmerg.xml</path>
+    <name>DeicingEmerg</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.105</y-m>
+      <z-m>0.202</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/DeIcing.xml</path>
+    <name>Deicing</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.132</y-m>
+      <z-m>0.202</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TestContinuousLoadButton.xml</path>
+    <name>TestContinuousLoadButton</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0.085</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TestWarningCircButton.xml</path>
+    <name>TestWarningCircButton</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0.125</y-m>
+      <z-m>0.178</z-m>
+    </offsets>
+  </model>
+
+  <!-- ENGINES ROW -->
+  <model>
+    <path>Aircraft/Hansajet/Models/EngineIgnitionLH.xml</path>
+    <name>EngineIgnitionLH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.132</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/EngineIgnitionIndicatorLH.xml</path>
+    <name>EngineIgnitionIndicatorLH</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.132</y-m>
+      <z-m>0.122</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/EngineIgnitionRH.xml</path>
+    <name>EngineIgnitionRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.1150</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/EngineIgnitionIndicatorRH.xml</path>
+    <name>EngineIgnitionIndicatorRH</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.1150</y-m>
+      <z-m>0.122</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/EngineStarterLH.xml</path>
+    <name>EngineIgnitionRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.095</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/EnginesOff.xml</path>
+    <name>EngineIgnitionRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.0775</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/EngineStarterRH.xml</path>
+    <name>EngineIgnitionRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.060</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TestTipTankButton.xml</path>
+    <name>TipTankTest</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.040</y-m>
+      <z-m>0.142</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TipPumpEmergLH.xml</path>
+    <name>TipPumpEmergLH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.0200</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TipPumpNormLH.xml</path>
+    <name>TipPumpNormLH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.001</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/WingPumpAuxLH.xml</path>
+    <name>WingPumpAuxLH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.018</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/WingPumpMainLH.xml</path>
+    <name>WingPumpMainLH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.037</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FuselagePump.xml</path>
+    <name>FuselagePump</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.056</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/WingPumpMainRH.xml</path>
+    <name>WingPumpMainRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.075</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/WingPumpAuxRH.xml</path>
+    <name>WingPumpAuxRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.094</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TipPumpNormRH.xml</path>
+    <name>TipPumpNormRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.113</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TipPumpEmergRH.xml</path>
+    <name>TipPumpEmergRH</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>0.1320</y-m>
+      <z-m>0.142</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- bottom row: ANTISTALL -->
+  <model>
+    <path>Aircraft/Hansajet/Models/AntistallSyst1Off.xml</path>
+    <name>AntiStall_SYST1_OFF</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.132</y-m>
+      <z-m>0.08</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AntistallComparatorOff.xml</path>
+    <name>AntiStall_COMPARATOR_OFF</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.113</y-m>
+      <z-m>0.08</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AntistallSyst2Off.xml</path>
+    <name>AntiStall_SYST2_OFF</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.092</y-m>
+      <z-m>0.08</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AntistallIndicatorSelect.xml</path>
+    <name>AntiStall_Indicator_Select</name>
+    <offsets>
+      <x-m>-0.0036</x-m>
+      <y-m>-0.072</y-m>
+      <z-m>0.08</z-m>
+      <heading-deg>90</heading-deg>
+      <pitch-deg>180</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Test1ShakerButton.xml</path>
+    <name>Test1_ShakerInput</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.052</y-m>
+      <z-m>0.090</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/PusherValveIndicatorL.xml</path>
+    <name>PusherValveIndicatorL</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.052</y-m>
+      <z-m>0.068</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Test2PusherButton.xml</path>
+    <name>Test2_PusherInput</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.033</y-m>
+      <z-m>0.090</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/PusherValveIndicatorR.xml</path>
+    <name>PusherValveIndicatorR</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.033</y-m>
+      <z-m>0.068</z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>FlagBATT_BUS</object-name>
+    <property>systems/electrical/bus[0]/voltage-v</property>
+    <interpolation>
+      <entry>
+        <ind>20</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>24</ind>
+        <dep>90</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>0.0002</x-m>
+      <y-m>-0.122363</y-m>
+      <z-m>0.31317</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>FlagESSENT_BUS_BAT</object-name>
+    <property>systems/electrical/bus[0]/voltage-v</property>
+    <interpolation>
+      <entry>
+        <ind>20</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>24</ind>
+        <dep>90</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>0.0002</x-m>
+      <y-m>-0.108994</y-m>
+      <z-m>0.31317</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>FlagESSENT_BUS_GEN</object-name>
+    <property>systems/electrical/bus[1]/voltage-v</property>
+    <interpolation>
+      <entry>
+        <ind>20</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>24</ind>
+        <dep>90</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>0.0002</x-m>
+      <y-m>-0.092927</y-m>
+      <z-m>0.31317</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>FlagGEN_BUS1</object-name>
+    <property>systems/electrical/bus[1]/generator[0]/voltage-v</property>
+    <interpolation>
+      <entry>
+        <ind>20</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>24</ind>
+        <dep>90</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>0.0002</x-m>
+      <y-m>-0.082502</y-m>
+      <z-m>0.31317</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>FlagGEN_BUS2</object-name>
+    <property>systems/electrical/bus[1]/generator[1]/voltage-v</property>
+    <interpolation>
+      <entry>
+        <ind>20</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>24</ind>
+        <dep>90</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>0.0002</x-m>
+      <y-m>-0.042563</y-m>
+      <z-m>0.31317</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+    </axis>
+  </animation>
+
+</PropertyList>
+

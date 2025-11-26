@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <object-name>Knob</object-name>
+  <type>pick</type>
+  <visible>true</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/value"/>
+      <value type="int">1</value>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>property-assign</command>
+        <property alias="../../../../../params/value"/>
+        <value type="int">0</value>
+      </binding>
+    </mod-up>
+  </action>
+</PropertyList>

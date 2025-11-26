@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+  <title>Hansajet</title>
+  <line>Startup Procedure</line>
+  <line>====================================</line>
+  <line>1. Look at the Overhead Panel (shift-v)</line>
+  <line>2. Switch BATT 1 and 2 ON</line>
+  <line>3. Switch LH and RH MAIN WING PUMP ON</line>
+  <line>4. Press and hold 's' for at least 3 seconds</line>
+  <line>5. Wait for engines to spool to approx. 25% </line>
+  <line>6. Increase Throttle approx. 10%. Ingition lights illuminate</line>
+  <line>7. Look at the main panel, observe engine instruments</line>
+  <line>------------------------------------</line>
+  <line>http://wiki.flightgear.org/index.php/Hansajet</line>
+  <line>http://www.hansajet.de/</line>
+
+  <key>
+    <name>ALT-a</name>
+    <desc>TOGGLE AFCS (Autopilot)</desc>
+  </key>
+  <key>
+    <name>CTRL-a</name>
+    <desc>ENGAGE Alt lock</desc>
+  </key>
+  <key>
+    <name>1</name>
+    <desc>DISENGAGE Alt lock and AP Pitch down</desc>
+  </key>
+  <key>
+    <name>2</name>
+    <desc>DISENGAGE Alt lock and AP Pitch up</desc>
+  </key>
+  <key>
+    <name>CTRL-g</name>
+    <desc>SET Gyro hold (HDG SEL)</desc>
+  </key>
+  <key>
+    <name>CTRL-h</name>
+    <desc>SET mag heading hold (HDG HOLD)</desc>
+  </key>
+  <key>
+    <name>CTRL-n</name>
+    <desc>SET NAV1 hold (RADIO)</desc>
+  </key>
+  <key>
+    <name>y</name>
+    <desc>ENABLE Yaw damper</desc>
+  </key>
+  <key>
+    <name>Y</name>
+    <desc>DISABLE Yaw damper</desc>
+  </key>
+
+  <key>
+    <name>b</name>
+    <desc>Apply brakes</desc>
+  </key>
+  <key>
+    <name>ALT-b</name>
+    <desc>Deploy drag chute</desc>
+  </key>
+  <key>
+    <name>B</name>
+    <desc>Toggle park brake</desc>
+  </key>
+  <key>
+    <name>CTRL-b</name>
+    <desc>Toggle speedbrake</desc>
+  </key>
+</PropertyList>

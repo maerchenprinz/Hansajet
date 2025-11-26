@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>controls/engines/engine[0]/starter-switch</value>
+  </params>
+
+  <model include="Switch4.xml"/>
+  <animation include="SwitchLeverClickPickAnimation.xml"/>
+  <animation include="SwitchLeverRotateAnimation.xml"/>
+
+</PropertyList>

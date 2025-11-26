@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <type>rotate</type>
+  <object-name>Lever</object-name>
+  <property alias="../../params/value"/>
+  <factor>-32</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</PropertyList>

@@ -1,0 +1,175 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <animation include="../CockpitShadowAnimation.xml"/>
+  <animation include="../CockpitRangeAnimation.xml"/>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/VHF2.xml</path>
+    <name>VHF-2</name>
+    <offsets>
+      <x-m>-0.06</x-m>
+      <y-m>0.04</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/VHF1.xml</path>
+    <name>VHF-1</name>
+    <offsets>
+      <x-m>-0.06</x-m>
+      <y-m>0.02</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/ATC.xml</path>
+    <name>ATC</name>
+    <offsets>
+      <x-m>-0.06</x-m>
+      <y-m>0.00</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/DME.xml</path>
+    <name>DME</name>
+    <offsets>
+      <x-m>-0.06</x-m>
+      <y-m>-0.02</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/ADF.xml</path>
+    <name>ADF</name>
+    <offsets>
+      <x-m>-0.06</x-m>
+      <y-m>-0.04</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/SPKR.xml</path>
+    <name>SPKR</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0.04</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Pushbutton.ac</path>
+    <name>CALL</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.04</y-m>
+      <z-m>0.012</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/NAV2.xml</path>
+    <name>NAV2</name>
+    <offsets>
+      <x-m>0.03</x-m>
+      <y-m>0.04</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/NAV1.xml</path>
+    <name>NAV1</name>
+    <offsets>
+      <x-m>0.03</x-m>
+      <y-m>0.02</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/ADF2.xml</path>
+    <name>ADF2</name>
+    <offsets>
+      <x-m>0.03</x-m>
+      <y-m>-0.02</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/ADF1.xml</path>
+    <name>ADF1</name>
+    <offsets>
+      <x-m>0.03</x-m>
+      <y-m>-0.04</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/BAT.xml</path>
+    <name>BAT</name>
+    <offsets>
+      <x-m>0.06</x-m>
+      <y-m>0.04</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/MKR.xml</path>
+    <name>MKR</name>
+    <offsets>
+      <x-m>0.06</x-m>
+      <y-m>0.00</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Switch3.ac</path>
+    <name>UnknownSwitch</name>
+    <offsets>
+      <x-m>0.06</x-m>
+      <y-m>0.02</y-m>
+      <z-m>0.002</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
+

@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <test>instrumentation/warning-panel/test</test>
+    <light>instrumentation/warning-panel/master-caution</light>
+    <reset>instrumentation/warning-panel/master-caution-reset[1]</reset>
+    <!-- FIXME: attach to correct electrical bus -->
+    <power>systems/electrical/bus[0]/voltage-v</power>
+  </params>
+  <path>MasterCautionLight.ac</path>
+
+  <animation>
+    <type>pick</type>
+    <object-name>MasterCaution</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property alias="/params/reset"/>
+        <value type="int">1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property alias="/params/reset"/>
+          <value type="int">0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <property alias="/params/reset"/>
+    <factor>-0.001</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+-->
+
+  <!-- TODO: implement dimming switch functionality -->
+
+  <animation>
+    <type>select</type>
+    <object-name>MasterCaution.ON</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property alias="/params/light"/>
+      </or>
+    </condition>
+  </animation>
+
+</PropertyList>
+
+

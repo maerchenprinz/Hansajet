@@ -1,0 +1,359 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <path>Aircraft/Hansajet/Models/SperrySP40-APController.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Chassis</object-name>
+    <object-name>Labels</object-name>
+    <emission include="CockpitLightEmissionInclude.xml"/>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AFCSEngageSwitch</object-name>
+    <property>instrumentation/sp40/afcs-engage-switch</property>
+    <factor>-32</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.0031373</x-m>
+      <y-m>0</y-m>
+      <z-m>0.0020411</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <object-name>AFCSEngagePick</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>instrumentation/sp40/afcs-engage-switch</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <object-name>AFCSEngageSwitch</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>instrumentation/sp40/afcs-engage-switch</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PitchSwitch</object-name>
+    <property>instrumentation/sp40/pitch-switch</property>
+    <factor>-16</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.0031373</x-m>
+      <y-m>0</y-m>
+      <z-m>0.0020411</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <object-name>PitchUpPick</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/sp40/pitch-switch</property>
+        <value type="int">-1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/sp40/pitch-switch</property>
+          <value type="int">0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <object-name>PitchDownPick</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/sp40/pitch-switch</property>
+        <value type="int">1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/sp40/pitch-switch</property>
+          <value type="int">0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <object-name>RUDIndicator</object-name>
+    <type>textranslate</type>
+    <property>instrumentation/sp40/rud-indicator-rel</property>
+    <factor>0.3</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+    </axis>
+  </animation>
+
+  <animation>
+    <object-name>ELIndicator</object-name>
+    <type>textranslate</type>
+    <property>instrumentation/sp40/el-indicator-rel</property>
+    <factor>0.3</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+    </axis>
+  </animation>
+
+  <animation>
+    <object-name>AILIndicator</object-name>
+    <type>rotate</type>
+    <property>instrumentation/sp40/ail-indicator-rel</property>
+    <factor>30.0</factor>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.00223485</y-m>
+      <z-m>0.0341533</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <object-name>ALT</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/sp40/alt-switch</property>
+        <value type="int">1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/sp40/alt-switch</property>
+          <value type="int">0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>ALT</object-name>
+    <property>instrumentation/sp40/alt-switch</property>
+    <factor>-0.003</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>ALT.Light</object-name>
+    <condition>
+      <property>instrumentation/sp40/lights/alt</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>HDGSEL</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/sp40/hdgsel-switch</property>
+        <value type="int">1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/sp40/hdgsel-switch</property>
+          <value type="int">0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>HDGSEL</object-name>
+    <property>instrumentation/sp40/hdgsel-switch</property>
+    <factor>-0.003</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>HDGSEL.Light</object-name>
+    <condition>
+      <property>instrumentation/sp40/lights/hdgsel</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>RADIO</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/sp40/radio-switch</property>
+        <value type="int">1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/sp40/radio-switch</property>
+          <value type="int">0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>RADIO</object-name>
+    <property>instrumentation/sp40/radio-switch</property>
+    <factor>-0.003</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>RADIO.Light</object-name>
+    <condition>
+      <property>instrumentation/sp40/lights/radio</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>HDGHOLD</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/sp40/hdghold-switch</property>
+        <value type="int">1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/sp40/hdghold-switch</property>
+          <value type="int">0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>HDGHOLD</object-name>
+    <property>instrumentation/sp40/hdghold-switch</property>
+    <factor>-0.003</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>HDGHOLD.Light</object-name>
+    <condition>
+      <property>instrumentation/sp40/lights/hdghold</property>
+    </condition>
+  </animation>
+
+ <animation>
+   <type>knob</type>
+   <object-name>APTurnKnob</object-name>
+   <property>instrumentation/sp40/turn-norm</property>
+   <factor>90</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0.000853</y-m>
+      <z-m>-0.00254</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <action>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/sp40/turn-norm</property>
+      <factor>0.05</factor>
+      <min>-1</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+   <hovered>
+     <binding>
+       <command>set-tooltip</command>
+       <tooltip-id>apturn</tooltip-id>
+       <label>AP Turn Rate</label>
+     </binding>
+   </hovered>
+ </animation>
+
+</PropertyList>

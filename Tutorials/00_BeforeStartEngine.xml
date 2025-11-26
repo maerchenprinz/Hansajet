@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <name>Before Start Engine</name>
+  <description>Performe these items before starting the engines</description>
+  <interval>0</interval>
+
+  <init>
+    <set>
+      <property>/sim/current-view/view-number</property>
+      <value>0</value>
+    </set>
+  </init>
+
+  <step>
+    <message>This tutorial is currently empty</message>
+  </step>
+
+</PropertyList>

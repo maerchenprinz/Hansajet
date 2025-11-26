@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <name>Start Engine</name>
+  <description>
+Performe these items to start the engines. 
+This tutorial automatically performes the requested items for you - just sit back
+and watch your virtual copilot do the job. You should have two running engines at the end.
+  </description>
+  <interval>1</interval>
+
+  <init>
+    <set>
+      <property>/sim/current-view/view-number</property>
+      <value>0</value>
+    </set>
+  </init>
+
+  <nasal>
+    <script><![CDATA[
+
+var set_properties = func( properties_to_set, delay = 0, idx = 0 ) {
+  if( idx >= size(properties_to_set ) )
+    return;
+
+  var properties_hash = properties_to_set[idx];
+  foreach( var name; keys(properties_hash) )
+    setprop( name, properties_hash[name] );
+
+  settimer( func { set_properties(properties_to_set,delay,idx+1) }, delay );
+}
+    ]]></script>
+  </nasal>
+
+  <step>
+    <message>
+      Check THROTTLE CUTOFF (both left and right)
+    </message>
+
+    <view>
+    <heading-offset-deg>325</heading-offset-deg>
+    <pitch-offset-deg>-47.0</pitch-offset-deg>
+    <roll-offset-deg>0.0</roll-offset-deg>
+    <field-of-view>55.0</field-of-view>
+    </view>
+
+    <nasal><script><![CDATA[
+      if( getprop( "/sim/tutorials/auto-perform-items" ) == 1 ) {
+        var properties_to_set = [];
+        var pv = {};
+        pv["controls/engines/engine[0]/throttle"] = 0;
+        pv["controls/engines/engine[1]/throttle"] = 0;
+        append( properties_to_set, pv );
+        settimer( func { set_properties(properties_to_set) }, 2.0 );
+      }
+    ]]></script></nasal>
+
+    <exit>
+      <condition>
+        <less-than>
+          <property>controls/engines/engine[0]/throttle</property>
+          <value>0.01</value>
+        </less-than>
+        <less-than>
+          <property>controls/engines/engine[1]/throttle</property>
+          <value>0.01</value>
+        </less-than>
+      </condition>
+    </exit>
+  </step>
+
+  <step>
+    <message>
+      set BATT1 and BATT2 to ON
+    </message>
+
+    <view>
+    <heading-offset-deg>300</heading-offset-deg>
+    <pitch-offset-deg>52.0</pitch-offset-deg>
+    <roll-offset-deg>0.0</roll-offset-deg>
+    <field-of-view>22.0</field-of-view>
+    </view>
+
+    <nasal><script><![CDATA[
+      if( getprop( "/sim/tutorials/auto-perform-items" ) == 1 ) {
+        var properties_to_set = [];
+        var pv = {};
+        pv["controls/electric/battery[0]"] = 1;
+        pv["controls/electric/battery[1]"] = 1;
+        append( properties_to_set, pv );
+        settimer( func { set_properties(properties_to_set) }, 2.0 );
+      }
+    ]]></script></nasal>
+
+    <exit>
+      <condition>
+        <and>
+          <property>controls/electric/battery[0]</property>
+          <property>controls/electric/battery[1]</property>
+        </and>
+      </condition>
+    </exit>
+  </step>
+
+  <step>
+    <message>
+      Switch Main Wing Pump (left and right) to ON
+    </message>
+
+    <view>
+    <heading-offset-deg>311.8</heading-offset-deg>
+    <pitch-offset-deg>30.2</pitch-offset-deg>
+    <roll-offset-deg>0.0</roll-offset-deg>
+    <x-offset-m>-0.3</x-offset-m>
+    <y-offset-m>2.4</y-offset-m>
+    <z-offset-m>-6.2</z-offset-m>
+    <field-of-view>15.5</field-of-view>
+    </view>
+
+    <marker>
+    <x-m>-6.5000</x-m>
+    <y-m>0.0217</y-m>
+    <z-m>2.6442</z-m>
+    <scale>1.0000</scale>
+    </marker>
+
+    <nasal><script><![CDATA[
+      if( getprop( "/sim/tutorials/auto-perform-items" ) == 1 ) {
+        var properties_to_set = [];
+        var pv = {};
+        pv["systems/fuel/fuel-pump[3]/enabled"] = 1;
+        pv["systems/fuel/fuel-pump[5]/enabled"] = 1;
+        append( properties_to_set, pv );
+        settimer( func { set_properties(properties_to_set) }, 2.0 );
+      }
+    ]]></script></nasal>
+
+    <exit>
+      <condition>
+        <greater-than>
+          <property>systems/fuel/fuel-pump[3]/enabled</property>
+          <value>0</value>
+        </greater-than>
+        <greater-than>
+          <property>systems/fuel/fuel-pump[5]/enabled</property>
+          <value>0</value>
+        </greater-than>
+      </condition>
+    </exit>
+  </step>
+
+  <step>
+    <message>
+      Check fuel pressure lights OFF
+    </message>
+
+    <view>
+    <heading-offset-deg>327.3</heading-offset-deg>
+    <pitch-offset-deg>-15.2</pitch-offset-deg>
+    <roll-offset-deg>0.0</roll-offset-deg>
+    <x-offset-m>-0.3</x-offset-m>
+    <y-offset-m>2.4</y-offset-m>
+    <z-offset-m>-6.2</z-offset-m>
+    <field-of-view>11.6</field-of-view>
+    </view>
+
+    <marker>
+    <x-m>-7.0883</x-m>
+    <y-m>0.2083</y-m>
+    <z-m>2.0808</z-m>
+    <scale>1.0000</scale>
+    </marker>
+
+    <exit>
+      <condition>
+        <greater-than>
+          <property>engines/engine[0]/fuel-pressure-psi</property>
+          <value>10</value>
+        </greater-than>
+        <greater-than>
+          <property>engines/engine[1]/fuel-pressure-psi</property>
+          <value>10</value>
+        </greater-than>
+      </condition>
+    </exit>
+  </step>
+
+  <step>
+    <message>
+      Click and hold start switch for 3 seconds
+    </message>
+    <view>
+    <heading-offset-deg>318.9</heading-offset-deg>
+    <pitch-offset-deg>34.7</pitch-offset-deg>
+    <roll-offset-deg>0.0</roll-offset-deg>
+    <x-offset-m>-0.3</x-offset-m>
+    <y-offset-m>2.4</y-offset-m>
+    <z-offset-m>-6.2</z-offset-m>
+    <field-of-view>24.0</field-of-view>
+    </view>
+
+    <marker>
+    <x-m>-6.5117</x-m>
+    <y-m>-0.0950</y-m>
+    <z-m>2.6550</z-m>
+    <scale>1.0000</scale>
+    </marker>
+
+    <nasal><script><![CDATA[
+      if( getprop( "/sim/tutorials/auto-perform-items" ) == 1 ) {
+        var properties_to_set = [];
+        var pv = {};
+        pv["controls/engines/engine[0]/starter-switch"] = 1;
+        pv["controls/engines/engine[1]/starter-switch"] = 1;
+        append( properties_to_set, pv );
+
+        pv = {};
+        pv["controls/engines/engine[0]/starter-switch"] = 0;
+        pv["controls/engines/engine[1]/starter-switch"] = 0;
+        append( properties_to_set, pv );
+
+        settimer( func { set_properties(properties_to_set,3) }, 2.0 );
+      }
+    ]]></script></nasal>
+
+    <exit>
+      <condition>
+        <greater-than>
+          <property>engines/engine[0]/n2</property>
+          <value>2</value>
+        </greater-than>
+        <greater-than>
+          <property>engines/engine[1]/n2</property>
+          <value>2</value>
+        </greater-than>
+      </condition>
+    </exit>
+  </step>
+
+  <step>
+    <message>
+      Advance throttle to idle, ignition light illuminates
+    </message>
+
+    <view>
+    <heading-offset-deg>327.3</heading-offset-deg>
+    <pitch-offset-deg>34.0</pitch-offset-deg>
+    <roll-offset-deg>0.0</roll-offset-deg>
+    <x-offset-m>-0.3</x-offset-m>
+    <y-offset-m>2.4</y-offset-m>
+    <z-offset-m>-6.2</z-offset-m>
+    <field-of-view>35.5</field-of-view>
+    </view>
+
+    <marker>
+    <x-m>-6.5325</x-m>
+    <y-m>-0.1317</y-m>
+    <z-m>2.6458</z-m>
+    <scale>1.0000</scale>
+    </marker>
+
+    <nasal><script><![CDATA[
+      if( getprop( "/sim/tutorials/auto-perform-items" ) == 1 ) {
+        var properties_to_set = [];
+        var pv = {};
+        pv["controls/engines/engine[0]/throttle"] = 0.11;
+        pv["controls/engines/engine[1]/throttle"] = 0.11;
+        append( properties_to_set, pv );
+        settimer( func { set_properties(properties_to_set) }, 2.0 );
+      }
+    ]]></script></nasal>
+
+    <exit>
+      <condition>
+        <property>engines/engine[0]/ignition</property>
+        <property>engines/engine[1]/ignition</property>
+      </condition>
+    </exit>
+  </step>
+
+  <step>
+    <message>
+      Check oil pressure 5 PSI or more
+    </message>
+    <view>
+    <heading-offset-deg>331.5</heading-offset-deg>
+    <pitch-offset-deg>-21.3</pitch-offset-deg>
+    <roll-offset-deg>0.0</roll-offset-deg>
+    <x-offset-m>-0.3</x-offset-m>
+    <y-offset-m>2.4</y-offset-m>
+    <z-offset-m>-6.2</z-offset-m>
+    <field-of-view>26.5</field-of-view>
+    </view>
+
+    <marker>
+    <x-m>-7.0875</x-m>
+    <y-m>0.0992</y-m>
+    <z-m>1.8742</z-m>
+    <scale>1.0000</scale>
+    </marker>
+
+    <exit>
+      <condition>
+        <greater-than>
+          <property>engines/engine[0]/oil-pressure-psi</property>
+          <value>5</value>
+        </greater-than>
+      </condition>
+    </exit>
+
+  </step>
+
+  <step>
+    <message>
+      Check fuel flow 150kg/h
+    </message>
+    <view>
+    <heading-offset-deg>331.5</heading-offset-deg>
+    <pitch-offset-deg>-21.3</pitch-offset-deg>
+    <roll-offset-deg>0.0</roll-offset-deg>
+    <x-offset-m>-0.3</x-offset-m>
+    <y-offset-m>2.4</y-offset-m>
+    <z-offset-m>-6.2</z-offset-m>
+    <field-of-view>26.5</field-of-view>
+    </view>
+
+    <marker>
+    <x-m>-7.0875</x-m>
+    <y-m>0.0992</y-m>
+    <z-m>1.9350</z-m>
+    <scale>1.0000</scale>
+    </marker>
+
+    <exit>
+      <condition>
+        <greater-than>
+          <property>engines/engine[0]/fuel-flow_pph</property>
+          <value>330</value>
+        </greater-than>
+      </condition>
+    </exit>
+
+  </step>
+
+  <step>
+    <message>
+      Check EGT max 900 deg 
+    </message>
+    <view>
+    <heading-offset-deg>331.5</heading-offset-deg>
+    <pitch-offset-deg>-21.3</pitch-offset-deg>
+    <roll-offset-deg>0.0</roll-offset-deg>
+    <x-offset-m>-0.3</x-offset-m>
+    <y-offset-m>2.4</y-offset-m>
+    <z-offset-m>-6.2</z-offset-m>
+    <field-of-view>26.5</field-of-view>
+    </view>
+
+    <marker>
+    <x-m>-7.0875</x-m>
+    <y-m>0.0992</y-m>
+    <z-m>2.0558</z-m>
+    <scale>1.0000</scale>
+    </marker>
+
+    <exit>
+      <condition>
+        <less-than>
+          <property>engines/engine[0]/egt-degf</property>
+          <value>1600</value>
+        </less-than>
+      </condition>
+    </exit>
+  </step>
+
+  <step>
+    <message>
+      set GEN.1 and GEN.2 to ON
+    </message>
+
+    <view>
+    <heading-offset-deg>298</heading-offset-deg>
+    <pitch-offset-deg>46.0</pitch-offset-deg>
+    <roll-offset-deg>0.0</roll-offset-deg>
+    <field-of-view>22.0</field-of-view>
+    </view>
+
+    <nasal><script><![CDATA[
+      if( getprop( "/sim/tutorials/auto-perform-items" ) == 1 ) {
+        var properties_to_set = [];
+        var pv = {};
+        pv["controls/electric/generator[0]"] = 1;
+        pv["controls/electric/generator[1]"] = 1;
+        pv["controls/electric/generator-position[0]"] = 1;
+        pv["controls/electric/generator-position[1]"] = 1;
+        append( properties_to_set, pv );
+        settimer( func { set_properties(properties_to_set) }, 2.0 );
+      }
+    ]]></script></nasal>
+
+    <exit>
+      <condition>
+        <equals>
+          <property>controls/electric/generator[0]</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>controls/electric/generator[1]</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </exit>
+  </step>
+
+</PropertyList>

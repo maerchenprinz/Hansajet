@@ -1,0 +1,56 @@
+AC3Db
+MATERIAL "Plane.014Xmat" rgb 1 1 1  amb 1 1 1  emis 1 1 1  spec 0 0 0  shi 0  trans 0
+OBJECT world
+kids 2
+OBJECT poly
+name "FlashOff"
+loc 2.38419e-07 0 0
+data 18
+BeaconOffXmesh.001
+texture "flashes.png"
+crease 30.000000
+numvert 4
+-0.2 -0.2 0
+0.2 -0.2 0
+0.2 0.2 0
+-0.2 0.2 0
+numsurf 2
+SURF 0x0
+mat 0
+refs 3
+0 0.333 -0.0038333
+1 0.667 -0.00383331
+2 0.667 1.00383
+SURF 0x0
+mat 0
+refs 3
+0 0.333 -0.0038333
+2 0.667 1.00383
+3 0.333 1.00383
+kids 0
+OBJECT poly
+name "Flash"
+loc 2.38419e-07 0 0
+data 18
+BeaconOffXmesh.001
+texture "flashes.png"
+crease 30.000000
+numvert 4
+-1 1 0
+1 1 0
+1 -1 0
+-1 -1 0
+numsurf 2
+SURF 0x0
+mat 0
+refs 3
+3 0.333 -0.0038333
+1 0.667 1.00383
+0 0.333 1.00383
+SURF 0x0
+mat 0
+refs 3
+3 0.333 -0.0038333
+2 0.667 -0.00383331
+1 0.667 1.00383
+kids 0

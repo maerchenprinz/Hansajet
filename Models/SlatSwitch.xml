@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>controls/flight/spoilers</value>
+    <unlock>controls/flight/spoilers-unlock</unlock>
+  </params>
+
+  <model include="SwitchCap.xml"/>
+  <animation include="SwitchCapPickAnimation.xml"/>
+  <animation include="SwitchCapRotateAnimation.xml"/>
+
+  <model include="Switch3.xml"/>
+  <animation include="LockedSwitchLeverPickAnimation.xml"/>
+  <animation include="SwitchLeverRotateAnimation.xml"/>
+
+</PropertyList>
+
+

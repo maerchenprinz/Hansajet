@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>controls/antistall/test2-pusher</value>
+  </params>
+
+  <model include="Pushbutton.xml"/>
+  <animation include="PushbuttonPickAnimation.xml"/>
+  <animation include="PushbuttonTranslateAnimation.xml"/>
+
+</PropertyList>
+
+

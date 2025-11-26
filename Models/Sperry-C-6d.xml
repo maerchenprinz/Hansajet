@@ -1,0 +1,212 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <indicated-heading>instrumentation/heading-indicator/indicated-heading-deg</indicated-heading>
+    <serviceable>instrumentation/heading-indicator/serviceable</serviceable>
+    <off>instrumentation/heading-indicator/off</off>
+    <spin>instrumentation/heading-indicator/spin</spin>
+    <one>instrumentation/heading-indicator[0]/needle1-rotation-filtered-deg</one>
+    <two>instrumentation/heading-indicator[0]/needle2-rotation-filtered-deg</two>
+    <voradf>instrumentation/heading-indicator/voradf-position</voradf>
+    <voradf-position>instrumentation/heading-indicator/voradf-interpolated-position</voradf-position>
+    <cross>instrumentation/heading-indicator/sync-increase</cross>
+    <dot>instrumentation/heading-indicator/sync-decrease</dot>
+  </params>
+
+  <path>Sperry-C-6d.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>CompassRose</object-name>
+    <object-name>Two</object-name>
+    <object-name>One</object-name>
+    <object-name>Marker</object-name>
+    <object-name>Off</object-name>
+    <object-name>SyncIndicator.Cross</object-name>
+    <object-name>SyncIndicator.Dot</object-name>
+    <emission include="InstrumentLightEmissionInclude.xml"/>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>CompassRose</object-name>
+    <property alias="/params/indicated-heading"/>
+    <factor>1.0</factor>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Two</object-name>
+    <property alias="/params/two"/>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>One</object-name>
+    <property alias="/params/one"/>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>VorAdf</object-name>
+    <property alias="/params/voradf-position"/>
+    <factor>90.0</factor>
+    <axis>
+      <x>1</x>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>-0.034</y-m>
+      <z-m>0.034</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <object-name>VorAdf</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/voradf"/>
+        <step>1</step>
+        <min>0</min>
+        <max>4</max>
+        <wrap>1</wrap>
+      </binding>
+      <binding>
+        <command>property-interpolate</command>
+        <property alias="/params/voradf-position"/>
+        <property alias="/params/voradf"/>
+        <time>0.2</time>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>SyncIndicator.Cross</object-name>
+    <condition>
+      <property alias="/params/serviceable"/>
+      <property alias="/params/cross"/>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>SyncIndicator.Dot</object-name>
+    <condition>
+      <property alias="/params/serviceable"/>
+      <property alias="/params/dot"/>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Off</object-name>
+    <condition>
+      <property alias="/params/off"/>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>SyncKnob</object-name>
+    <property>instrumentation/heading-indicator/sync-knob-position</property>
+    <factor>90.0</factor>
+    <axis>
+      <x>-1</x>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0.034</y-m>
+      <z-m>-0.034</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <object-name>SyncKnobPick.L</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/heading-indicator/sync-knob</property>
+        <value type="double">-1.0</value>
+      </binding>
+      <binding>
+        <command>property-interpolate</command>
+        <property>instrumentation/heading-indicator/sync-knob-position</property>
+        <property>instrumentation/heading-indicator/sync-knob</property>
+        <time>0.5</time>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/heading-indicator/sync-knob</property>
+          <value type="double">0.0</value>
+        </binding>
+        <binding>
+          <command>property-interpolate</command>
+          <property>instrumentation/heading-indicator/sync-knob-position</property>
+          <property>instrumentation/heading-indicator/sync-knob</property>
+          <time>0.5</time>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <object-name>SyncKnobPick.R</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/heading-indicator/sync-knob</property>
+        <value type="double">1.0</value>
+      </binding>
+      <binding>
+        <command>property-interpolate</command>
+        <property>instrumentation/heading-indicator/sync-knob-position</property>
+        <property>instrumentation/heading-indicator/sync-knob</property>
+        <time>0.5</time>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/heading-indicator/sync-knob</property>
+          <value type="double">0.0</value>
+        </binding>
+        <binding>
+          <command>property-interpolate</command>
+          <property>instrumentation/heading-indicator/sync-knob-position</property>
+          <property>instrumentation/heading-indicator/sync-knob</property>
+          <time>0.5</time>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+</PropertyList>

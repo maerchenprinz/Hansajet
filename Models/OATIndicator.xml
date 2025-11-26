@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <value>environment/temperature-degc</value>
+  </params>
+
+  <path>OATIndicator.ac</path>
+
+  <animation include="SimpleGaugeEmissionInclude.xml"/>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/value"/>
+    <factor>-0.750</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0.0176041</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+</PropertyList>

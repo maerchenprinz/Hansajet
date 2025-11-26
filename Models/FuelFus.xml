@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <fuel>consumables/fuel/tank[2]/level-lbs</fuel>
+  </params>
+
+  <path>FuelFus.ac</path>
+
+  <animation include="SimpleGaugeEmissionInclude.xml"/>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/fuel"/>
+    <interpolation>
+      <entry>
+        <ind>0</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>20</ind>
+        <dep>10</dep>
+      </entry>
+      <entry>
+        <ind>880</ind>
+        <dep>234</dep>
+      </entry>
+      <entry>
+        <ind>1100</ind>
+        <dep>274</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+</PropertyList>
+

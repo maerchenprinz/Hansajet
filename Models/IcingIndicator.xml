@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <test>controls/anti-ice/light-test</test>
+    <light-0>instrumentation/ice-indicator/tail</light-0>
+    <light-1>instrumentation/ice-indicator/engine-left</light-1>
+    <light-2>instrumentation/ice-indicator/engine-right</light-2>
+    <light-3>instrumentation/ice-indicator/wing-left-inner</light-3>
+    <light-4>instrumentation/ice-indicator/wing-right-inner</light-4>
+    <light-5>instrumentation/ice-indicator/wing-left-outer</light-5>
+    <light-6>instrumentation/ice-indicator/wing-right-outer</light-6>
+  </params>
+
+  <path>IcingIndicator.ac</path>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Button</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property alias="../../../../params/test"/>
+        <value>1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property alias="../../../../../params/test"/>
+          <value>0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>Button</object-name>
+    <factor>-0.005</factor>
+    <property alias="../../params/test"/>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light0</object-name>
+    <condition>
+      <or>
+        <property alias="../../../../params/light-0"/>
+        <property alias="../../../../params/test"/>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light1</object-name>
+    <condition>
+      <or>
+        <property alias="../../../../params/light-1"/>
+        <property alias="../../../../params/test"/>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light2</object-name>
+    <condition>
+      <or>
+        <property alias="../../../../params/light-2"/>
+        <property alias="../../../../params/test"/>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light3</object-name>
+    <condition>
+      <or>
+        <property alias="../../../../params/light-3"/>
+        <property alias="../../../../params/test"/>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light4</object-name>
+    <condition>
+      <or>
+        <property alias="../../../../params/light-4"/>
+        <property alias="../../../../params/test"/>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light5</object-name>
+    <condition>
+      <or>
+        <property alias="../../../../params/light-5"/>
+        <property alias="../../../../params/test"/>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light6</object-name>
+    <condition>
+      <or>
+        <property alias="../../../../params/light-6"/>
+        <property alias="../../../../params/test"/>
+      </or>
+    </condition>
+  </animation>
+
+</PropertyList>
+
+

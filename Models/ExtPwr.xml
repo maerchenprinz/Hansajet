@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  
+  <params>
+    <value>instrumentation/overhead-panel/ext-pwr</value>
+    <test>instrumentation/overhead-panel/ext-pwr-test</test>
+  </params>
+  
+  <path>ControlLight-Red.ac</path>
+
+  <animation include="ControlLightLightSelectAnimation.xml"/>
+  <animation include="ControlLightPickAnimation.xml"/>
+  <animation include="ControlLightTranslateAnimation.xml"/>
+
+</PropertyList>

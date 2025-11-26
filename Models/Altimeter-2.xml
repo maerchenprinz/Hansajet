@@ -1,0 +1,162 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <altitude>instrumentation/altimeter[1]/indicated-altitude-ft</altitude>
+    <subscale>instrumentation/altimeter[1]/setting-hpa</subscale>
+  </params>
+
+  <path>Altimeter.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>Needle</object-name>
+    <object-name>Altitude10000</object-name>
+    <object-name>Altitude1000</object-name>
+    <object-name>Altitude100</object-name>
+    <object-name>Subscale1000</object-name>
+    <object-name>Subscale100</object-name>
+    <object-name>Subscale10</object-name>
+    <object-name>Subscale1</object-name>
+    <emission include="InstrumentLightEmissionInclude.xml"/>
+  </animation>
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/altitude"/>
+    <factor>-0.360</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Altitude100</object-name>
+    <property alias="../../params/altitude"/>
+    <factor>-0.001</factor>
+    <step>100</step>
+    <scroll>10</scroll>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Altitude1000</object-name>
+    <property alias="../../params/altitude"/>
+    <factor>-0.0001</factor>
+    <step>1000</step>
+    <scroll>10</scroll>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Altitude10000</object-name>
+    <property alias="../../params/altitude"/>
+    <factor>-0.00001</factor>
+    <step>10000</step>
+    <scroll>10</scroll>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Subscale1</object-name>
+    <property alias="../../params/subscale"/>
+    <factor>-0.1</factor>
+    <step>1</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Subscale10</object-name>
+    <property alias="../../params/subscale"/>
+    <factor>-0.01</factor>
+    <step>10</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Subscale100</object-name>
+    <property alias="../../params/subscale"/>
+    <factor>-0.001</factor>
+    <step>100</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Subscale1000</object-name>
+    <property alias="../../params/subscale"/>
+    <factor>-0.0001</factor>
+    <step>1000</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+ <animation>
+   <type>knob</type>
+   <object-name>SubscaleKnob</object-name>
+   <property>instrumentation/altimeter[1]/setting-hpa</property>
+   <factor>5</factor>
+   <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+   <center>
+    <x-m>0</x-m>
+    <y-m>-0.0336</y-m>
+    <z-m>-0.034</z-m>
+   </center>
+    <action>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/altimeter[1]/setting-hpa</property>
+      <factor>1</factor>
+      <min>980</min>
+      <max>1050</max>                
+      <wrap>false</wrap>
+     </binding>
+    </action>
+ </animation>
+
+</PropertyList>

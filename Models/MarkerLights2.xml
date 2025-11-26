@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <model>
+    <path>Aircraft/Hansajet/Models/InnerMarker2.xml</path>
+    <name>InnerMarker</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0.025</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/MiddleMarker2.xml</path>
+    <name>MiddleMarker</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0.0</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/OuterMarker2.xml</path>
+    <name>OuterMarker</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.025</z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

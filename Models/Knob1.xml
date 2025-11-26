@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <path>Aircraft/Hansajet/Models/Knob1.ac</path>
+  <name>Switch</name>
+
+  <animation>
+    <type>material</type>
+    <emission include="CockpitLightEmissionInclude.xml"/>
+  </animation>
+
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+  </offsets>
+</PropertyList>

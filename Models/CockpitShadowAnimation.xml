@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <type>noshadow</type>
+  <condition>
+    <not>
+      <property>sim/model/Hansajet/shadows/cockpit</property>
+    </not>
+  </condition>
+</PropertyList>

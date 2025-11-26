@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <value>fdm/jsbsim/propulsion/engine[1]/egt-degf-corrected</value>
+  </params>
+
+  <path>EGTIndicator.ac</path>
+
+  <animation include="DualHandGaugeEmissionInclude.xml"/>
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/value"/>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>-110.0</dep>
+      </entry>
+      <entry>
+        <ind>2192.0</ind>
+        <dep>-410.0</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>SmallHand</object-name>
+    <property alias="../../params/value"/>
+    <factor>-2.0</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0150888</y-m>
+      <z-m>-0.0010238</z-m>
+    </center>
+  </animation>
+
+</PropertyList>

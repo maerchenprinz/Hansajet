@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <value>instrumentation/vertical-speed-indicator[0]/indicated-speed-fpm</value>
+  </params>
+
+  <path>VSI.ac</path>
+
+  <animation include="SimpleGaugeEmissionInclude.xml"/>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/value"/>
+    <interpolation>
+      <entry>
+        <ind>-6000</ind>
+        <dep>170</dep>
+      </entry>
+      <entry>
+        <ind>-5000</ind>
+        <dep>155</dep>
+      </entry>
+      <entry>
+        <ind>-4000</ind>
+        <dep>135</dep>
+      </entry>
+      <entry>
+        <ind>-3000</ind>
+        <dep>110</dep>
+      </entry>
+      <entry>
+        <ind>-2000</ind>
+        <dep>80</dep>
+      </entry>
+      <entry>
+        <ind>-1000</ind>
+        <dep>45</dep>
+      </entry>
+      <entry>
+        <ind>0</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>1000</ind>
+        <dep>-45</dep>
+      </entry>
+      <entry>
+        <ind>2000</ind>
+        <dep>-80</dep>
+      </entry>
+      <entry>
+        <ind>3000</ind>
+        <dep>-110</dep>
+      </entry>
+      <entry>
+        <ind>4000</ind>
+        <dep>-135</dep>
+      </entry>
+      <entry>
+        <ind>5000</ind>
+        <dep>-155</dep>
+      </entry>
+      <entry>
+        <ind>6000</ind>
+        <dep>-170</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+</PropertyList>

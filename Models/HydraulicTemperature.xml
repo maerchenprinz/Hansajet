@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <value>systems/hydraulic/temp-degc</value>
+  </params>
+
+  <path>HydraulicTemperature.ac</path>
+
+  <animation include="SimpleGaugeEmissionInclude.xml"/>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/value"/>
+    <interpolation>
+      <entry>
+        <ind>-80</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>150</ind>
+        <dep>288</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+</PropertyList>
+

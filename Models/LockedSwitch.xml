@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>a</value>
+    <unlock>b</unlock>
+  </params>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/Switch3.ac</path>
+    <name>Switch</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0.002</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/SwitchCap.ac</path>
+    <name>SwitchCap</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+  <!-- Lock can only be operated when switch is off -->
+
+  <animation>
+    <object-name>SwitchCap</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <condition>
+          <not>
+            <property alias="../../../../../../params/value"/>
+          </not>
+        </condition>
+        <command>property-toggle</command>
+        <property alias="../../../../params/unlock"/>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>SwitchCap</object-name>
+    <property alias="../../params/unlock"/>
+    <factor>-90</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>-0.00235911</y-m>
+      <z-m>0.0104086</z-m>
+    </center>
+  </animation>
+
+
+  <!-- Switch can only be operated, when lock is unlocked -->
+  <animation>
+    <object-name>Lever</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <condition>
+      <property alias="../../../params/unlock"/>
+    </condition>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <condition>
+          <property alias="../../../../../params/unlock"/>
+        </condition>
+        <command>property-toggle</command>
+        <property alias="../../../../params/value"/>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lever</object-name>
+    <property alias="../../params/value"/>
+    <factor>-32</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+</PropertyList>
+
+

@@ -1,0 +1,595 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <selected-radial>instrumentation/nav[0]/radials/selected-deg</selected-radial>
+    <signal-quality>instrumentation/nav[0]/signal-quality-norm</signal-quality>
+    <to-flag>instrumentation/nav[0]/to-flag</to-flag>
+    <from-flag>instrumentation/nav[0]/from-flag</from-flag>
+    <tofrom-serviceable>instrumentation/nav[0]/to-from/serviceable</tofrom-serviceable>
+    <gs-needle-deflection>instrumentation/nav[0]/gs-needle-deflection</gs-needle-deflection>
+    <heading-needle-deflection>instrumentation/nav[0]/heading-needle-deflection</heading-needle-deflection>
+    <has-gs>instrumentation/nav[0]/has-gs</has-gs>
+    <gs-serviceable>instrumentation/nav[0]/gs/serviceable</gs-serviceable>
+
+    <indicated-heading>instrumentation/heading-indicator/indicated-heading-deg</indicated-heading>
+    <gyro-spin>instrumentation/heading-indicator/spin</gyro-spin>
+
+    <heading-bug>autopilot/settings/heading-bug-deg</heading-bug>
+
+    <dme-in-range>instrumentation/dme/in-range</dme-in-range>
+    <dme-dist>instrumentation/dme/indicated-distance-nm</dme-dist>
+  </params>
+
+  <path>HSI.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>CompassRose</object-name>
+    <object-name>CDIPlate</object-name>
+    <object-name>TO</object-name>
+    <object-name>FROM</object-name>
+    <object-name>OFF</object-name>
+    <object-name>GS</object-name>
+    <object-name>NAV</object-name>
+    <object-name>HDGBug</object-name>
+    <object-name>Marking</object-name>
+    <object-name>CDIBar</object-name>
+    <object-name>GSBar</object-name>
+    <object-name>Course100</object-name>
+    <object-name>Course10</object-name>
+    <object-name>Course1</object-name>
+    <object-name>Miles100</object-name>
+    <object-name>Miles10</object-name>
+    <object-name>Miles1</object-name>
+    <emission include="InstrumentLightEmissionInclude.xml"/>
+  </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>CompassRose</object-name>
+        <property alias="../../params/indicated-heading"/>
+        <factor>1.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-0.001</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>HDGBug</object-name>
+        <property alias="../../params/indicated-heading"/>
+        <factor>1.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>HDGBug</object-name>
+        <property alias="../../params/heading-bug"/>
+        <factor>-1.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>HDGSelector</object-name>
+        <property alias="../../params/heading-bug"/>
+        <factor>-8.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0.039</y-m>
+            <z-m>-0.039</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>HDGSelector</object-name>
+        <property alias="../../params/indicated-heading"/>
+        <factor>8.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0.039</y-m>
+            <z-m>-0.039</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>OBSSelector</object-name>
+        <property alias="../../params/selected-radial"/>
+        <factor>-8.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-0.039</y-m>
+            <z-m>-0.039</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>OBSSelector</object-name>
+        <property alias="../../params/indicated-heading"/>
+        <factor>8.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-0.039</y-m>
+            <z-m>-0.039</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>OFF</object-name>
+        <property alias="../../params/gyro-spin"/>
+        <factor>-50.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>-0.001</x-m>
+            <y-m>0.039552</y-m>
+            <z-m>0.0101084</z-m>
+        </center>
+    </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Course1</object-name>
+    <property alias="../../params/selected-radial"/>
+    <factor>-0.1</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Course10</object-name>
+    <property alias="../../params/selected-radial"/>
+    <factor>-0.01</factor>
+    <step>10</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Course100</object-name>
+    <property alias="../../params/selected-radial"/>
+    <factor>-0.001</factor>
+    <step>100</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+   <animation>
+        <type>rotate</type>
+        <object-name>CDIPlate</object-name>
+        <object-name>CDIBar</object-name>
+        <object-name>NAV</object-name>
+        <object-name>TO</object-name>
+        <object-name>FROM</object-name>
+        <property alias="../../params/indicated-heading"/>
+        <factor>1.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>CDIPlate</object-name>
+        <object-name>CDIBar</object-name>
+        <object-name>NAV</object-name>
+        <object-name>TO</object-name>
+        <object-name>FROM</object-name>
+        <property alias="../../params/selected-radial"/>
+        <factor>-1.0</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>CDIBar</object-name>
+        <property alias="../../params/heading-needle-deflection"/>
+        <factor>2.5</factor>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+        <center>
+            <x-m>-0.0403711</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>NAV</object-name>
+        <property alias="../../params/signal-quality"/>
+        <factor>-0.00824454</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>TO</object-name>
+        <condition>
+          <property alias="../../../params/to-flag"/>
+          <property alias="../../../params/tofrom-serviceable"/>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FROM</object-name>
+        <condition>
+          <property alias="../../../params/from-flag"/>
+          <property alias="../../../params/tofrom-serviceable"/>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>GS</object-name>
+        <condition>
+          <not>
+            <property alias="../../../../params/has-gs"/>
+            <property alias="../../../../params/gs-serviceable"/>
+          </not>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>GSBar</object-name>
+        <property alias="../../params/gs-needle-deflection"/>
+        <factor>5.71</factor> <!-- 20 / 3.5 -->
+        <max-deg>20</max-deg>
+        <min-deg>-20</min-deg>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-0.0193344</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+<!--
+    <animation>
+        <type>translate</type>
+        <object-name>GSBar</object-name>
+        <interpolation>
+          <entry>
+            <ind>-0.7</ind>
+            <dep>-0.0116294</dep>
+          </entry>
+          <entry>
+            <ind>0.7</ind>
+            <dep>0.0116294</dep>
+          </entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+-->
+
+    <animation>
+        <type>pick</type>
+        <object-name>HDGSelectorPick.L</object-name>
+        <visible>false</visible>
+        <action>
+          <button>0</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/heading-bug"/>
+            <step>-1</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+        <action>
+          <button>1</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/heading-bug"/>
+            <step>-10</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>HDGSelectorPick.R</object-name>
+        <visible>false</visible>
+        <action>
+          <button>0</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/heading-bug"/>
+            <step>1</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+        <action>
+          <button>1</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/heading-bug"/>
+            <step>10</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>HDGSelector</object-name>
+        <visible>true</visible>
+        <action>
+          <button>3</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/heading-bug"/>
+            <step>-1</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+        <action>
+          <button>4</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/heading-bug"/>
+            <step>1</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>OBSSelectorPick.L</object-name>
+        <visible>false</visible>
+        <action>
+          <button>0</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/selected-radial"/>
+            <step>-1</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+        <action>
+          <button>1</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/selected-radial"/>
+            <step>-10</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>OBSSelectorPick.R</object-name>
+        <visible>false</visible>
+        <action>
+          <button>0</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/selected-radial"/>
+            <step>1</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+        <action>
+          <button>1</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/selected-radial"/>
+            <step>10</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>OBSSelector</object-name>
+        <visible>true</visible>
+        <action>
+          <button>3</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/selected-radial"/>
+            <step>-1</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+        <action>
+          <button>4</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/selected-radial"/>
+            <step>1</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+          </binding>
+        </action>
+    </animation>
+
+    <!-- DME indicator -->
+    <animation>
+      <type>select</type>
+      <object-name>MilesOff</object-name>
+      <condition>
+        <not>
+          <property alias="../../../../params/dme-in-range"/>
+        </not>
+      </condition>
+    </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Miles1</object-name>
+    <property alias="../../params/dme-dist"/>
+    <factor>-0.1</factor>
+    <step>1</step>
+    <scroll>.1</scroll>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Miles10</object-name>
+    <property alias="../../params/dme-dist"/>
+    <factor>-0.01</factor>
+    <step>10</step>
+    <scroll>.1</scroll>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Miles100</object-name>
+    <property alias="../../params/dme-dist"/>
+    <factor>-0.001</factor>
+    <step>100</step>
+    <scroll>.1</scroll>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+</PropertyList>

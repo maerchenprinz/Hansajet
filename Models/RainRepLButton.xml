@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>controls/windshield/rain-rep[0]</value>
+  </params>
+
+  <model include="Pushbutton.xml"/>
+  <animation include="PushbuttonPickAnimation.xml"/>
+  <animation include="PushbuttonTranslateAnimation.xml"/>
+
+</PropertyList>
+
+

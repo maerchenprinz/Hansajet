@@ -1,0 +1,246 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<!--
+  Tank layout:
+  Left Tip:   tank[0]
+  Left Wing:  tank[1]
+  Fuselage:   tank[2]
+  Right Wing: tank[3]
+  Right Tip:  tank[4]
+
+  Pumps:
+  Fuselage:   #0
+  Left tip:   #1
+  Right tip:  #2
+  Left main:  #3
+  Left aux:   #4
+  Right main: #5
+  Right aux:  #6
+-->
+<!-- 
+  Lights illuminate if the respective fuel pump is malfunctioning
+  or the fuel tank is empty. On the ground with the electrical system
+  energized, the main wing tank pump warning lights are illuminated
+  although the pumps are switched off to remind the pilot to switch
+  on the pumps before starting the engines
+-->
+
+<PropertyList>
+  <params>
+    <test>controls/fuel/fuel-pump-light-test</test>
+    <pump-test>controls/fuel/fuel-pump-test</pump-test>
+
+    <fuselage-pump>systems/fuel/fuel-pump[0]/serviceable</fuselage-pump>
+    <fuselage-pump-on>systems/fuel/fuel-pump[0]/enabled</fuselage-pump-on>
+
+    <left-main>systems/fuel/fuel-pump[3]/serviceable</left-main>
+    <left-main-on>systems/fuel/fuel-pump[3]/enabled</left-main-on>
+
+    <left-aux>systems/fuel/fuel-pump[4]/serviceable</left-aux>
+    <left-aux-on>systems/fuel/fuel-pump[4]/enabled</left-aux-on>
+
+    <right-main>systems/fuel/fuel-pump[5]/serviceable</right-main>
+    <right-main-on>systems/fuel/fuel-pump[5]/enabled</right-main-on>
+
+    <right-aux>systems/fuel/fuel-pump[6]/serviceable</right-aux>
+    <right-aux-on>systems/fuel/fuel-pump[6]/enabled</right-aux-on>
+
+    <left-tip>systems/fuel/fuel-pump[1]/serviceable</left-tip>
+    <left-tip-on>systems/fuel/fuel-pump[1]/enabled</left-tip-on>
+
+    <right-tip>systems/fuel/fuel-pump[2]/serviceable</right-tip>
+    <right-tip-on>systems/fuel/fuel-pump[2]/enabled</right-tip-on>
+
+    <on-ground>gear/gear[1]/wow</on-ground>
+
+  </params>
+
+  <path>FuelPumpIndicator.ac</path>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Button</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property alias="/params/test"/>
+        <value>1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property alias="/params/test"/>
+          <value>0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>Button</object-name>
+    <factor>-0.005</factor>
+    <property alias="/params/test"/>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light0</object-name>
+    <condition>
+      <or>
+        <property alias="/params/test"/>
+        <not>
+          <or>
+            <property alias="/params/pump-test"/>
+            <property alias="/params/fuselage-pump"/>
+          </or>
+        </not>
+        <and>
+          <property alias="/params/pump-test"/>
+          <property alias="/params/fuselage-pump-on"/>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light1a</object-name>
+    <condition>
+      <or>
+        <property alias="/params/test"/>
+        <not>
+          <or>
+            <property alias="/params/pump-test"/>
+            <property alias="/params/left-main"/>
+          </or>
+        </not>
+        <and>
+          <property alias="/params/pump-test"/>
+          <property alias="/params/left-main-on"/>
+        </and>
+        <and>
+          <property alias="/params/on-ground"/>
+          <not>
+            <property alias="/params/left-main-on"/>
+          </not>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light1b</object-name>
+    <condition>
+      <or>
+        <property alias="/params/test"/>
+        <not>
+          <or>
+            <property alias="/params/pump-test"/>
+            <property alias="/params/left-aux"/>
+          </or>
+        </not>
+        <and>
+          <property alias="/params/pump-test"/>
+          <property alias="/params/left-aux-on"/>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light2a</object-name>
+    <condition>
+      <or>
+        <property alias="/params/test"/>
+        <not>
+          <or>
+            <property alias="/params/pump-test"/>
+            <property alias="/params/right-main"/>
+          </or>
+        </not>
+        <and>
+          <property alias="/params/pump-test"/>
+          <property alias="/params/right-main-on"/>
+        </and>
+        <and>
+          <property alias="/params/on-ground"/>
+          <not>
+            <property alias="/params/right-main-on"/>
+          </not>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light2b</object-name>
+    <condition>
+      <or>
+        <property alias="/params/test"/>
+        <not>
+          <or>
+            <property alias="/params/pump-test"/>
+            <property alias="/params/right-aux"/>
+          </or>
+        </not>
+        <and>
+          <property alias="/params/pump-test"/>
+          <property alias="/params/right-aux-on"/>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light3</object-name>
+    <condition>
+      <or>
+        <property alias="/params/test"/>
+        <not>
+          <or>
+            <property alias="/params/pump-test"/>
+            <property alias="/params/left-tip"/>
+          </or>
+        </not>
+        <and>
+          <property alias="/params/pump-test"/>
+          <property alias="/params/left-tip-on"/>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light4</object-name>
+    <condition>
+      <or>
+        <property alias="/params/test"/>
+        <not>
+          <or>
+            <property alias="/params/pump-test"/>
+            <property alias="/params/right-tip"/>
+          </or>
+        </not>
+        <and>
+          <property alias="/params/pump-test"/>
+          <property alias="/params/right-tip-on"/>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+</PropertyList>
+
+

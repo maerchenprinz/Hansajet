@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <type>rotate</type>
+  <property alias="../../params/position"/>
+  <factor>-36</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</PropertyList>

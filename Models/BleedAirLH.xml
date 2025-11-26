@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  
+  <params>
+    <value>fdm/jsbsim/propulsion/engine[0]/bleed-air-pressure-switch</value>
+    <test>controls/anti-ice/engine[0]/inlet-heat-test</test>
+  </params>
+  
+  <path>ControlLight-Amber.ac</path>
+
+  <animation include="ControlLightLightSelectAnimation.xml"/>
+  <animation include="ControlLightPickAnimation.xml"/>
+  <animation include="ControlLightTranslateAnimation.xml"/>
+
+</PropertyList>

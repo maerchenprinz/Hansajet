@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <rpm>engines/engine[0]/n2</rpm>
+  </params>
+
+  <path>RPMIndicator.ac</path>
+
+  <animation include="DualHandGaugeEmissionInclude.xml"/>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/rpm"/>
+    <factor>-2.70</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>SmallHand</object-name>
+    <property alias="../../params/rpm"/>
+    <factor>-36.0</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>-0.00840303</y-m>
+      <z-m>0.00835604</z-m>
+    </center>
+  </animation>
+
+</PropertyList>
+

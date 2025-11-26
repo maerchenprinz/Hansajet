@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <object-name>SwitchCap</object-name>
+  <type>rotate</type>
+  <object-name>SwitchCap</object-name>
+  <property alias="../../params/unlock"/>
+  <factor>-90</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+  <center>
+    <x-m>0</x-m>
+    <y-m>-0.00235911</y-m>
+    <z-m>0.0104086</z-m>
+  </center>
+</PropertyList>

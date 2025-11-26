@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <object-name>Lever</object-name>
+  <type>pick</type>
+  <visible>true</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <condition>
+        <property alias="../../../../../params/unlock"/>
+      </condition>
+      <command>property-toggle</command>
+      <property alias="../../../../params/value"/>
+    </binding>
+  </action>
+</PropertyList>

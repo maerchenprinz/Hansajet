@@ -1,0 +1,42 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <antiskid>controls/gear/antiskid</antiskid>
+  </params>
+
+  <path>Aircraft/Hansajet/Models/Switch2.ac</path>
+
+  <animation>
+    <object-name>Lever</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property alias="../../../../params/antiskid"/>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lever</object-name>
+    <property alias="../../params/antiskid"/>
+    <factor>-32</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+</PropertyList>
+

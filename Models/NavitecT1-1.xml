@@ -1,0 +1,239 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <lunette-rotation>instrumentation/stopwatch[0]/lunette-rotation-deg</lunette-rotation>
+    <button-left>instrumentation/stopwatch[0]/button-left</button-left>
+    <button-right>instrumentation/stopwatch[0]/button-right</button-right>
+    <running>instrumentation/stopwatch[0]/running</running>
+    <time>/instrumentation/stopwatch[0]/elapsed-sec</time>
+  </params>
+
+  <path>NavitecT1.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>30Minutes</object-name>
+    <object-name>Seconds</object-name>
+    <object-name>HandYellow</object-name>
+    <object-name>HandWhiteLarge</object-name>
+    <object-name>HandWhiteSmall</object-name>
+    <emission include="InstrumentLightEmissionInclude.xml"/>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Baseplate</object-name>
+    <object-name>Lunette</object-name>
+    <object-name>KnobLeft</object-name>
+    <object-name>KnobRight</object-name>
+    <object-name>KnobCenter1</object-name>
+    <object-name>KnobCenter2</object-name>
+    <emission include="CockpitLightEmissionInclude.xml"/>
+  </animation>
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>Lunette</object-name>
+    <property alias="/params/lunette-rotation"/>
+    <factor>1.0</factor>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m>-0.001</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Lunette</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/lunette-rotation"/>
+        <step>-1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+    <action>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/lunette-rotation"/>
+        <step>1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>KnobLeft</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property alias="/params/button-left"/>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property alias="/params/running"/>
+        <value>0</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property alias="/params/button-left"/>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property alias="/params/time"/>
+          <value>0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>KnobRight</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property alias="/params/button-right"/>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property alias="/params/running"/>
+      </binding>
+      <binding>
+        <time alias="/params/time"/>
+        <running alias="/params/running"/>
+        <command>nasal</command>
+        <script><![CDATA[
+          var runningNode = nil;
+          if( runningNode == nil ) 
+            runningNode = props.globals.getNode( cmdarg().getNode("running", 1 ).getValue(), 1 );
+          if( runningNode.getValue() ) {
+            var timeNode = props.globals.initNode( cmdarg().getNode("time",1 ).getValue(), 0.0 );
+            var elapsed_node = props.globals.getNode( "/sim/time/elapsed-sec", 1 );
+            var start_time = 0;
+            var offset = timeNode.getValue();
+            var loop = func {
+              if( runningNode.getValue() ) {
+                timeNode.setDoubleValue( elapsed_node.getValue() - start_time + offset );
+                settimer( loop, 0.05 );
+              }
+            };
+            start_time = elapsed_node.getValue();
+            loop();
+          }
+        ]]></script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property alias="/params/button-right"/>
+          <value>0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>KnobLeft</object-name>
+    <property alias="/params/button-left"/>
+    <factor>0.001</factor>
+    <axis>
+      <x1-m>0.0069587</x1-m>
+      <y1-m>-0.0172024</y1-m>
+      <z1-m>0.0297085</z1-m>
+      <x2-m>0.0069587</x2-m>
+      <y2-m>-0.0137873</y2-m>
+      <z2-m>0.0237933</z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>KnobRight</object-name>
+    <property alias="/params/button-right"/>
+    <factor>0.001</factor>
+    <axis>
+      <x1-m>0.0069587</x1-m>
+      <y1-m>0.0172024</y1-m>
+      <z1-m>0.0297085</z1-m>
+      <x2-m>0.0069587</x2-m>
+      <y2-m>0.0137873</y2-m>
+      <z2-m>0.0237933</z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>HandYellow</object-name>
+    <property alias="/params/time"/>
+    <factor>-6</factor>
+    <axis>
+      <x>1</x>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>HandWhiteLarge</object-name>
+    <property alias="/params/time"/>
+    <factor>-0.1</factor>
+    <axis>
+      <x>1</x>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>HandWhiteSmall</object-name>
+    <property alias="/params/time"/>
+    <factor>-0.001666666666666667</factor>
+    <axis>
+      <x>1</x>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>30Minutes</object-name>
+    <property alias="/params/time"/>
+    <factor>-0.2</factor>
+    <axis>
+      <x>1</x>
+    </axis>
+    <center>
+      <x-m>0.0109786</x-m>
+      <y-m>-0.00340981</y-m>
+      <z-m>-0.00712122</z-m>
+    </center>
+  </animation>
+  
+</PropertyList>

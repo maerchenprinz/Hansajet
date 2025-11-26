@@ -1,0 +1,217 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <path>Aircraft/Hansajet/Models/Autopilot.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Chassis</object-name>
+    <object-name>Turn</object-name>
+    <object-name>Head</object-name>
+    <object-name>Nut</object-name>
+    <object-name>Engage</object-name>
+    <object-name>Altitude</object-name>
+    <object-name>Mach</object-name>
+    <emission include="CockpitLightEmissionInclude.xml"/>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Engage</object-name>
+    <property>autopilot/locks/passive-mode</property>
+    <factor>32</factor>
+    <offset-deg>-32</offset-deg>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.00623352</x-m>
+      <y-m>0</y-m>
+      <z-m>0.0229362</z-m>
+    </center>
+  </animation>
+
+
+  <animation>
+    <object-name>EngagePick</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>autopilot/locks/passive-mode</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Altitude</object-name>
+    <property>autopilot/controls/altitude-hold</property>
+    <factor>-32</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.00623352</x-m>
+      <y-m>0</y-m>
+      <z-m>0.0229362</z-m>
+    </center>
+  </animation>
+
+
+  <animation>
+    <object-name>AltitudePick</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>autopilot/controls/altitude-hold</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Mach</object-name>
+    <property>autopilot/controls/mach-hold</property>
+    <factor>-32</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.00623352</x-m>
+      <y-m>0</y-m>
+      <z-m>0.0229362</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <object-name>MachPick</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>autopilot/controls/mach-hold</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Turn</object-name>
+    <property>autopilot/controls/turn</property>
+    <factor>-45</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>-0.0306531</y-m>
+      <z-m>-0.0216956</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <object-name>TurnPickLeft</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/controls/turn</property>
+        <step>-1</step>
+        <min>-1</min>
+        <max>1</max>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <object-name>TurnPickRight</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/controls/turn</property>
+        <step>1</step>
+        <min>-1</min>
+        <max>1</max>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Head</object-name>
+    <property>autopilot/controls/head</property>
+    <factor>-45</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0.0306531</y-m>
+      <z-m>-0.0216956</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <object-name>HeadPickLeft</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/controls/head</property>
+        <step>-1</step>
+        <min>-1</min>
+        <max>1</max>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <object-name>HeadPickRight</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/controls/head</property>
+        <step>1</step>
+        <min>-1</min>
+        <max>1</max>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>
+
+

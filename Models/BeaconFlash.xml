@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <path>RedFlash.ac</path>
+
+  <animation>
+    <type>timed</type>
+    <object-name>Flash</object-name>
+    <object-name>FlashOff</object-name>
+    <duration-sec>2</duration-sec>
+  </animation>
+
+  <animation>
+    <type>billboard</type>
+    <object-name>Flash</object-name>
+  </animation>
+
+</PropertyList>

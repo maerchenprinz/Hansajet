@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>controls/gear/gear-down</value>
+  </params>
+
+  <path>Aircraft/Hansajet/Models/GearLever.ac</path>
+
+  <animation>
+    <object-name>Lever</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property alias="../../../../params/value"/>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <object-name>Lever</object-name>
+    <type>rotate</type>
+    <property alias="../../params/value"/>
+    <factor>60</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+</PropertyList>
+
+
+

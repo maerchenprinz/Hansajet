@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <red-prop>sim/model/cockpit-lighting/emission/red</red-prop>
+  <green-prop>sim/model/cockpit-lighting/emission/green</green-prop>
+  <blue-prop>sim/model/cockpit-lighting/emission/blue</blue-prop>
+  <factor-prop>controls/lighting/cockpit-light</factor-prop>
+</PropertyList>
+
+

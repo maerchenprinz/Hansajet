@@ -1,0 +1,218 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <animation include="CockpitShadowAnimation.xml"/>
+  <animation include="CockpitRangeAnimation.xml"/>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FDController.xml</path>
+    <name>FDController</name>
+    <offsets>
+      <x-m>-0.07</x-m>
+      <y-m>-0.10</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/MarkerOnOffSwitch.xml</path>
+    <name>MarkerOnOffSwitch</name>
+    <offsets>
+      <x-m>-0.065</x-m>
+      <y-m>-0.045</y-m>
+      <z-m>0</z-m>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/MarkerHiLoSwitch.xml</path>
+    <name>MarkerHiLoSwitch</name>
+    <offsets>
+      <x-m>-0.065</x-m>
+      <y-m>-0.025</y-m>
+      <z-m>0</z-m>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/CompMagDGSwitch.xml</path>
+    <name>CompMagDGSwitch</name>
+    <offsets>
+      <x-m>-0.065</x-m>
+      <y-m>0.015</y-m>
+      <z-m>0</z-m>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/YawDamperSwitch.xml</path>
+    <name>YawDamperSwitch</name>
+    <offsets>
+      <x-m>-0.065</x-m>
+      <y-m>0.090</y-m>
+      <z-m>-0.0025</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FuelUsed.xml</path>
+    <name>FuelUsed</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>-0.120722</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FuelUsedResetButton.xml</path>
+    <name>FuelUsed</name>
+    <offsets>
+      <x-m>0.02</x-m>
+      <y-m>-0.08908085</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FuelTip.xml</path>
+    <name>TipFuel</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>-0.0574397</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FuelFus.xml</path>
+    <name>FusFuel</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0574397</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FuelPumpTestButton.xml</path>
+    <name>FuelPumpTest</name>
+    <offsets>
+      <x-m>0.02</x-m>
+      <y-m>0.08908085</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FuelPumpIndicator.xml</path>
+    <name>FuelPumps</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.120722</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FuelWing.xml</path>
+    <name>WingFuel</name>
+    <offsets>
+      <x-m>0.0270002</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/HydraulicTemperature.xml</path>
+    <name>HydTemp</name>
+    <offsets>
+      <x-m>0.0767899</x-m>
+      <y-m>-0.106181</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AntiSkidSwitch.xml</path>
+    <name>AntiSkid</name>
+    <offsets>
+      <x-m>0.0767899</x-m>
+      <y-m>-0.07288</y-m>
+      <z-m>0</z-m>
+      <roll-deg>-90</roll-deg>
+      <heading-deg>90</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/HydraulicPressure-I.xml</path>
+    <name>HydPress1</name>
+    <offsets>
+      <x-m>0.0767899</x-m>
+      <y-m>-0.0395929</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/HydraulicPressure-II.xml</path>
+    <name>HydPress2</name>
+    <offsets>
+      <x-m>0.0767899</x-m>
+      <y-m>0.0395931</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/HydraulicPressure-III.xml</path>
+    <name>HydPress3</name>
+    <offsets>
+      <x-m>0.0767899</x-m>
+      <y-m>0.0761866</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/FuelIndicatorSelectSwitch.xml</path>
+    <name>FuelIndicator</name>
+    <offsets>
+      <x-m>-0.0284431</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/SequencerSelectSwitch.xml</path>
+    <name>SequencerSelectSwitch</name>
+    <offsets>
+      <x-m>-0.0287</x-m>
+      <y-m>0.0891</y-m>
+      <z-m>-0.0025</z-m>
+      <roll-deg>-90</roll-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
+

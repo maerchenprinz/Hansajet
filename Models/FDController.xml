@@ -1,0 +1,133 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<!--
+-->
+<PropertyList>
+
+  <path>FDController.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>FDChassis</object-name>
+    <object-name>FDTrim</object-name>
+    <object-name>FDMode</object-name>
+    <emission include="CockpitLightEmissionInclude.xml"/>
+  </animation>
+
+  <animation>
+   <type>knob</type>
+   <object-name>FDMode</object-name>
+    <property>autopilot/flightdirector/switch-position</property>
+   <factor>32</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.00733</z-m>
+    </center>
+   <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+   </axis>
+    <action>
+     <binding>
+      <command>property-adjust</command>
+      <property>autopilot/flightdirector/switch-position</property>
+      <factor>-1</factor>
+      <min>0</min>
+      <max>5</max>                
+      <wrap>false</wrap>
+     </binding>
+    </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>fdmode</tooltip-id>
+      <label>%s</label>
+      <property>autopilot/flightdirector/switch-position</property>
+      <mapping>nasal</mapping>
+      <script>
+        var fdmode = ['Standby', 'Blue Left', 'Flight Instruments', 'VOR/LOC', 'Approach', 'Go Around'];
+        return fdmode[arg[0]];
+      </script>
+    </binding>
+   </hovered>
+  </animation>
+
+  <animation>
+   <type>knob</type>
+   <object-name>FDTrim</object-name>
+    <property>autopilot/flightdirector/trim-position</property>
+   <factor>1</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>-0.03123</y-m>
+      <z-m>-0.00733</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <action>
+     <binding>
+      <command>property-adjust</command>
+      <property>autopilot/flightdirector/trim-position</property>
+      <factor>-1</factor>
+       <min>-180</min>
+       <max>180</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+   <hovered>
+     <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>fdtrim</tooltip-id>
+      <label>Trim Pos: %i</label>
+      <measure-text>Trim Pos: -180</measure-text>
+      <property>autopilot/flightdirector/trim-position</property>
+     </binding>
+   </hovered>
+  </animation>
+
+  <animation>
+    <object-name>FDAlt</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>autopilot/flightdirector/altitude-hold</property>
+      </binding>
+    </action>
+   <hovered>
+     <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>fdalt</tooltip-id>
+      <label>ALT %s</label>
+      <measure-text>ALT OFF</measure-text>
+      <mapping>on-off</mapping>
+      <property>autopilot/flightdirector/altitude-hold</property>
+     </binding>
+   </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>FDAlt</object-name>
+    <property>autopilot/flightdirector/altitude-hold</property>
+    <factor>-32</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>-0.0015</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.0074</z-m>
+    </center>
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <animation include="CockpitShadowAnimation.xml"/>
+  <animation include="CockpitRangeAnimation.xml"/>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/RudderTrimIndicator.xml</path>
+    <name>RudderTrimIndicator</name>
+    <offsets>
+      <x-m>0.02</x-m>
+      <y-m>-0.02</y-m>
+      <z-m>0.0001</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AileronTrimIndicator.xml</path>
+    <name>AileronTrimIndicator</name>
+    <offsets>
+      <x-m>0.02</x-m>
+      <y-m>0.02</y-m>
+      <z-m>0.0001</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/SperrySP40-APController.xml</path>
+    <name>Autopilot</name>
+    <offsets>
+      <x-m>-0.09</x-m>
+      <y-m>0.04</y-m>
+      <z-m>0.0001</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
+

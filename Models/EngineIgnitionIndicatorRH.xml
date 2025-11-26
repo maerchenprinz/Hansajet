@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>engines/engine[1]/ignition</value>
+    <test>engines/engine[1]/ignition-light-test</test>
+  </params>
+
+  <path>ControlLight-Red.ac</path>
+
+  <animation include="ControlLightLightSelectAnimation.xml"/>
+  <animation include="ControlLightPickAnimation.xml"/>
+  <animation include="ControlLightTranslateAnimation.xml"/>
+
+</PropertyList>
+

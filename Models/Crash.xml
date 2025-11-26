@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <params>
+    <value>controls/electric/crash/off</value>
+    <unlock>controls/electric/crash/unlock</unlock>
+  </params>
+
+  <model include="SwitchCap.xml"/>
+  <animation include="SwitchCapPickAnimation.xml"/>
+  <animation include="SwitchCapRotateAnimation.xml"/>
+
+  <model include="Switch3.xml">
+    <offsets>
+      <y-m>0.0046</y-m>
+    </offsets>
+  </model>
+  <animation include="LockedSwitchLeverPickAnimation.xml"/>
+  <animation include="SwitchLeverRotateAnimation.xml"/>
+
+</PropertyList>
+
+

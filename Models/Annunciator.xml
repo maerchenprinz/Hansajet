@@ -1,0 +1,174 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <path>Aircraft/Hansajet/Models/Annunciator.ac</path>
+  <!-- operations manual page 8-8.1
+       the annunciator lights illuminate in the slat fully extended
+       position and during the retraction cycle. They are extinguished
+       in the fully retracted position -->
+  <animation>
+    <type>select</type> 
+    <object-name>SlatLH</object-name>
+    <condition>             
+      <or>
+        <less-than>
+          <property>fdm/jsbsim/fcs/slat[0]/position-norm</property>
+          <value>0.01</value>
+        </less-than>
+        <and>
+          <less-than>
+            <property>fdm/jsbsim/fcs/slat[0]/position-norm</property>
+            <value>0.99</value>
+          </less-than>
+          <greater-than>
+            <property>fdm/jsbsim/fcs/slat-switch</property>
+            <value>0.5</value>
+          </greater-than>
+        </and>
+      </or>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type> 
+    <object-name>SlatLHOn</object-name>
+    <condition>             
+      <or>
+        <greater-than>
+          <property>fdm/jsbsim/fcs/slat[0]/position-norm</property>
+          <value>0.99</value>
+        </greater-than>
+        <and>
+          <greater-than>
+            <property>fdm/jsbsim/fcs/slat[0]/position-norm</property>
+            <value>0.01</value>
+          </greater-than>
+          <less-than>
+            <property>fdm/jsbsim/fcs/slat-switch</property>
+            <value>0.5</value>
+          </less-than>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type> 
+    <object-name>SlatRH</object-name>
+    <condition>             
+      <or>
+        <less-than>
+          <property>fdm/jsbsim/fcs/slat[1]/position-norm</property>
+          <value>0.01</value>
+        </less-than>
+        <and>
+          <less-than>
+            <property>fdm/jsbsim/fcs/slat[1]/position-norm</property>
+            <value>0.99</value>
+          </less-than>
+          <greater-than>
+            <property>fdm/jsbsim/fcs/slat-switch</property>
+            <value>0.5</value>
+          </greater-than>
+        </and>
+      </or>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type> 
+    <object-name>SlatRHOn</object-name>
+    <condition>             
+      <or>
+        <greater-than>
+          <property>fdm/jsbsim/fcs/slat[0]/position-norm</property>
+          <value>0.99</value>
+        </greater-than>
+        <and>
+          <greater-than>
+            <property>fdm/jsbsim/fcs/slat[0]/position-norm</property>
+            <value>0.01</value>
+          </greater-than>
+          <less-than>
+            <property>fdm/jsbsim/fcs/slat-switch</property>
+            <value>0.5</value>
+          </less-than>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type> 
+    <object-name>SpeedBrakeExtend</object-name>
+    <condition>             
+      <less-than-equals>
+        <property>surface-positions/speedbrake-pos-norm</property>
+        <value>0.10</value>
+      </less-than-equals>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type> 
+    <object-name>SpeedBrakeExtendOn</object-name>
+    <condition>             
+      <greater-than>
+        <property>surface-positions/speedbrake-pos-norm</property>
+        <value>0.10</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type> 
+    <object-name>DragChuteJett</object-name>
+    <condition>             
+      <not>
+        <property>instrumentation/annunciator/drag-chute-jett</property>
+      </not>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type> 
+    <object-name>DragChuteJettOn</object-name>
+    <condition>             
+      <property>instrumentation/annunciator/drag-chute-jett</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type> 
+    <object-name>FuelFilterIcedLH</object-name>
+    <condition>             
+      <not>
+        <property>instrumentation/annunciator/left-fuel-filter-iced</property>
+      </not>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type> 
+    <object-name>FuelFilterIcedLHOn</object-name>
+    <condition>             
+      <property>instrumentation/annunciator/left-fuel-filter-iced</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type> 
+    <object-name>FuelFilterIcedRH</object-name>
+    <condition>             
+      <not>
+        <property>instrumentation/annunciator/right-fuel-filter-iced</property>
+      </not>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type> 
+    <object-name>FuelFilterIcedRHOn</object-name>
+    <condition>             
+      <property>instrumentation/annunciator/right-fuel-filter-iced</property>
+    </condition>
+  </animation>
+
+</PropertyList>
+
+
+
+

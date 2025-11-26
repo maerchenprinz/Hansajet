@@ -1,0 +1,627 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <test>instrumentation/warning-panel/test</test>
+    <!-- FIXME: attach to correct electrical bus -->
+    <power>systems/electrical/bus[0]/voltage-v</power>
+  </params>
+  <path>WarningPanel.ac</path>
+
+  <animation>
+    <object-name>Test.Knob</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property alias="/params/test"/>
+        <value type="int">1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property alias="/params/test"/>
+          <value type="int">0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>Test.Knob</object-name>
+    <property alias="/params/test"/>
+    <factor>-0.005</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- TODO: implement dimming switch functionality -->
+
+  <!-- operations manual page 8.8-1:
+       illuminates, at 195KIAS if slats are not retracted -->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.RetractSlats</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <and>
+          <greater-than>
+            <property>instrumentation/airspeed-indicator[0]/indicated-speed-kt</property>
+            <value>195</value>
+          </greater-than>
+          <or>
+            <greater-than>
+              <property>fdm/jsbsim/fcs/slat[0]/position-norm</property>
+              <value>0.01</value>
+            </greater-than>
+            <greater-than>
+              <property>fdm/jsbsim/fcs/slat[1]/position-norm</property>
+              <value>0.01</value>
+            </greater-than>
+          </or>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- operations manual page 8.8-1:
+       illuminates, at 145KIAS if slats are not extended -->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.ExtendSlats</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <and>
+          <less-than>
+            <property>instrumentation/airspeed-indicator[1]/indicated-speed-kt</property>
+            <value>145</value>
+          </less-than>
+          <or>
+            <less-than>
+              <property>fdm/jsbsim/fcs/slat[0]/position-norm</property>
+              <value>0.99</value>
+            </less-than>
+            <less-than>
+              <property>fdm/jsbsim/fcs/slat[1]/position-norm</property>
+              <value>0.99</value>
+            </less-than>
+          </or>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- operation manual 14.2.7
+       each fuel pump supplies fuel with a pressure of approx 14 psi -->
+  <!-- assume: low pressure is 10psi -->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.No1EngFuelPressLow</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <less-than>
+          <property>engines/engine[0]/fuel-pressure-psi</property>
+          <value>10</value>
+        </less-than>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.No2EngFuelPressLow</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <less-than>
+          <property>engines/engine[1]/fuel-pressure-psi</property>
+          <value>10</value>
+        </less-than>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.AntiStallOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/anti-stall-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.PusherOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/pusher-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.No1GenOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <less-than>
+          <property>/systems/electrical/bus[1]/generator[0]/voltage-v</property>
+          <value>20</value>
+        </less-than>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.No2GenOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <less-than>
+          <property>/systems/electrical/bus[1]/generator[1]/voltage-v</property>
+          <value>20</value>
+        </less-than>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.No1AltOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/no1-alt-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.No2AltOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/no2-alt-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.No1AltOverheat</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/no1-alt-overheat</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.No2AltOverheat</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/no2-alt-overheat</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.MainBus400CPSOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/main-bus-400cps-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.AuxBus400CPSOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/aux-bus-400cps-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- operations manual 16.11.5 -->
+  <!-- illuminates below pressure of 2,085 +/- 50 PSI System I or System II-->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.HydPressLow</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <less-than>
+          <property>systems/hydraulic/system[0]/pressure-psi</property>
+          <value>2045</value>
+        </less-than>
+        <less-than>
+          <property>systems/hydraulic/system[1]/pressure-psi</property>
+          <value>2900</value>
+        </less-than>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- operations manual 16.11.6 -->
+  <!-- illuminates if level in reservoir drops below 1 US GAL -->
+  <!-- low level shutoff test button also illuminates -->
+  <!-- TODO: not implemented -->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.HydLowLevel</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/hyd-low-level</property>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- operations manual 16.11.5 -->
+  <!-- illuminates below pressure of 1,065 +/- 25 PSI for brake press akku -->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.BrakePressLow</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <less-than>
+          <property>systems/hydraulic/system[2]/pressure-psi</property>
+          <value>1050</value>
+        </less-than>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- operations manual 17.4.3 -->
+  <!-- illuminate gear-switch is down and anti skid switch is off -->
+  <!-- extinguishes if anti skid switch is on or gear switch is up
+       and main gear uplocks engage -->
+  <!-- TODO: check for uplocks -->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.AntiSkidOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <and>
+          <property>controls/gear/gear-down</property>
+          <not>
+            <property>controls/gear/antiskid</property>
+          </not>
+        </and>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- operations manual 17.1.3 -->
+  <!-- illuminates if throttle below 13mm +/- 0.5mm above idle and gear
+       retracted; extinguishes if throttle above 13mm or all three gear
+       locked -->
+  <!-- TODO: not yet implemented -->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.LandingGear</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/landing-gear</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.APUOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/apu-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.CabinDoorUnsafe</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/cabin-door-unsafe</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.CabinPressLow</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/cabin-press-low</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.PitotHeatOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/pitot-heat-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.StaticHeatOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/static-heat-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- operations manual 8.7.1: illuminates at flap asymmetry exceeding 6deg -->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.FlapAsymmetry</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <greater-than>
+          <property>fdm/jsbsim/fcs/flap-asymmetry</property>
+          <value>6.0</value>
+        </greater-than>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.VaneHeatOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/vane-heat-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.AutopilotOff</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/autopilot-off</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.ElevatorTrim</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/elevator-trim</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.AileronTrim</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/aileron-trim</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Caution.RudderTrim</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/rudder-trim</property>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- operation manual 15.9.3 -->
+  <!-- illuminate if oil pressure goes below 5psi -->
+  <!-- set master caution and play gong -->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.OilPressLow</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <less-than>
+          <property>engines/engine[0]/oil-pressure-psi</property>
+          <value>5.0</value>
+        </less-than>
+        <less-than>
+          <property>engines/engine[1]/oil-pressure-psi</property>
+          <value>5.0</value>
+        </less-than>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- operation manual 14.5.2 -->
+  <!-- illuminates at 660kg (1455lbs) total fuel. 
+       at "Envelope B Procedure, illuminates at 440kg (970lbs) kg total fuel -->
+  <!-- TODO: not implemented -->
+  <animation>
+    <type>select</type>
+    <object-name>Caution.FuelLowLevel</object-name>
+    <condition>
+      <greater-than>
+        <property alias="../../../../params/power"/>
+        <value>20</value>
+      </greater-than>
+      <or>
+        <property alias="/params/test"/>
+        <property>instrumentation/warning-panel/fuel-low-level</property>
+      </or>
+    </condition>
+  </animation>
+
+</PropertyList>
+

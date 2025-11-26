@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <value>instrumentation/airspeed-indicator[1]/indicated-speed-kt</value>
+    <value2>instrumentation/airspeed-indicator[1]/airspeed-limit-kt</value2>
+  </params>
+
+  <path>AirspeedIndicator.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>Needle</object-name>
+    <object-name>Needle2</object-name>
+    <object-name>Subscale</object-name>
+    <emission include="InstrumentLightEmissionInclude.xml"/>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property alias="../../params/value"/>
+    <interpolation>
+      <entry>
+        <ind>0</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>50</ind>
+        <dep>10.428</dep>
+      </entry>
+      <entry>
+        <ind>650</ind>
+        <dep>349.572</dep>
+      </entry>
+      <entry>
+        <ind>700</ind>
+        <dep>360</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle2</object-name>
+    <property alias="../../params/value2"/>
+    <interpolation>
+      <entry>
+        <ind>320</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>50</ind>
+        <dep>-152.6148</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Subscale</object-name>
+    <property alias="../../params/value"/>
+    <factor>0.01</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+</PropertyList>
+
