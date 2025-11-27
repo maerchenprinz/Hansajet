@@ -29,25 +29,14 @@
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/RadioPanelKing.xml</path>
-    <name>RadioPanelKing</name>
+    <path>Aircraft/Hansajet/Models/Annunciator.xml</path>
+    <name>Annunciator</name>
     <offsets>
       <x-m>-7.08893</x-m>
       <y-m>-0.02</y-m>
       <z-m>2.24</z-m>
     </offsets>
   </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>RadioPanelKing</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/Hansajet/radio-panel</property>
-        <value>king</value>
-      </equals>
-    </condition>
-  </animation>
 
   <model>
     <path>Aircraft/Hansajet/Models/RadioPanelCollins.xml</path>

@@ -38,7 +38,6 @@ At the time when the Hansa Jet was operated by U.S. civil airlines and the West 
             <cockpit type="double">5</cockpit>
           </volume>
         </sound>
-        <!--radio-panel type="string">king</radio-panel-->
         <radio-panel type="string">collins</radio-panel>
       </Hansajet>
       <instrument-lighting>
@@ -162,7 +161,7 @@ At the time when the Hansa Jet was operated by U.S. civil airlines and the West 
     </systems>
 
     <instrumentation>
-      <path>Aircraft/Hansajet/Systems/Hansajet-instruments.xml</path>
+      <path>Aircraft/Hansajet/Systems/Hansajet-instrumentation.xml</path>
     </instrumentation>
 
     <sound>
@@ -617,13 +616,15 @@ At the time when the Hansa Jet was operated by U.S. civil airlines and the West 
     </attitude-indicator>
 
     <comm n="0">
-      <power-btn type="bool">1</power-btn>
+      <operable type="bool">true</operable>
+      <power-btn type="bool">true</power-btn>
       <test-btn type="bool">0</test-btn>
       <volume type="double">0.8</volume>
     </comm>
 
     <comm n="1">
-      <power-btn type="bool">1</power-btn>
+      <operable type="bool">true</operable>
+      <power-btn type="bool">true</power-btn>
       <test-btn type="bool">0</test-btn>
       <volume type="double">0.8</volume>
     </comm>
@@ -637,26 +638,6 @@ At the time when the Hansa Jet was operated by U.S. civil airlines and the West 
       <power-btn type="bool">1</power-btn>
       <volume type="double">0.8</volume>
     </nav>
-
-    <collins-313n n="0">
-      <comm-left-outer-position type="int">1</comm-left-outer-position>
-      <comm-left-inner-position type="int">0</comm-left-inner-position>
-      <comm-right-inner-position type="int">0</comm-right-inner-position>
-      <nav-left-outer-position type="int">1</nav-left-outer-position>
-      <nav-left-inner-position type="int">0</nav-left-inner-position>
-      <nav-right-inner-position type="int">0</nav-right-inner-position>
-      <test-position type="int">0</test-position>
-    </collins-313n>
-
-    <collins-313n n="1">
-      <comm-left-outer-position type="int">1</comm-left-outer-position>
-      <comm-left-inner-position type="int">0</comm-left-inner-position>
-      <comm-right-inner-position type="int">0</comm-right-inner-position>
-      <nav-left-outer-position type="int">1</nav-left-outer-position>
-      <nav-left-inner-position type="int">0</nav-left-inner-position>
-      <nav-right-inner-position type="int">0</nav-right-inner-position>
-      <test-position type="int">0</test-position>
-    </collins-313n>
 
     <adf n="0">
       <serviceable type="bool">true</serviceable>
@@ -705,10 +686,7 @@ At the time when the Hansa Jet was operated by U.S. civil airlines and the West 
       <file>Aircraft/Hansajet/Nasal/Hansajet.nas</file>
       <file>Aircraft/Hansajet/Nasal/electric.nas</file>
       <file>Aircraft/Hansajet/Nasal/SelectorSwitch.nas</file>
-      <file>Aircraft/Hansajet/Models/Radio/kr87.nas</file>
       <script><![CDATA[
-        kr87.new("/instrumentation/adf[0]");
-        kr87.new("/instrumentation/adf[1]");
         SelectorSwitch.new( 
           "instrumentation/heading-indicator[0]/voradf-position",
           "instrumentation/heading-indicator[0]/needle1-rotation-deg", [

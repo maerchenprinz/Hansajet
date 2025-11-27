@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <PropertyList>
   <params>
-    <comm-left-outer-position>instrumentation/nav[0]/comm-left-outer-position</comm-left-outer-position>
-    <comm-left-inner-position>instrumentation/nav[0]/comm-left-inner-position</comm-left-inner-position>
-    <comm-right-inner-position>instrumentation/nav[0]/comm-right-inner-position</comm-right-inner-position>
+    <comm-left-outer-position>instrumentation/comm[0]/comm-left-outer-position</comm-left-outer-position>
+    <comm-left-inner-position>instrumentation/comm[0]/comm-left-inner-position</comm-left-inner-position>
+    <comm-right-inner-position>instrumentation/comm[0]/comm-right-inner-position</comm-right-inner-position>
     <nav-left-outer-position>instrumentation/nav[0]/nav-left-outer-position</nav-left-outer-position>
     <nav-left-inner-position>instrumentation/nav[0]/nav-left-inner-position</nav-left-inner-position>
     <nav-right-inner-position>instrumentation/nav[0]/nav-right-inner-position</nav-right-inner-position>

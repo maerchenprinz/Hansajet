@@ -16,7 +16,7 @@
 
   <model>
     <path>Aircraft/Hansajet/Models/Radio/Collins-313N-3.xml</path>
-    <name>NavCom1</name>
+    <name>NavCom2</name>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>

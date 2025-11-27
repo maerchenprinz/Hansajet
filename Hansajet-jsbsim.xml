@@ -319,7 +319,7 @@ wing tip  NACA 63A(1.8)11
 
  <propulsion>
    <engine file="cj610">
-    <location unit="M">
+    <!--location unit="M">
       <x> 2.24 </x>
       <y> -1.57 </y>
       <z> 2.29 </z>
@@ -328,7 +328,7 @@ wing tip  NACA 63A(1.8)11
       <pitch> 0.00 </pitch>
       <roll>   0.00 </roll>
       <yaw>   0.00 </yaw>
-    </orient>
+    </orient-->
     <feed>1</feed>
     <thruster file="direct">
      <location unit="M">
@@ -345,7 +345,7 @@ wing tip  NACA 63A(1.8)11
   </engine>
 
    <engine file="cj610">
-    <location unit="M">
+    <!--location unit="M">
       <x> 2.24 </x>
       <y> 1.57 </y>
       <z> 2.29 </z>
@@ -354,7 +354,7 @@ wing tip  NACA 63A(1.8)11
       <pitch> 0.00 </pitch>
       <roll>   0.00 </roll>
       <yaw>   0.00 </yaw>
-    </orient>
+    </orient-->
     <feed>3</feed>
     <thruster file="direct">
      <location unit="M">

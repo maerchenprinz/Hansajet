@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <PropertyList>
   <params>
-    <comm-left-outer-position>instrumentation/nav[1]/comm-left-outer-position</comm-left-outer-position>
-    <comm-left-inner-position>instrumentation/nav[1]/comm-left-inner-position</comm-left-inner-position>
-    <comm-right-inner-position>instrumentation/nav[1]/comm-right-inner-position</comm-right-inner-position>
+    <comm-left-outer-position>instrumentation/comm[1]/comm-left-outer-position</comm-left-outer-position>
+    <comm-left-inner-position>instrumentation/comm[1]/comm-left-inner-position</comm-left-inner-position>
+    <comm-right-inner-position>instrumentation/comm[1]/comm-right-inner-position</comm-right-inner-position>
     <nav-left-outer-position>instrumentation/nav[1]/nav-left-outer-position</nav-left-outer-position>
     <nav-left-inner-position>instrumentation/nav[1]/nav-left-inner-position</nav-left-inner-position>
     <nav-right-inner-position>instrumentation/nav[1]/nav-right-inner-position</nav-right-inner-position>
@@ -167,6 +167,15 @@
         <value type="bool">true</value>
       </binding>
     </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <label>Stored: %3.2fMHz</label>
+        <measure-text>Stored: 999.99MHz</measure-text>
+        <tooltip-id>r802-1-freq</tooltip-id>
+        <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+      </binding>
+    </hovered>
   </animation>
 
   <animation>
