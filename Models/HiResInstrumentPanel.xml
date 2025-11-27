@@ -161,11 +161,21 @@
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/AI.xml</path>
+    <path>Aircraft/Hansajet/Models/AI/AI.xml</path>
     <name>AttitudeIndicator-1</name>
     <offsets>
       <x-m>0</x-m>
       <y-m>-0.416948</y-m>
+      <z-m>-0.000342393</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AI/AI-2.xml</path>
+    <name>AttitudeIndicator-2</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0.418188</y-m>
       <z-m>-0.000342393</z-m>
     </offsets>
   </model>
@@ -181,17 +191,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/AI-2.xml</path>
-    <name>AttitudeIndicator-2</name>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0.418188</y-m>
-      <z-m>-0.000342393</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/AirspeedIndicator.xml</path>
+    <path>Aircraft/Hansajet/Models/AirspeedIndicator/AirspeedIndicator.xml</path>
     <name>AirspeedIndicator</name>
     <offsets>
       <x-m>0</x-m>
@@ -201,7 +201,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/AirspeedIndicator-2.xml</path>
+    <path>Aircraft/Hansajet/Models/AirspeedIndicator/AirspeedIndicator-2.xml</path>
     <name>AirspeedIndicator</name>
     <offsets>
       <x-m>0</x-m>

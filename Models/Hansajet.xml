@@ -48,17 +48,6 @@
     </offsets>
   </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>RadioPanelCollins</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/Hansajet/radio-panel</property>
-        <value>collins</value>
-      </equals>
-    </condition>
-  </animation>
-
   <model>
     <path>Aircraft/Hansajet/Models/FuelHydraulicPanel.xml</path>
     <name>FuelHydraulic</name>
@@ -70,12 +59,34 @@
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/TrimPanel.xml</path>
-    <name>Trimpanel</name>
+    <path>Aircraft/Hansajet/Models/Sperry_SP-40/SperrySP40-APController.xml</path>
+    <name>Sperry Autopilot</name>
     <offsets>
-      <x-m>-6.30894</x-m>
-      <y-m>-0.04002</y-m>
-      <z-m>1.56321</z-m>
+      <x-m>-6.39</x-m>
+      <y-m>0.0</y-m>
+      <z-m>1.563</z-m>
+      <pitch-deg>-90</pitch-deg>
+    </offsets>
+  </model>
+
+<!--Trim System-->
+  <model>
+    <path>Aircraft/Hansajet/Models/TrimSystem/AileronTrimIndicator.xml</path>
+    <name>Sperry Autopilot</name>
+    <offsets>
+      <x-m>-6.30</x-m>
+      <y-m>-0.02</y-m>
+      <z-m>1.562</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/TrimSystem/RudderTrimIndicator.xml</path>
+    <name>Sperry Autopilot</name>
+    <offsets>
+      <x-m>-6.30</x-m>
+      <y-m>-0.06</y-m>
+      <z-m>1.562</z-m>
     </offsets>
   </model>
 

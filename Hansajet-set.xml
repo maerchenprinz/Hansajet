@@ -38,7 +38,6 @@ At the time when the Hansa Jet was operated by U.S. civil airlines and the West 
             <cockpit type="double">5</cockpit>
           </volume>
         </sound>
-        <radio-panel type="string">collins</radio-panel>
       </Hansajet>
       <instrument-lighting>
         <emission>

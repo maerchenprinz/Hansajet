@@ -1,12 +1,12 @@
 <?xml version = '1.0' encoding = 'UTF-8' ?>
 <PropertyList>
-  <path>Aircraft/Hansajet/Models/SperrySP40-APController.ac</path>
+  <path>SperrySP40-APController.ac</path>
 
   <animation>
     <type>material</type>
     <object-name>Chassis</object-name>
     <object-name>Labels</object-name>
-    <emission include="CockpitLightEmissionInclude.xml"/>
+    <emission include="../CockpitLightEmissionInclude.xml"/>
   </animation>
 
   <animation>
