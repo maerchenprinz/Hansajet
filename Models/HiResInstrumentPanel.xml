@@ -9,498 +9,379 @@
   <animation include="CockpitShadowAnimation.xml"/>
   <animation include="CockpitRangeAnimation.xml"/>
 
+<!--Over Panel-->
   <model>
-    <path>Aircraft/Hansajet/Models/RainRepLButton.xml</path>
+    <path>FirePanel/RainRepLButton.xml</path>
     <name>RainRepLButton</name>
     <offsets>
-      <x-m>-0.02</x-m>
+      <x-m>0.06</x-m>
       <y-m>-0.144905</y-m>
-      <z-m>0.290288</z-m>
+      <z-m>0.28</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/RainRepRButton.xml</path>
+    <path>FirePanel/RainRepRButton.xml</path>
     <name>RainRepRButton</name>
     <offsets>
-      <x-m>-0.02</x-m>
+      <x-m>0.06</x-m>
       <y-m>0.144905</y-m>
-      <z-m>0.290288</z-m>
+      <z-m>0.28</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/FireExtTestButton.xml</path>
+    <path>FirePanel/FireExtTestButton.xml</path>
     <name>FireExtTestButton</name>
     <offsets>
-      <x-m>-0.02</x-m>
+      <x-m>0.06</x-m>
       <y-m>-0.0939906</y-m>
-      <z-m>0.290288</z-m>
+      <z-m>0.28</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/FireExtLight.xml</path>
+    <path>FirePanel/FireExtLight.xml</path>
     <name>FireExtTestLight</name>
     <offsets>
-      <x-m>-0.02</x-m>
-      <y-m>-0.0939906</y-m>
-      <z-m>0.310295</z-m>
+      <x-m>0.06</x-m>
+      <y-m>-0.094</y-m>
+      <z-m>0.30</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/WiperSwitchLH.xml</path>
+    <path>FirePanel/WiperSwitchLH.xml</path>
     <name>WiperSwitchLH</name>
     <offsets>
-      <x-m>-0.02</x-m>
-      <y-m>-0.12197</y-m>
-      <z-m>0.291099</z-m>
+      <x-m>0.06</x-m>
+      <y-m>-0.122</y-m>
+      <z-m>0.28</z-m>
       <heading-deg>90</heading-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/FireExtHandle.ac</path>
-    <name>FireExtHandle.Left</name>
-    <offsets>
-      <x-m>-0.02</x-m>
-      <y-m>-0.051771</y-m>
-      <z-m>0.304996</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/FireExtHandle.ac</path>
-    <name>FireExtHandle.Right</name>
-    <offsets>
-      <x-m>-0.02</x-m>
-      <y-m>0.051771</y-m>
-      <z-m>0.304996</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/FireWarnLight.xml</path>
+    <path>FirePanel/FireWarnLight.xml</path>
     <name>FireExtTestLight</name>
     <offsets>
-      <x-m>-0.02</x-m>
-      <y-m>0.0939906</y-m>
-      <z-m>0.310295</z-m>
+      <x-m>0.06</x-m>
+      <y-m>0.094</y-m>
+      <z-m>0.30</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/FireWarnTestButton.xml</path>
+    <path>FirePanel/FireWarnTestButton.xml</path>
     <name>FireWarnTestButton</name>
     <offsets>
-      <x-m>-0.02</x-m>
-      <y-m>0.0939906</y-m>
-      <z-m>0.290288</z-m>
+      <x-m>0.06</x-m>
+      <y-m>0.094</y-m>
+      <z-m>0.28</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/WiperSwitchRH.xml</path>
+    <path>FirePanel/WiperSwitchRH.xml</path>
     <name>WiperSwitchRH</name>
     <offsets>
-      <x-m>-0.02</x-m>
-      <y-m>0.12197</y-m>
-      <z-m>0.291099</z-m>
+      <x-m>0.06</x-m>
+      <y-m>0.122</y-m>
+      <z-m>0.28</z-m>
       <heading-deg>90</heading-deg>
     </offsets>
   </model>
+
+<!--Left Panel-->
   <model>
-    <path>Aircraft/Hansajet/Models/TurnCoordinator.xml</path>
+    <path>AI/AI.xml</path>
+    <name>HFDI-1</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>-0.4252</y-m>
+      <z-m>0.0168</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>TurnCoordinator.xml</path>
     <name>TC</name>
     <offsets>
       <x-m>0</x-m>
-      <y-m>-0.608224</y-m>
-      <z-m>-0.128284</z-m>
+      <y-m>-0.6155</y-m>
+      <z-m>-0.0878</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/MarkerLights.xml</path>
+    <path>AirspeedIndicator/AirspeedIndicator.xml</path>
+    <name>AirspeedIndicator</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.531</y-m>
+      <z-m>-0.005</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>MachIndicator.xml</path>
+    <name>MachIndicator</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.3287</y-m>
+      <z-m>0.086</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>VSI.xml</path>
+    <name>VSI</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.3287</y-m>
+      <z-m>-0.082</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Altimeter.xml</path>
+    <name>Altimeter</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>-0.3287</y-m>
+      <z-m>0.002</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>HSI.xml</path>
+    <name>HSI</name>
+    <offsets>
+      <x-m>0.001</x-m>
+      <y-m>-0.4276</y-m>
+      <z-m>-0.0948</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Sperry-C-6d.xml</path>
+    <name>RMI1</name>
+    <offsets>
+      <x-m>0.001</x-m>
+      <y-m>-0.531</y-m>
+      <z-m>-0.095</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>AOAIndicator.xml</path>
+    <name>AOAIndicator</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>-0.2533</y-m>
+      <z-m>0.1206</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>FlapIndicator.xml</path>
+    <name>FlapIndicator</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>-0.1893</y-m>
+      <z-m>0.1206</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>OATIndicator.xml</path>
+    <name>OAT</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>-0.2533</y-m>
+      <z-m>0.0578</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>GearIndicator.xml</path>
+    <name>Gear</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>-0.1893</y-m>
+      <z-m>0.0578</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>GearLever.xml</path>
+    <name>GearLever</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>-0.1316</y-m>
+      <z-m>0.0795</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Radar_WP-103/Indicator_493A-3.xml</path>
+    <name>RadarIndicator</name>
+    <offsets>
+      <x-m>0.001</x-m>
+      <y-m>-0.1894</y-m>
+      <z-m>-0.057</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>MarkerLights.xml</path>
     <name>MarkerLights</name>
     <offsets>
       <x-m>0</x-m>
-      <y-m>-0.597012</y-m>
-      <z-m>-0.0580874</z-m>
+      <y-m>-0.588</y-m>
+      <z-m>0.011</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/MarkerLights2.xml</path>
-    <name>MarkerLights</name>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0.597012</y-m>
-      <z-m>-0.0580874</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/MasterCautionLight-2.xml</path>
+    <path>MasterCautionLight-2.xml</path>
     <name>MasterCautionLight-2</name>
     <offsets>
-      <x-m>0</x-m>
-      <y-m>-0.416948</y-m>
-      <z-m>0.069342393</z-m>
+      <x-m>0.0</x-m>
+      <y-m>-0.44</y-m>
+      <z-m>0.082</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/WarningPanel.xml</path>
+    <path>WarningPanel.xml</path>
     <name>WarningPanel</name>
     <offsets>
-      <x-m>0</x-m>
-      <y-m>0.222394</y-m>
+      <x-m>0.005</x-m>
+      <y-m>0.23</y-m>
       <z-m>0.0281781</z-m>
     </offsets>
   </model>
 
+<!--Middle Panel-->
   <model>
-    <path>Aircraft/Hansajet/Models/AI/AI.xml</path>
-    <name>AttitudeIndicator-1</name>
+    <path>ADF_DF-203/Collins_614L-8_1.xml</path>
+    <name>ADF-1</name>
     <offsets>
-      <x-m>0</x-m>
-      <y-m>-0.416948</y-m>
-      <z-m>-0.000342393</z-m>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.085</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/AI/AI-2.xml</path>
+    <path>ADF_DF-203/Collins_614L-8_2.xml</path>
+    <name>ADF-2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.017</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Radio/Collins-313N-3D.xml</path>
+    <name>NavCom-1</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.053</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Radio/Collins-313N-3.xml</path>
+    <name>NavCom-2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.12</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Annunciator/Annunciator.xml</path>
+    <name>Annunciator</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.184</z-m>
+    </offsets>
+  </model>
+
+<!--Right Panel-->
+  <model>
+    <path>Models/AI/AI-2.xml</path>
     <name>AttitudeIndicator-2</name>
     <offsets>
-      <x-m>0</x-m>
-      <y-m>0.418188</y-m>
-      <z-m>-0.000342393</z-m>
+      <x-m>0.0</x-m>
+      <y-m>0.4252</y-m>
+      <z-m>0.0168</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/MasterCautionLight-1.xml</path>
+    <path>MasterCautionLight-1.xml</path>
     <name>MasterCautionLight-1</name>
     <offsets>
-      <x-m>0</x-m>
-      <y-m>0.416948</y-m>
-      <z-m>0.069342393</z-m>
+      <x-m>0.0</x-m>
+      <y-m>0.4252</y-m>
+      <z-m>0.082</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/AirspeedIndicator/AirspeedIndicator.xml</path>
-    <name>AirspeedIndicator</name>
+    <path>AirspeedIndicator/AirspeedIndicator-2.xml</path>
+    <name>AirspeedIndicatorR</name>
     <offsets>
-      <x-m>0</x-m>
-      <y-m>-0.525078</y-m>
-      <z-m>-0.0302152</z-m>
+      <x-m>0.0</x-m>
+      <y-m>0.319</y-m>
+      <z-m>0.0134</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/AirspeedIndicator/AirspeedIndicator-2.xml</path>
-    <name>AirspeedIndicator</name>
+    <path>Models/VOR_LOC.xml</path>
+    <name>CrossPointerIndicator</name>
     <offsets>
-      <x-m>0</x-m>
-      <y-m>0.312318</y-m>
-      <z-m>-0.0302152</z-m>
+      <x-m>0.0</x-m>
+      <y-m>0.319</y-m>
+      <z-m>-0.0915</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/MachIndicator.xml</path>
-    <name>MachIndicator</name>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>-0.311078</y-m>
-      <z-m>0.0678369</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/MachIndicator.xml</path>
-    <name>MachIndicator</name>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0.312318</y-m>
-      <z-m>0.0678369</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/VSI.xml</path>
+    <path>Models/VSI-2.xml</path>
     <name>VSI</name>
     <offsets>
-      <x-m>0</x-m>
-      <y-m>-0.311078</y-m>
-      <z-m>-0.128284</z-m>
+      <x-m>0.0</x-m>
+      <y-m>0.531</y-m>
+      <z-m>-0.0946</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/VOR_LOC.xml</path>
-    <name>VSI</name>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0.311078</y-m>
-      <z-m>-0.128284</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/VSI-2.xml</path>
-    <name>VSI</name>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0.526318</y-m>
-      <z-m>-0.128284</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/Altimeter.xml</path>
+    <path>Altimeter-2.xml</path>
     <name>Altimeter</name>
     <offsets>
-      <x-m>0</x-m>
-      <y-m>-0.311078</y-m>
-      <z-m>-0.0302152</z-m>
+      <x-m>0.0</x-m>
+      <y-m>0.531</y-m>
+      <z-m>-0.005</z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/Altimeter-2.xml</path>
-    <name>Altimeter</name>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0.522251</y-m>
-      <z-m>-0.0302152</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/HSI.xml</path>
-    <name>HSI</name>
-    <offsets>
-      <x-m>0.001</x-m>
-      <y-m>-0.416948</y-m>
-      <z-m>-0.115742</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/Sperry-C-6d.xml</path>
-    <name>RMI1</name>
-    <offsets>
-      <x-m>0.001</x-m>
-      <y-m>-0.525078</y-m>
-      <z-m>-0.128284</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/Bendix-36109.xml</path>
+    <path>Bendix-36109/Bendix-36109.xml</path>
     <name>RMI2</name>
     <offsets>
       <x-m>0.001</x-m>
-      <y-m>0.418186</y-m>
-      <!-- <y-m>-0.525078</y-m> -->
-      <z-m>-0.128284</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/FlapIndicator.xml</path>
-    <name>FlapIndicator</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.166496</y-m>
-      <z-m>0.0978369</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/AOAIndicator.xml</path>
-    <name>AOAIndicator</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.226496</y-m>
-      <z-m>0.0978369</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/OATIndicator.xml</path>
-    <name>OAT</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.226496</y-m>
-      <z-m>0.0378368</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/GearIndicator.xml</path>
-    <name>Gear</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.166496</y-m>
-      <z-m>0.0378368</z-m>
-    </offsets>
-  </model>
-
-<!--
-  <model>
-    <path>Aircraft/Instruments-3d/RDR-160/RDR-160.xml</path>
-    <name>RDR160</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.18</y-m>
-      <z-m>-0.10</z-m>
-    </offsets>
-  </model>
--->
-
-  <model>
-    <path>Aircraft/Hansajet/Models/GearLever.xml</path>
-    <name>GearLever</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.114354</y-m>
-      <z-m>0.0378368</z-m>
-    </offsets>
-  </model>
-
-  <!-- engine gauges -->
-  <model>
-    <path>Aircraft/Hansajet/Models/RPMIndicator-1.xml</path>
-    <name>RPM-1</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0998242</y-m>
-      <z-m>0.127837</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/RPMIndicator-2.xml</path>
-    <name>RPM-2</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.159824</y-m>
-      <z-m>0.127837</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/EGTIndicator-1.xml</path>
-    <name>EGT-1</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0998242</y-m>
-      <z-m>0.0678369</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/EGTIndicator-2.xml</path>
-    <name>EGT-2</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.159824</y-m>
-      <z-m>0.0678369</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/EPRIndicator-1.xml</path>
-    <name>EPR-1</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0998242</y-m>
-      <z-m>0.00783691</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/EPRIndicator-2.xml</path>
-    <name>EPR-2</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.159824</y-m>
-      <z-m>0.00783691</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/FFIndicator-1.xml</path>
-    <name>FF-1</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0998242</y-m>
-      <z-m>-0.0521631</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/FFIndicator-2.xml</path>
-    <name>FF-2</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.159824</y-m>
-      <z-m>-0.0521631</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/OilPressureIndicator-1.xml</path>
-    <name>Oil-1</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0998242</y-m>
-      <z-m>-0.112163</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/OilPressureIndicator-2.xml</path>
-    <name>Oil-2</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.159824</y-m>
-      <z-m>-0.112163</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/OilTemperatureIndicator-1.xml</path>
-    <name>Oil-1</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0998242</y-m>
-      <z-m>-0.172163</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/OilTemperatureIndicator-2.xml</path>
-    <name>Oil-2</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.159824</y-m>
-      <z-m>-0.172163</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/IcingIndicator.xml</path>
-    <name>Oil-2</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.229824</y-m>
-      <z-m>-0.112163</z-m>
+      <y-m>0.4255</y-m>
+      <z-m>-0.0946</z-m>
     </offsets>
   </model>
 
@@ -509,8 +390,149 @@
     <name>TC</name>
     <offsets>
       <x-m>0.0</x-m>
-      <y-m>0.229824</y-m>
-      <z-m>-0.172163</z-m>
+      <y-m>0.6155</y-m>
+      <z-m>-0.0878</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>MarkerLights2.xml</path>
+    <name>MarkerLights</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0.588</y-m>
+      <z-m>-0.014</z-m>
+    </offsets>
+  </model>
+
+<!--Engine Gauges -->
+  <model>
+    <path>RPMIndicator-1.xml</path>
+    <name>RPM-1</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.11</y-m>
+      <z-m>0.142</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>RPMIndicator-2.xml</path>
+    <name>RPM-2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.165</y-m>
+      <z-m>0.142</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>EGTIndicator-1.xml</path>
+    <name>EGT-1</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.11</y-m>
+      <z-m>0.085</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>EGTIndicator-2.xml</path>
+    <name>EGT-2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.165</y-m>
+      <z-m>0.085</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>EPRIndicator-1.xml</path>
+    <name>EPR-1</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.11</y-m>
+      <z-m>0.028</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>EPRIndicator-2.xml</path>
+    <name>EPR-2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.165</y-m>
+      <z-m>0.028</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>FFIndicator-1.xml</path>
+    <name>FF-1</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.11</y-m>
+      <z-m>-0.029</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>FFIndicator-2.xml</path>
+    <name>FF-2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.165</y-m>
+      <z-m>-0.029</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>OilPressureIndicator-1.xml</path>
+    <name>OilPressure-1</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.11</y-m>
+      <z-m>-0.086</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>OilPressureIndicator-2.xml</path>
+    <name>OilPressure-2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.165</y-m>
+      <z-m>-0.086</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>OilTemperatureIndicator-1.xml</path>
+    <name>OilTemp-1</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.11</y-m>
+      <z-m>-0.143</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>OilTemperatureIndicator-2.xml</path>
+    <name>OilTemp-2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.165</y-m>
+      <z-m>-0.143</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>IcingIndicator.xml</path>
+    <name>Oil-2</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.236</y-m>
+      <z-m>-0.143</z-m>
     </offsets>
   </model>
 

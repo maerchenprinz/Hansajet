@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8' ?>
 <PropertyList>
-  <path>Aircraft/Hansajet/Models/Annunciator.ac</path>
+  <path>Annunciator.ac</path>
   <!-- operations manual page 8-8.1
        the annunciator lights illuminate in the slat fully extended
        position and during the retraction cycle. They are extinguished

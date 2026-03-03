@@ -9,7 +9,7 @@ OBJECT world
 kids 37
 OBJECT poly
 name "Test.Knob"
-loc 0.000709037 0.0901543 -0.0193009
+loc 0.000862111 0.110521 -4.65661e-10
 crease 45.000000
 numvert 25
 0.00766696 0 0
@@ -197,7 +197,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Test.Chassis"
-loc 0.000139044 0.0901543 -0.0193009
+loc 0.000292118 0.110521 -4.65661e-10
 crease 45.000000
 numvert 25
 0.00186096 0.00433013 0.0025
@@ -393,7 +393,7 @@ loc -0.00356367 0.0239045 -0.299298
 kids 1
 OBJECT poly
 name "Caution.Dim"
-loc -0.0251743 -0.171971 0.351521
+loc -0.0251747 -0.168372 0.341514
 crease 45.000000
 numvert 14
 0.0334373 0.137623 -0.00450178
@@ -1159,6 +1159,7 @@ refs 4
 1 0 0.625
 kids 0
 OBJECT poly
+name "object"
 loc 0.0002 -4.09782e-08 -7.45058e-09
 crease 45.000000
 numvert 128

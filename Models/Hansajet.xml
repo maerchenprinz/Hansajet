@@ -29,26 +29,6 @@
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/Annunciator.xml</path>
-    <name>Annunciator</name>
-    <offsets>
-      <x-m>-7.08893</x-m>
-      <y-m>-0.02</y-m>
-      <z-m>2.24</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Hansajet/Models/RadioPanelCollins.xml</path>
-    <name>RadioPanelCollins</name>
-    <offsets>
-      <x-m>-7.08893</x-m>
-      <y-m>-0.02</y-m>
-      <z-m>2.24</z-m>
-    </offsets>
-  </model>
-
-  <model>
     <path>Aircraft/Hansajet/Models/FuelHydraulicPanel.xml</path>
     <name>FuelHydraulic</name>
     <offsets>
@@ -91,15 +71,28 @@
   </model>
 
   <model>
-    <path>Aircraft/Hansajet/Models/AudioPanel/AudioPanel.xml</path>
-    <name>PilotIntercomPanel</name>
+    <path>Aircraft/Hansajet/Models/AudioPanel/audiopanel.xml</path>
+    <name>AudioPanel left</name>
     <offsets>
       <x-m>-6.35044</x-m>
       <y-m>-0.854144</y-m>
       <z-m>1.87498</z-m>
-      <pitch-deg>12</pitch-deg>
-      <heading-deg>-5</heading-deg>
-      <roll-deg>1</roll-deg>
+      <pitch-deg>-11</pitch-deg>
+      <heading-deg>175</heading-deg>
+      <roll-deg>-1.5</roll-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hansajet/Models/AudioPanel/audiopanel.xml</path>
+    <name>AudioPanel right</name>
+    <offsets>
+      <x-m>-6.35044</x-m>
+      <y-m>0.854144</y-m>
+      <z-m>1.87498</z-m>
+      <pitch-deg>-11</pitch-deg>
+      <heading-deg>185</heading-deg>
+      <roll-deg>1.5</roll-deg>
     </offsets>
   </model>
 
@@ -746,7 +739,7 @@
     <factor>-45</factor>
     <center>
       <x-m>-7.35686</x-m>
-      <y-m>-0.42</y-m>
+      <y-m>-0.4346</y-m>
       <z-m>1.78158</z-m>
     </center>
     <axis>
@@ -763,7 +756,7 @@
     <factor>-45</factor>
     <center>
       <x-m>-7.35686</x-m>
-      <y-m>0.42</y-m>
+      <y-m>0.4346</y-m>
       <z-m>1.78158</z-m>
     </center>
     <axis>
