@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <path>Indicator_493A-3.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>RadarFrontPanel</object-name>
+    <object-name>RadarDimLever</object-name>
+    <object-name>RadarColourLever</object-name>
+    <emission include="../InstrumentLightEmissionInclude.xml"/>
+  </animation>
+
+<!--Dim Lever-->
+ <animation>
+   <type>knob</type>
+   <object-name>RadarDimLever</object-name>
+    <property>Hansajet/Radar/Dim_lever_deg</property>
+   <factor>1</factor>
+   <offset-deg>-40</offset-deg>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+    <action>
+     <binding>
+      <command>property-adjust</command>
+      <property>Hansajet/Radar/Dim_lever_deg</property>
+      <factor>5</factor>
+      <min>0</min>
+      <max>90</max>                
+      <wrap>false</wrap>
+     </binding>
+    </action>
+   <hovered>
+    <binding>
+     <command>set-tooltip</command>
+      <label>Dim Factor: %2d%%</label>
+      <tooltip-id>rdrdim</tooltip-id>
+      <mapping>percent</mapping>
+      <property>Hansajet/Radar/Dim_lever_deg</property>
+    </binding>
+   </hovered>
+ </animation>
+
+<!--Dim Lever-->
+ <animation>
+   <type>knob</type>
+   <object-name>RadarColourLever</object-name>
+    <property>Hansajet/Radar/Colour_lever_deg</property>
+   <factor>1</factor>
+   <offset-deg>-40</offset-deg>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+    <x>1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+    <action>
+     <binding>
+      <command>property-adjust</command>
+      <property>Hansajet/Radar/Colour_lever_deg</property>
+      <factor>5</factor>
+      <min>0</min>
+      <max>90</max>                
+      <wrap>false</wrap>
+     </binding>
+    </action>
+   <hovered>
+    <binding>
+     <command>set-tooltip</command>
+      <label>Dim Factor: %2d%%</label>
+      <measure-text>Volume: 100%</measure-text>
+      <tooltip-id>rdrclr</tooltip-id>
+      <mapping>percent</mapping>
+      <property>Hansajet/Radar/Colour_lever_deg</property>
+    </binding>
+   </hovered>
+ </animation>
+
+
+  <!--animation>
+    <type>rotate</type>
+    <object-name>Needle1Source</object-name>
+    <property alias="/params/needle1source"/>
+    <factor>30</factor>
+    <offset-deg>-15</offset-deg>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+    <center>
+      <x-m>-0.00673564</x-m>
+      <y-m>-0.0278851</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation-->
+
+</PropertyList>

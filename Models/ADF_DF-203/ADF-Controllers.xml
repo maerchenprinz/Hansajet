@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+<!-- Loop Antenna -->
+ <filter>
+  <type>gain</type>
+  <gain>1.0</gain>
+  <input>
+   <expression>
+    <sum>
+     <property>/Hansajet/ADF/adf1_Loop</property>
+     <property>/instrumentation/adf[0]/indicated-bearing-deg</property>
+    </sum>
+   </expression>
+  </input>
+  <output>/instrumentation/adf[0]/indicated-bearing-deg</output>
+ </filter>
+
+ <filter>
+  <type>gain</type>
+  <gain>1.0</gain>
+  <input>
+   <expression>
+  <abs>
+   <cos>
+    <product>
+     <value>0.017453</value>
+     <dif>
+      <sum>
+       <value>0.0</value><!--0 if best bearing = signal strenght 1; 90 if best bearing = signal strenght 0-->
+       <property>/instrumentation/adf[0]/indicated-bearing-deg</property>
+      </sum>
+      <property>/instrumentation/adf[1]/indicated-bearing-deg</property>
+     </dif>
+    </product>
+   </cos>
+  </abs>
+   </expression>
+  </input>
+  <output>/instrumentation/adf[0]/signal-strength</output>
+ </filter>
+<!---->
+ <filter>
+  <type>gain</type>
+  <gain>1.0</gain>
+  <input>
+   <expression>
+    <sum>
+     <property>/Hansajet/ADF/adf2_Loop</property>
+     <property>/instrumentation/adf2[0]/indicated-bearing-deg</property>
+    </sum>
+   </expression>
+  </input>
+  <output>/instrumentation/adf2[0]/indicated-bearing-deg</output>
+ </filter>
+
+ <filter>
+  <type>gain</type>
+  <gain>1.0</gain>
+  <input>
+   <expression>
+  <abs>
+   <cos>
+    <product>
+     <value>0.017453</value>
+     <dif>
+      <sum>
+       <value>0.0</value><!--0 if best bearing = signal strenght 1; 90 if best bearing = signal strenght 0-->
+       <property>/instrumentation/adf2[0]/indicated-bearing-deg</property>
+      </sum>
+      <property>/instrumentation/adf2[1]/indicated-bearing-deg</property>
+     </dif>
+    </product>
+   </cos>
+  </abs>
+   </expression>
+  </input>
+  <output>/instrumentation/adf2[0]/signal-strength</output>
+ </filter>
+
+<!--Tuning/ Dial Drum-->
+<!-- Not the best solution so far, but the best I could find after hours of "banging-head-on-desk" -->
+ <filter>
+  <type>gain</type>
+  <gain>1.0</gain>
+
+  <input>
+  <condition>
+   <equals>
+    <property>/Hansajet/ADF/adf2_Subband</property>
+    <value>190</value>
+   </equals>
+  </condition>
+   <expression>
+    <table>
+    <property>/Hansajet/ADF/adf2_TuneKnob</property>
+     <entry>
+      <ind>0.0</ind><dep>0.0</dep>
+     </entry>
+     <entry>
+      <ind>10.0</ind><dep>30.0</dep>
+     </entry>
+     <entry>
+      <ind>11.0</ind><dep>31.5</dep>
+     </entry>
+     <entry>
+      <ind>210.0</ind><dep>330.0</dep>
+     </entry>
+    </table>
+   </expression>
+  </input>
+
+  <input>
+  <condition>
+   <equals>
+    <property>/Hansajet/ADF/adf2_Subband</property>
+    <value>400</value>
+   </equals>
+  </condition>
+   <expression>
+    <table>
+    <property>/Hansajet/ADF/adf2_TuneKnob</property>
+     <entry>
+      <ind>0.0</ind><dep>0.0</dep>
+     </entry>
+     <entry>
+      <ind>440.0</ind><dep>330.0</dep>
+     </entry>
+    </table>
+   </expression>
+  </input>
+
+  <input>
+  <condition>
+   <equals>
+    <property>/Hansajet/ADF/adf2_Subband</property>
+    <value>840</value>
+   </equals>
+  </condition>
+   <expression>
+    <table>
+    <property>/Hansajet/ADF/adf2_TuneKnob</property>
+     <entry>
+      <ind>0.0</ind><dep>-6.0</dep>
+     </entry>
+     <entry>
+      <ind>160.0</ind><dep>90.0</dep>
+     </entry>
+     <entry>
+      <ind>910.0</ind><dep>315.0</dep>
+     </entry>
+    </table>
+   </expression>
+  </input>
+  <output>/Hansajet/ADF/adf2_test_deg</output>
+   <min>-6.0</min>
+   <max>330.0</max>
+ </filter>
+
+</PropertyList>

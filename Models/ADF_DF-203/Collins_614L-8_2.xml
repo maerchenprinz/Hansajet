@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <path>Collins_614L-8.ac</path>
+
+ <animation include="../CockpitShadowAnimation.xml"/>
+ <animation include="../CockpitRangeAnimation.xml"/>
+
+<!--Loop knob-->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_adfloop_left</object-name>
+  <visible>false</visible>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-interpolate</command>
+    <property>/Hansajet/ADF/adf2_Loop</property>
+    <value type="double">-2.0</value>
+    <rate>2.0</rate>
+   </binding>
+  <mod-up>
+   <binding>
+    <command>property-interpolate</command>
+    <property>/Hansajet/ADF/adf2_Loop</property>
+    <value type="double">0.0</value>
+    <rate>10.0</rate>
+   </binding>
+  </mod-up>
+  </action>
+  <hovered>
+   <binding>
+    <command>set-tooltip</command>
+    <tooltip-id>adf2loopl</tooltip-id>
+    <label>Loop Antenna left</label>
+   </binding>
+  </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_adfloop_right</object-name>
+  <visible>false</visible>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-interpolate</command>
+    <property>/Hansajet/ADF/adf2_Loop</property>
+    <value type="double">2.0</value>
+    <rate>2.0</rate>
+   </binding>
+  <mod-up>
+   <binding>
+    <command>property-interpolate</command>
+    <property>/Hansajet/ADF/adf2_Loop</property>
+    <value type="double">0.0</value>
+    <rate>10.0</rate>
+   </binding>
+  </mod-up>
+  </action>
+  <hovered>
+   <binding>
+    <command>set-tooltip</command>
+    <tooltip-id>adf2loopr</tooltip-id>
+    <label>Loop Antenna right</label>
+   </binding>
+  </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>kn_Loop</object-name>
+   <property>/Hansajet/ADF/adf2_Loop</property>
+   <factor>30</factor>
+  <center>
+    <x-m>0.0</x-m>
+    <y-m>-0.048</y-m>
+    <z-m>0.018</z-m>
+  </center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!--Function knob OFF-Compass-Antenna-Frame-->
+ <animation>
+   <type>knob</type>
+   <object-name>ModeKnob</object-name>
+   <property>Hansajet/ADF/adf2_kn_Mode</property>
+   <factor>30</factor>
+   <offset-deg>-45</offset-deg>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.041</y-m>
+   <z-m>-0.012</z-m>
+  </center>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+    <action>
+     <binding>
+     <command>property-cycle</command>
+      <property>Hansajet/ADF/adf2_kn_Mode</property>
+      <value type="int">0</value>
+      <value type="int">1</value>
+      <value type="int">2</value>
+      <value type="int">3</value>
+      <min>0</min>
+      <max>3</max>
+      <wrap>false</wrap>
+     </binding>
+    <binding>
+      <command>nasal</command>
+      <script>
+	var adf2mode = ['off', 'adf', 'ant', 'off'];
+	setprop("/instrumentation/adf2[0]/mode", adf2mode[getprop("Hansajet/ADF/adf2_kn_Mode")] );
+	var adf2refmode = ['off', 'adf', 'off', 'adf'];
+	setprop("/instrumentation/adf2[1]/mode", adf2refmode[getprop("Hansajet/ADF/adf2_kn_Mode")] );
+      </script>
+    </binding>
+    </action>
+
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>adf2-mode</tooltip-id>
+      <label>%s</label>
+      <property>Hansajet/ADF/adf2_kn_Mode</property>
+      <mapping>nasal</mapping>
+      <script>
+        var adf2mode = ['OFF', 'ADF', 'Antenna', 'Loop'];
+        return adf2mode[arg[0]];
+      </script>
+    </binding>
+   </hovered>
+ </animation>
+
+<!-- Volume knob -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_GainControl</object-name>
+    <property>Hansajet/ADF/adf2_Volume</property>
+   <factor>180</factor>
+   <offset-deg>-30</offset-deg>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.041</y-m>
+   <z-m>-0.012</z-m>
+  </center>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+    <action>
+     <binding>
+      <command>property-adjust</command>
+      <property>Hansajet/ADF/adf2_Volume</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>1</max>                
+      <wrap>false</wrap>
+     </binding>
+    </action>
+   <hovered>
+    <binding>
+     <command>set-tooltip</command>
+      <label>Volume: %3d%%</label>
+      <measure-text>Volume: 100%</measure-text>
+      <tooltip-id>adf2vol</tooltip-id>
+      <mapping>percent</mapping>
+      <property>Hansajet/ADF/adf2_Volume</property>
+    </binding>
+   </hovered>
+ </animation>
+
+<!-- Band Knob -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_Band</object-name>
+   <property>Hansajet/ADF/adf2_Subband</property>
+    <interpolation>
+     <entry><ind>190.0</ind><dep>-45.0</dep></entry>
+     <entry><ind>400.0</ind><dep>0.0</dep></entry>
+     <entry><ind>840.0</ind><dep>45.0</dep></entry>
+    </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0433</y-m>
+   <z-m>-0.0143</z-m>
+  </center>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+   <action>
+    <binding>
+     <command>property-cycle</command>
+      <property>Hansajet/ADF/adf2_Subband</property>
+      <value type="int">190</value>
+      <value type="int">400</value>
+      <value type="int">840</value>
+      <wrap>false</wrap>
+    </binding>
+   </action>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>DialDrum</object-name>
+  <property>Hansajet/ADF/adf2_Subband</property>
+    <interpolation>
+     <entry><ind>190</ind><dep>0.0</dep></entry>
+     <entry><ind>400</ind><dep>0.012</dep></entry>
+     <entry><ind>840</ind><dep>0.024</dep></entry>
+    </interpolation>
+  <axis>
+    <x>0</x>
+    <y>0</y>
+    <z>1</z>
+  </axis>
+ </animation>
+
+<!-- Tune Knob -->
+ <animation>
+  <type>knob</type>
+  <object-name>kn_Tune</object-name>
+   <property>Hansajet/ADF/adf2_TuneKnob</property>
+   <factor>4.0</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0433</y-m>
+   <z-m>-0.0143</z-m>
+  </center>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+  <action>
+  <binding>
+   <condition>
+    <equals>
+     <property>Hansajet/ADF/adf2_Subband</property>
+     <value>190</value>
+    </equals>
+   </condition>
+   <command>property-adjust</command>
+   <property>Hansajet/ADF/adf2_TuneKnob</property>
+   <factor>1.0</factor>
+   <min>0.0</min>
+   <max>210.0</max>
+   <wrap>false</wrap>
+  </binding>
+
+  <binding>
+   <condition>
+    <equals>
+     <property>Hansajet/ADF/adf2_Subband</property>
+     <value>400</value>
+    </equals>
+   </condition>
+   <command>property-adjust</command>
+   <property>Hansajet/ADF/adf2_TuneKnob</property>
+   <factor>1.0</factor>
+   <min>0.0</min>
+   <max>440.0</max>
+   <wrap>false</wrap>
+  </binding>
+
+  <binding>
+   <condition>
+    <equals>
+     <property>Hansajet/ADF/adf2_Subband</property>
+     <value>840</value>
+    </equals>
+   </condition>
+   <command>property-adjust</command>
+   <property>Hansajet/ADF/adf2_TuneKnob</property>
+   <factor>1.0</factor>
+   <min>0.0</min>
+   <max>910.0</max>
+   <wrap>false</wrap>
+  </binding>
+  </action>
+
+ <!--increase>
+  <binding>
+   <condition>
+   <and>
+    <equals>
+     <property>Hansajet/ADF/adf1_Subband</property>
+     <value>190</value>
+    </equals>
+    <less-than-equals>
+     <property>Hansajet/ADF/adf1_TuneKnob</property>
+     <value>9.0</value>
+    </less-than-equals>
+   </and>
+   </condition>
+      <command>nasal</command>
+      <script>
+	instruments.addfreqs1(3.0);
+      </script>
+  </binding>
+  <binding>
+   <condition>
+   <and>
+    <equals>
+     <property>Hansajet/ADF/adf1_Subband</property>
+     <value>190</value>
+    </equals>
+    <greater-than-equals>
+     <property>Hansajet/ADF/adf1_TuneKnob</property>
+     <value>11.0</value>
+    </greater-than-equals>
+   </and>
+   </condition>
+      <command>nasal</command>
+      <script>
+	instruments.addfreqs1(1.5);
+      </script>
+  </binding>
+ </increase>
+ <decrease>
+  <binding>
+   <condition>
+   <and>
+    <equals>
+     <property>Hansajet/ADF/adf1_Subband</property>
+     <value>190</value>
+    </equals>
+    <less-than-equals>
+     <property>Hansajet/ADF/adf1_TuneKnob</property>
+     <value>9.0</value>
+    </less-than-equals>
+   </and>
+   </condition>
+      <command>nasal</command>
+      <script>
+	instruments.addfreqs1(-3.0);
+      </script>
+  </binding>
+  <binding>
+   <condition>
+   <and>
+    <equals>
+     <property>Hansajet/ADF/adf1_Subband</property>
+     <value>190</value>
+    </equals>
+    <greater-than-equals>
+     <property>Hansajet/ADF/adf1_TuneKnob</property>
+     <value>11.0</value>
+    </greater-than-equals>
+   </and>
+   </condition>
+      <command>nasal</command>
+      <script>
+	instruments.addfreqs1(-1.5);
+      </script>
+  </binding>
+ </decrease-->
+   <hovered>
+    <binding>
+     <command>set-tooltip</command>
+      <label>Tune Freq
+  %4ukHz</label>
+      <tooltip-id>ADF2Tune</tooltip-id>
+      <property>instrumentation/adf2[0]/frequencies/selected-khz</property>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>DialDrum</object-name>
+   <property>Hansajet/ADF/adf2_test_deg</property>
+   <factor>1.0</factor>
+    <!--interpolation>
+     <entry><ind>0.0</ind><dep>0.0</dep></entry>
+     <entry><ind>30.0</ind><dep>30.0</dep></entry>
+     <entry><ind>329.99</ind><dep>330.0</dep></entry>
+
+     <entry><ind>400.0</ind><dep>0.0</dep></entry>
+     <entry><ind>839.99</ind><dep>330.0</dep></entry>
+
+     <entry><ind>840.0</ind><dep>-6.0</dep></entry>
+     <entry><ind>850.0</ind><dep>0.0</dep></entry>
+     <entry><ind>1000.0</ind><dep>96.0</dep></entry>
+     <entry><ind>1750.0</ind><dep>315.0</dep></entry>
+    </interpolation-->
+   <center>
+    <x-m>-0.0195</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.0</z-m>
+   </center>
+   <axis>
+    <x>0.0</x>
+    <y>0.0</y>
+    <z>-1.0</z>
+   </axis>
+ </animation>
+
+<!--BFO switch-->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_adfbfo_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/ADF/adf2_sw_BFO", 1.0, 0.1 );
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>adf2bfoon</tooltip-id>
+      <label>BFO ON</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_adfbfo_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/ADF/adf2_sw_BFO", 0.0, 0.1 );
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>adf2bfooff</tooltip-id>
+      <label>BFO OFF</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_BFO</object-name>
+   <property>Hansajet/ADF/adf2_sw_BFO</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>15.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-15.0</dep></entry>
+  </interpolation>
+   <center>
+    <x-m>-0.002</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.022</z-m>
+   </center>
+   <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+   </axis>
+ </animation>
+
+<!--Needle Tuning Meter-->
+ <animation>
+   <type>rotate</type>
+   <object-name>needle_TuningMeter</object-name>
+   <property>/instrumentation/adf2[0]/signal-strength</property>
+   <factor>100</factor>
+   <offset-deg>-50</offset-deg>
+  <center>
+    <x-m>0.0</x-m>
+    <y-m>0.0416</y-m>
+    <z-m>0.016</z-m>
+  </center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>

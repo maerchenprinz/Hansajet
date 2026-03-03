@@ -1,0 +1,1156 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <path>audiopanel.ac</path>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_uhf_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_UHF_0", 1.0, 0.1 );
+#	settimer(func {instruments.AudioOutput(Device = "UHF");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopaneluhfupl</tooltip-id>
+      <label>UHF/HF-1 Audible</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_uhf_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_UHF_0", 0.0, 0.1 );
+#	settimer(func {instruments.AudioOutput(Device = "UHF");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopaneluhfdownl</tooltip-id>
+      <label>UHF/HF-1 Muted</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_uhf</object-name>
+   <property>Hansajet/AudioPanel/sw_UHF_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.067</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_dme_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_DME_0", 1.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "DME");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopaneldmeupl</tooltip-id>
+      <label>DME Audible</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_dme_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_DME_0", 0.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "DME");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopaneldmedownl</tooltip-id>
+      <label>DME Muted</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_dme</object-name>
+   <property>Hansajet/AudioPanel/sw_DME_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.067</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!--Transponder-->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_atc_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_ATC_0", 1.0, 0.1 );
+#	settimer(func {instruments.AudioOutput(Device = "ATC");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelatcupl</tooltip-id>
+      <label>ATC Audible</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_atc_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_ATC_0", 0.0, 0.1 );
+#	settimer(func {instruments.AudioOutput(Device = "ATC");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelatcdownl</tooltip-id>
+      <label>ATC Muted</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_atc</object-name>
+   <property>Hansajet/AudioPanel/sw_ATC_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.067</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_vhf-1_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_VHF-1_0", 1.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "COMM-1");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelvhf-1upl</tooltip-id>
+      <label>Comm-1 Audible</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_vhf-1_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_VHF-1_0", 0.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "COMM-1");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelvhf-1downl</tooltip-id>
+      <label>Comm-1 Muted</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_vhf-1</object-name>
+   <property>Hansajet/AudioPanel/sw_VHF-1_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.067</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_vhf-2_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_VHF-2_0", 1.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "COMM-2");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelvhf-2upl</tooltip-id>
+      <label>Comm-2 Audible</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_vhf-2_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_VHF-2_0", 0.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "COMM-2");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelvhf-2downl</tooltip-id>
+      <label>Comm-2 Muted</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_vhf-2</object-name>
+   <property>Hansajet/AudioPanel/sw_VHF-2_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.067</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_spkr_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_SPKR_0", 1.0, 0.1 );
+#	settimer(func {instruments.AudioOutput(Device = "SPKR");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelspkrupl</tooltip-id>
+      <label>Loudspeakers ON</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_spkr_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_SPKR_0", 0.0, 0.1 );
+#	settimer(func {instruments.AudioOutput(Device = "SPKR");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelspkrdownl</tooltip-id>
+      <label>Loudspeakers OFF</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_spkr</object-name>
+   <property>Hansajet/AudioPanel/sw_SPKR_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.0</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_adf1_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_ADF-1_0", 1.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "ADF-1");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopaneladf1upl</tooltip-id>
+      <label>ADF-1 Audible</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_adf1_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_ADF-1_0", 0.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "ADF-1");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopaneladf1downl</tooltip-id>
+      <label>ADF-1 Muted</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_adf1</object-name>
+   <property>Hansajet/AudioPanel/sw_ADF-1_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>-0.038</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_adf2_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_ADF-2_0", 1.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "ADF-2");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopaneladf2upl</tooltip-id>
+      <label>ADF-1 Audible</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_adf2_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_ADF-2_0", 0.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "ADF-2");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopaneladf2downl</tooltip-id>
+      <label>ADF-2 Muted</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_adf2</object-name>
+   <property>Hansajet/AudioPanel/sw_ADF-2_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>-0.038</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_nav1_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_NAV-1_0", 1.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "NAV-1");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelnav1upl</tooltip-id>
+      <label>NAV-1 Audible</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_nav1_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_NAV-1_0", 0.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "NAV-1");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelnav1downl</tooltip-id>
+      <label>NAV-1 Muted</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_nav1</object-name>
+   <property>Hansajet/AudioPanel/sw_NAV-1_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>-0.038</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_nav2_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_NAV-2_0", 1.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "NAV-2");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelnav2upl</tooltip-id>
+      <label>NAV-2 Audible</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_nav2_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_NAV-2_0", 0.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "NAV-2");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelnav2downl</tooltip-id>
+      <label>NAV-2 Muted</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_nav2</object-name>
+   <property>Hansajet/AudioPanel/sw_NAV-2_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>-0.038</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!--EMER-NORMAL-->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_emer_left</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_EMER_0", 1.0, 0.1 );
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelemerleftl</tooltip-id>
+      <label>Emergency
+Mode ON</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_emer_right</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_EMER_0", 0.0, 0.1 );
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelemerrightl</tooltip-id>
+      <label>Normal
+Mode ON</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_emer</object-name>
+   <property>Hansajet/AudioPanel/sw_EMER_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>0.0</x-m>
+    <y-m>0.0075</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!--MKR-->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_mkr_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_MKR_0", 1.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "MKR");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelmkrupl</tooltip-id>
+      <label>Autofeather by
+  Thrust ON</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_mkr_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_MKR_0", 0.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "MKR");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelmkrdownl</tooltip-id>
+      <label>Autofeather by
+  Thrust OFF</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_mkr</object-name>
+   <property>Hansajet/AudioPanel/sw_MKR_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>-0.078</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!--INT-->
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_int_up</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_INT_0", 1.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "INT");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelintupl</tooltip-id>
+      <label>Autofeather by
+  Thrust ON</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>clickspot_audiopanel_int_down</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+	interpolate("Hansajet/AudioPanel/sw_INT_0", 0.0, 0.1 );
+	settimer(func {instruments.AudioOutput(Device = "INT");}, 0.1);
+      </script>
+    </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>audiopanelintdownl</tooltip-id>
+      <label>Autofeather by
+  Thrust OFF</label>
+    </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>sw_audiopanel_int</object-name>
+   <property>Hansajet/AudioPanel/sw_INT_0</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>16.0</dep></entry>
+    <entry><ind>1.0</ind><dep>-16.0</dep></entry>
+  </interpolation>
+  <center>
+    <x-m>-0.078</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.004</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!--TRANSMIT BUTTONS-->
+ <animation>
+  <type>pick</type>
+  <object-name>btn_audiopanel_trans-uhf</object-name>
+  <visible>true</visible>
+   <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+     <binding>
+     <command>nasal</command>
+      <script>
+	if (getprop("Hansajet/AudioPanel/btn_UHF-1" ) == 0.0 ) {
+	interpolate("Hansajet/AudioPanel/btn_UHF-1", 2.0, 0.2, 1.0, 0.1 );
+	}
+	else {
+	interpolate("Hansajet/AudioPanel/btn_UHF-1", 2.0, 0.1, 0.0, 0.2 );
+	}
+      </script>
+     </binding>
+   </action>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>btn_audiopanel_trans-uhf</object-name>
+  <property>Hansajet/AudioPanel/btn_UHF-1</property>
+  <factor>0.005</factor>
+  <axis>
+    <x>0</x>
+    <y>0</y>
+    <z>-1</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>btn_audiopanel_trans-int</object-name>
+  <visible>true</visible>
+   <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+     <binding>
+     <command>nasal</command>
+      <script>
+	if (getprop("Hansajet/AudioPanel/btn_INT" ) == 0.0 ) {
+	interpolate("Hansajet/AudioPanel/btn_INT", 2.0, 0.2, 1.0, 0.1 );
+	}
+	else {
+	interpolate("Hansajet/AudioPanel/btn_INT", 2.0, 0.1, 0.0, 0.2 );
+	}
+      </script>
+     </binding>
+   </action>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>btn_audiopanel_trans-int</object-name>
+  <property>Hansajet/AudioPanel/btn_INT</property>
+  <factor>0.005</factor>
+  <axis>
+    <x>0</x>
+    <y>0</y>
+    <z>-1</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>btn_audiopanel_trans-pa</object-name>
+  <visible>true</visible>
+   <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+     <binding>
+     <command>nasal</command>
+      <script>
+	if (getprop("Hansajet/AudioPanel/btn_PA" ) == 0.0 ) {
+	interpolate("Hansajet/AudioPanel/btn_PA", 2.0, 0.2, 1.0, 0.1 );
+	}
+	else {
+	interpolate("Hansajet/AudioPanel/btn_PA", 2.0, 0.1, 0.0, 0.2 );
+	}
+      </script>
+     </binding>
+   </action>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>btn_audiopanel_trans-pa</object-name>
+  <property>Hansajet/AudioPanel/btn_PA</property>
+  <factor>0.005</factor>
+  <axis>
+    <x>0</x>
+    <y>0</y>
+    <z>-1</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>btn_audiopanel_trans-vhf-1</object-name>
+  <visible>true</visible>
+   <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+     <binding>
+     <command>nasal</command>
+      <script>
+	if (getprop("Hansajet/AudioPanel/btn_VHF-1" ) == 0.0 ) {
+	interpolate("Hansajet/AudioPanel/btn_VHF-1", 2.0, 0.2, 1.0, 0.1 );
+	}
+	else {
+	interpolate("Hansajet/AudioPanel/btn_VHF-1", 2.0, 0.1, 0.0, 0.2 );
+	}
+      </script>
+     </binding>
+   </action>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>btn_audiopanel_trans-vhf-1</object-name>
+  <property>Hansajet/AudioPanel/btn_VHF-1</property>
+  <factor>0.005</factor>
+  <axis>
+    <x>0</x>
+    <y>0</y>
+    <z>-1</z>
+  </axis>
+ </animation>
+
+<!---->
+ <animation>
+  <type>pick</type>
+  <object-name>btn_audiopanel_trans-vhf-2</object-name>
+  <visible>true</visible>
+   <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+     <binding>
+     <command>nasal</command>
+      <script>
+	if (getprop("Hansajet/AudioPanel/btn_VHF-2" ) == 0.0 ) {
+	interpolate("Hansajet/AudioPanel/btn_VHF-2", 2.0, 0.2, 1.0, 0.1 );
+	}
+	else {
+	interpolate("Hansajet/AudioPanel/btn_VHF-2", 2.0, 0.1, 0.0, 0.2 );
+	}
+      </script>
+     </binding>
+   </action>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>btn_audiopanel_trans-vhf-2</object-name>
+  <property>Hansajet/AudioPanel/btn_VHF-2</property>
+  <factor>0.005</factor>
+  <axis>
+    <x>0</x>
+    <y>0</y>
+    <z>-1</z>
+  </axis>
+ </animation>
+
+<!-- VOLUME KNOB -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_Volume</object-name>
+   <property>Hansajet/AudioPanel/kn_audiopanel_Volume_0</property>
+   <factor>-10</factor>
+   <axis>
+    <x>0</x>
+    <y>0</y>
+    <z>1</z>
+   </axis>
+   <center>
+    <x-m>-0.037</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.0</z-m>
+   </center>
+    <action>
+     <binding>
+      <command>property-adjust</command>
+      <property>Hansajet/AudioPanel/kn_audiopanel_Volume_0</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>1</max>
+     </binding>
+    </action>
+   <hovered>
+    <binding>
+     <command>set-tooltip</command>
+      <label>Volume: %3d%%</label>
+      <measure-text>Volume: 100%</measure-text>
+      <tooltip-id>audiopanellvol</tooltip-id>
+      <mapping>percent</mapping>
+      <property>Hansajet/AudioPanel/kn_audiopanel_Volume_0</property>
+    </binding>
+   </hovered>
+ </animation>
+
+<!-- TEXT OSG -->
+  <animation>
+    <type>select</type>
+    <object-name>textaudiopanel</object-name>
+    <condition>
+      <property>sim/panel-hotspots</property>
+    </condition>
+  </animation>
+
+  <text>
+    <name>textaudiopanel</name>
+    <type type="string">literal</type>
+    <text type="string">Audio-panel</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.036</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.08</max-height>
+    <max-width>0.08</max-width>
+    <font-resolution>
+      <width type="int">64</width>
+      <height type="int">64</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+     <pitch-deg>0</pitch-deg>
+     <heading-deg>-90</heading-deg>
+     <roll-deg>0</roll-deg>
+     <x-m>0</x-m>
+     <y-m>0</y-m>
+     <z-m>0.01</z-m>
+    </offsets>
+  </text>
+  <animation>
+    <type>material</type>
+    <object-name>textaudiopanel</object-name>
+    <emission>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+    </emission>
+  </animation>
+
+</PropertyList>

@@ -2,7 +2,7 @@
 <PropertyList>
 
   <params>
-    <value>controls/audiopanel/vhf[1]</value>
+    <value>controls/windshield/wiper[1]</value>
   </params>
 
   <model include="../Switch3.xml"/>
@@ -10,6 +10,3 @@
   <animation include="../SwitchLeverRotateAnimation.xml"/>
 
 </PropertyList>
-
-
-

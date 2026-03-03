@@ -1,26 +1,5 @@
 <?xml version="1.0" ?>
 <PropertyList>
-  <params>
-    <comm-left-outer-position>instrumentation/comm[1]/comm-left-outer-position</comm-left-outer-position>
-    <comm-left-inner-position>instrumentation/comm[1]/comm-left-inner-position</comm-left-inner-position>
-    <comm-right-inner-position>instrumentation/comm[1]/comm-right-inner-position</comm-right-inner-position>
-    <nav-left-outer-position>instrumentation/nav[1]/nav-left-outer-position</nav-left-outer-position>
-    <nav-left-inner-position>instrumentation/nav[1]/nav-left-inner-position</nav-left-inner-position>
-    <nav-right-inner-position>instrumentation/nav[1]/nav-right-inner-position</nav-right-inner-position>
-    <test-position>instrumentation/nav[1]/test-position</test-position>
-
-    <comm-power>instrumentation/comm[1]/power-btn</comm-power>
-    <comm-test>instrumentation/comm[1]/test-btn</comm-test>
-    <comm-frq>instrumentation/comm[1]/frequencies/selected-mhz</comm-frq>
-    <comm-volume>instrumentation/comm[1]/volume</comm-volume>
-
-    <nav-frq>instrumentation/nav[1]/frequencies/selected-mhz</nav-frq>
-    <nav-volume>instrumentation/nav[1]/volume</nav-volume>
-    <nav-power>instrumentation/nav[1]/power-btn</nav-power>
-    <nav-test>instrumentation/nav[1]/test-btn</nav-test>
-
-  </params>
-    
   <path>Collins-313N-3.ac</path>
 
   <animation>
@@ -46,886 +25,357 @@
     <object-name>Plate</object-name>
     <emission include="../CockpitLightEmissionInclude.xml"/>
   </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>TestPickLeft</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-assign</command>
-        <property alias="/params/test-position"/>
-        <value type="int">-1</value>
-      </binding>
-      <mod-up>
-        <binding>
-          <command>property-assign</command>
-          <property alias="/params/test-position"/>
-          <value type="int">0</value>
-        </binding>
-      </mod-up>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>TestPickRight</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-assign</command>
-        <property alias="/params/test-position"/>
-        <value type="int">1</value>
-      </binding>
-      <mod-up>
-        <binding>
-          <command>property-assign</command>
-          <property alias="/params/test-position"/>
-          <value type="int">0</value>
-        </binding>
-      </mod-up>
-    </action>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>Test</object-name>
-    <property alias="/params/test-position"/>
-    <factor>30</factor>
-    <center>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
     
-  <!-- COMM (left half) -->
-  <!-- Left outer ring: OFF-PWR-TEST -->
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>CommLeftOuterPickLeft</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-left-outer-position"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>2</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <condition>
-          <less-than>
-            <property alias="/params/comm-left-outer-position"/>
-            <value type="int">1</value>
-          </less-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/comm-power"/>
-        <value type="bool">false</value>
-      </binding>
-      <binding>
-        <condition>
-          <greater-than>
-            <property alias="/params/comm-left-outer-position"/>
-            <value type="int">0</value>
-          </greater-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/comm-power"/>
-        <value type="bool">true</value>
-      </binding>
-      <binding>
-        <condition>
-          <less-than>
-            <property alias="/params/comm-left-outer-position"/>
-            <value type="int">2</value>
-          </less-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/comm-test"/>
-        <value type="bool">false</value>
-      </binding>
-      <binding>
-        <condition>
-          <greater-than>
-            <property alias="/params/comm-left-outer-position"/>
-            <value type="int">1</value>
-          </greater-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/comm-test"/>
-        <value type="bool">true</value>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <label>Stored: %3.2fMHz</label>
-        <measure-text>Stored: 999.99MHz</measure-text>
-        <tooltip-id>r802-1-freq</tooltip-id>
-        <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>CommLeftOuterPickRight</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-left-outer-position"/>
-        <step>1</step>
-        <min>0</min>
-        <max>2</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <condition>
-          <less-than>
-            <property alias="/params/comm-left-outer-position"/>
-            <value type="int">1</value>
-          </less-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/comm-power"/>
-        <value type="bool">false</value>
-      </binding>
-      <binding>
-        <condition>
-          <greater-than>
-            <property alias="/params/comm-left-outer-position"/>
-            <value type="int">0</value>
-          </greater-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/comm-power"/>
-        <value type="bool">true</value>
-      </binding>
-      <binding>
-        <condition>
-          <less-than>
-            <property alias="/params/comm-left-outer-position"/>
-            <value type="int">2</value>
-          </less-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/comm-test"/>
-        <value type="bool">false</value>
-      </binding>
-      <binding>
-        <condition>
-          <greater-than>
-            <property alias="/params/comm-left-outer-position"/>
-            <value type="int">1</value>
-          </greater-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/comm-test"/>
-        <value type="bool">true</value>
-      </binding>
-    </action>
-  </animation>
-
-  <!-- Left inner knob: COMM-MHz -->
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>CommLeftInnerPickLeft</object-name>
-    <action>
-      <button>0</button>
-      <button>3</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-left-inner-position"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-frq"/>
-        <step>-1</step>
-        <min>118.0</min>
-        <max>137.0</max>
-        <wrap>true</wrap>
-        <mask>integer</mask>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-left-inner-position"/>
-        <step>1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-frq"/>
-        <step>1</step>
-        <min>118.0</min>
-        <max>137.0</max>
-        <wrap>true</wrap>
-        <mask>integer</mask>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>CommLeftInnerPickRight</object-name>
-    <action>
-      <button>0</button>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-left-inner-position"/>
-        <step>1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-frq"/>
-        <step>1</step>
-        <min>118.0</min>
-        <max>137.0</max>
-        <wrap>true</wrap>
-        <mask>integer</mask>
-      </binding>
-    </action>
-    <action>
-      <button>3</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-left-inner-position"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-frq"/>
-        <step>-1</step>
-        <min>118.0</min>
-        <max>137.0</max>
-        <wrap>true</wrap>
-        <mask>integer</mask>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>CommLeftOuter</object-name>
-    <property alias="/params/comm-left-outer-position"/>
-    <factor>-40</factor>
+<!-- Left knob: OFF-PWR-TEST -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_Comm2Mode</object-name>
+    <property>Hansajet/COMM/kn_Comm2_Mode</property>
+    <factor>45</factor>
     <center>
-      <x-m>0</x-m>
-      <y-m>-0.051</y-m>
-      <z-m>-0.0178585</z-m>
+     <x-m>0</x-m>
+     <y-m>-0.051</y-m>
+     <z-m>-0.0178</z-m>
     </center>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+     <x>-1</x>
+     <y>0</y>
+     <z>0</z>
     </axis>
-  </animation>
-    
-  <animation>
-    <type>rotate</type>
-    <object-name>CommLeftInner</object-name>
-    <property alias="/params/comm-left-inner-position"/>
-    <factor>-45</factor>
+  <action>
+   <binding>
+    <command>property-adjust</command>
+    <property>Hansajet/COMM/kn_Comm2_Mode</property>
+     <factor>1</factor>
+     <min>0</min>
+     <max>2</max>
+     <wrap>false</wrap>
+     <mask>integer</mask>
+   </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>comm2mode</tooltip-id>
+      <label>%s</label>
+      <property>Hansajet/COMM/kn_Comm2_Mode</property>
+      <mapping>nasal</mapping>
+      <script>
+        var comm2mode = ['OFF', 'Power', 'Test'];
+        return comm2mode[arg[0]];
+      </script>
+    </binding>
+   </hovered>
+ </animation>
+
+<!-- Left knob: COMM-MHz -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_Comm2_MHz</object-name>
+    <property>Hansajet/COMM/kn_Comm2_MHz</property>
+    <factor>18</factor>
     <center>
-      <x-m>0</x-m>
-      <y-m>-0.051</y-m>
-      <z-m>-0.0178585</z-m>
+     <x-m>0</x-m>
+     <y-m>-0.051</y-m>
+     <z-m>-0.0178</z-m>
     </center>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+     <x>-1</x>
+     <y>0</y>
+     <z>0</z>
     </axis>
-  </animation>
-    
-  <!-- Right outer ring: OFF-PWR -->
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>CommRightOuterPickLeft</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-volume"/>
-        <step>-0.1</step>
-        <min>0</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
-    </action>
-  </animation>
+  <action>
+   <binding>
+    <command>property-adjust</command>
+    <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+     <factor>1</factor>
+     <min>118.0</min>
+     <max>137.0</max>
+     <wrap>true</wrap>
+     <mask>integer</mask>
+   </binding>
+   <binding>
+    <command>property-adjust</command>
+     <property>Hansajet/COMM/kn_Comm2_MHz</property>
+     <factor>1.0</factor>
+     <min>0.0</min>
+     <max>20.0</max>
+     <wrap>true</wrap>
+   </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <label>COMM-2 %3.3fMHz</label>
+      <tooltip-id>comm2freqmhz</tooltip-id>
+      <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+    </binding>
+   </hovered>
+ </animation>
 
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>CommRightOuterPickRight</object-name>
+<!-- Right knob: COMM volume -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_Comm2Vol</object-name>
+    <property>Hansajet/COMM/comm2_Volume</property>
+    <offset-deg>60.0</offset-deg>
+    <factor>180</factor>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.015</y-m>
+   <z-m>-0.018</z-m>
+  </center>
     <action>
-      <button>0</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-volume"/>
-        <step>0.1</step>
-        <min>0</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
+     <binding>
+      <command>property-adjust</command>
+      <property>Hansajet/COMM/comm2_Volume</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>1</max>                
+      <wrap>false</wrap>
+     </binding>
     </action>
-  </animation>
+   <hovered>
+    <binding>
+     <command>set-tooltip</command>
+      <label>Volume: %3d%%</label>
+      <measure-text>Volume: 100%</measure-text>
+      <tooltip-id>comm2vol</tooltip-id>
+      <mapping>percent</mapping>
+      <property>Hansajet/COMM/comm2_Volume</property>
+    </binding>
+   </hovered>
+ </animation>
 
-  <!-- Right inner knob: COMM-kHz -->
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>CommRightInnerPickLeft</object-name>
-    <action>
-      <button>0</button>
-      <button>3</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-right-inner-position"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-frq"/>
-        <step>-0.025</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <resolution>0.025</resolution>
-        <wrap>true</wrap>
-        <mask>decimal</mask>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-right-inner-position"/>
-        <step>1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-frq"/>
-        <step>0.025</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <resolution>0.025</resolution>
-        <wrap>true</wrap>
-        <mask>decimal</mask>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>CommRightInnerPickRight</object-name>
-    <action>
-      <button>0</button>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-right-inner-position"/>
-        <step>1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-frq"/>
-        <step>0.025</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <resolution>0.025</resolution>
-        <wrap>true</wrap>
-        <mask>decimal</mask>
-      </binding>
-    </action>
-    <action>
-      <button>3</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-right-inner-position"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/comm-frq"/>
-        <step>-0.025</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <resolution>0.025</resolution>
-        <wrap>true</wrap>
-        <mask>decimal</mask>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>CommRightOuter</object-name>
-    <property alias="/params/comm-volume"/>
-    <factor>-180</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>-0.015</y-m>
-      <z-m>-0.0178585</z-m>
-    </center>
-    <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-  </animation>
-    
-  <animation>
-    <type>rotate</type>
-    <object-name>CommRightInner</object-name>
-    <property alias="/params/comm-right-inner-position"/>
-    <factor>-45</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>-0.015</y-m>
-      <z-m>-0.0178585</z-m>
-    </center>
-    <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-  </animation>
+<!-- Right knob: COMM-kHz -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_Comm2_kHz</object-name>
+    <property>Hansajet/COMM/kn_Comm2_kHz</property>
+    <factor>18</factor>
+   <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+   </axis>
+   <center>
+    <x-m>0.0</x-m>
+    <y-m>-0.015</y-m>
+    <z-m>-0.018</z-m>
+   </center>
+  <action>
+   <binding>
+    <command>property-adjust</command>
+     <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+     <factor>0.025</factor>
+     <min>0.0</min>
+     <max>1.0</max>
+     <resolution>0.025</resolution>
+     <wrap>true</wrap>
+     <mask>decimal</mask>
+   </binding>
+   <binding>
+    <command>property-adjust</command>
+     <property>Hansajet/COMM/kn_Comm2_kHz</property>
+     <factor>1.0</factor>
+     <min>0.0</min>
+     <max>40.0</max>
+     <wrap>true</wrap>
+   </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <label>COMM-2 %3.3fMHz</label>
+      <tooltip-id>comm2freq</tooltip-id>
+      <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+    </binding>
+   </hovered>
+ </animation>
     
   <!-- NAV (right half) -->
-  <!-- Left outer ring: OFF-PWR -->
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>NavLeftOuterPickLeft</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-left-outer-position"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <condition>
-          <less-than>
-            <property alias="/params/nav-left-outer-position"/>
-            <value type="int">1</value>
-          </less-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/nav-power"/>
-        <value type="bool">false</value>
-      </binding>
-      <binding>
-        <condition>
-          <greater-than>
-            <property alias="/params/nav-left-outer-position"/>
-            <value type="int">0</value>
-          </greater-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/nav-power"/>
-        <value type="bool">true</value>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>NavLeftOuterPickRight</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-left-outer-position"/>
-        <step>1</step>
-        <min>0</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <condition>
-          <less-than>
-            <property alias="/params/nav-left-outer-position"/>
-            <value type="int">1</value>
-          </less-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/nav-power"/>
-        <value type="bool">false</value>
-      </binding>
-      <binding>
-        <condition>
-          <greater-than>
-            <property alias="/params/nav-left-outer-position"/>
-            <value type="int">0</value>
-          </greater-than>
-        </condition>
-        <command>property-assign</command>
-        <property alias="/params/nav-power"/>
-        <value type="bool">true</value>
-      </binding>
-    </action>
-  </animation>
-
-  <!-- Left inner knob: COMM-MHz -->
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>NavLeftInnerPickLeft</object-name>
-    <action>
-      <button>0</button>
-      <button>3</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-left-inner-position"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-frq"/>
-        <step>-1</step>
-        <min>108.0</min>
-        <max>118.0</max>
-        <wrap>true</wrap>
-        <mask>integer</mask>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-left-inner-position"/>
-        <step>1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-frq"/>
-        <step>1</step>
-        <min>108.0</min>
-        <max>118.0</max>
-        <wrap>true</wrap>
-        <mask>integer</mask>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>NavLeftInnerPickRight</object-name>
-    <action>
-      <button>0</button>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-left-inner-position"/>
-        <step>1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-frq"/>
-        <step>1</step>
-        <min>108.0</min>
-        <max>118.0</max>
-        <wrap>true</wrap>
-        <mask>integer</mask>
-      </binding>
-    </action>
-    <action>
-      <button>3</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-left-inner-position"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-frq"/>
-        <step>-1</step>
-        <min>108.0</min>
-        <max>118.0</max>
-        <wrap>true</wrap>
-        <mask>integer</mask>
-      </binding>
-    </action>
-  </animation>
-
-  <!-- Right outer ring: OFF-PWR -->
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>NavRightOuterPickLeft</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-volume"/>
-        <step>-0.1</step>
-        <min>0</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>NavRightOuterPickRight</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-volume"/>
-        <step>0.1</step>
-        <min>0</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <!-- Right inner knob: COMM-kHz -->
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>NavRightInnerPickLeft</object-name>
-    <action>
-      <button>0</button>
-      <button>3</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-right-inner-position"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-frq"/>
-        <step>-0.05</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <resolution>0.05</resolution>
-        <wrap>true</wrap>
-        <mask>decimal</mask>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-right-inner-position"/>
-        <step>1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-frq"/>
-        <step>0.05</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <resolution>0.05</resolution>
-        <wrap>true</wrap>
-        <mask>decimal</mask>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>NavRightInnerPickRight</object-name>
-    <action>
-      <button>0</button>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-right-inner-position"/>
-        <step>1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-frq"/>
-        <step>0.05</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <resolution>0.05</resolution>
-        <wrap>true</wrap>
-        <mask>decimal</mask>
-      </binding>
-    </action>
-    <action>
-      <button>3</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-right-inner-position"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>8</max>
-        <wrap>true</wrap>
-      </binding>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="/params/nav-frq"/>
-        <step>-0.05</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <resolution>0.05</resolution>
-        <wrap>true</wrap>
-        <mask>decimal</mask>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>NavLeftOuter</object-name>
-    <property alias="/params/nav-left-outer-position"/>
-    <factor>-40</factor>
+  <!-- Right knob: OFF-PWR -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_NAV2Mode</object-name>
+    <property>Hansajet/COMM/kn_NAV2_Mode</property>
+    <factor>40</factor>
     <center>
       <x-m>0</x-m>
       <y-m>0.015</y-m>
-      <z-m>-0.0178585</z-m>
+      <z-m>-0.0178</z-m>
     </center>
     <axis>
-      <x>1</x>
+      <x>-1</x>
       <y>0</y>
       <z>0</z>
     </axis>
-  </animation>
-    
-  <animation>
-    <type>rotate</type>
-    <object-name>NavLeftInner</object-name>
-    <property alias="/params/nav-left-inner-position"/>
-    <factor>-45</factor>
+  <action>
+   <binding>
+    <command>property-adjust</command>
+    <property>Hansajet/COMM/kn_NAV2_Mode</property>
+     <factor>1</factor>
+     <min>0</min>
+     <max>1</max>
+     <wrap>false</wrap>
+     <mask>integer</mask>
+   </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>nav2mode</tooltip-id>
+      <label>%s</label>
+      <property>Hansajet/NAV/kn_NAV2_Mode</property>
+      <mapping>nasal</mapping>
+      <script>
+        var nav2mode = ['OFF', 'Power'];
+        return nav2mode[arg[0]];
+      </script>
+    </binding>
+   </hovered>
+ </animation>
+
+<!-- Left knob: NAV-MHz -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_NAV2_MHz</object-name>
+    <property>Hansajet/COMM/kn_NAV2_MHz</property>
+    <factor>18</factor>
     <center>
       <x-m>0</x-m>
       <y-m>0.015</y-m>
-      <z-m>-0.0178585</z-m>
+      <z-m>-0.0178</z-m>
     </center>
     <axis>
-      <x>1</x>
+      <x>-1</x>
       <y>0</y>
       <z>0</z>
     </axis>
-  </animation>
-    
-  <animation>
-    <type>rotate</type>
-    <object-name>NavRightOuter</object-name>
-    <property alias="/params/nav-volume"/>
-    <factor>-180</factor>
+  <action>
+   <binding>
+    <command>property-adjust</command>
+     <property>Hansajet/COMM/kn_NAV2_MHz</property>
+     <factor>1.0</factor>
+     <min>0.0</min>
+     <max>10.0</max>
+     <wrap>true</wrap>
+   </binding>
+   <binding>
+    <command>property-adjust</command>
+    <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
+     <factor>1</factor>
+     <min>108.0</min>
+     <max>118.0</max>
+     <wrap>true</wrap>
+     <mask>integer</mask>
+   </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <label>NAV-2 %3.2fMHz</label>
+      <tooltip-id>nav2freqmhz</tooltip-id>
+      <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
+    </binding>
+   </hovered>
+ </animation>
+
+<!-- Right knob: NAV-kHz -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_NAV2_kHz</object-name>
+    <property>Hansajet/COMM/kn_NAV2_kHz</property>
+    <factor>18</factor>
     <center>
       <x-m>0</x-m>
       <y-m>0.051</y-m>
-      <z-m>-0.0178585</z-m>
+      <z-m>-0.0178</z-m>
     </center>
     <axis>
-      <x>1</x>
+      <x>-1</x>
       <y>0</y>
       <z>0</z>
     </axis>
-  </animation>
+  <action>
+   <binding>
+    <command>property-adjust</command>
+     <property>Hansajet/COMM/kn_NAV2_kHz</property>
+     <factor>1.0</factor>
+     <min>0.0</min>
+     <max>40.0</max>
+     <wrap>true</wrap>
+   </binding>
+   <binding>
+    <command>property-adjust</command>
+     <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
+     <factor>0.05</factor>
+     <min>0.0</min>
+     <max>1.0</max>
+     <resolution>0.05</resolution>
+     <wrap>true</wrap>
+     <mask>decimal</mask>
+   </binding>
+  </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <label>COMM-1 %3.2fMHz</label>
+      <tooltip-id>nav2freq</tooltip-id>
+      <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
+    </binding>
+   </hovered>
+ </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>NavRightInner</object-name>
-    <property alias="/params/nav-right-inner-position"/>
-    <factor>-45</factor>
+<!-- Right knob: NAV volume -->
+ <animation>
+   <type>knob</type>
+   <object-name>kn_NAV2Vol</object-name>
+    <property>Hansajet/NAV/nav2_Volume</property>
+    <offset-deg>60.0</offset-deg>
+    <factor>180</factor>
     <center>
       <x-m>0</x-m>
       <y-m>0.051</y-m>
-      <z-m>-0.0178585</z-m>
+      <z-m>-0.0178</z-m>
     </center>
     <axis>
-      <x>1</x>
+      <x>-1</x>
       <y>0</y>
       <z>0</z>
     </axis>
-  </animation>
+    <action>
+     <binding>
+      <command>property-adjust</command>
+      <property>Hansajet/NAV/nav2_Volume</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>1</max>                
+      <wrap>false</wrap>
+     </binding>
+    </action>
+   <hovered>
+    <binding>
+     <command>set-tooltip</command>
+      <label>Volume: %3d%%</label>
+      <measure-text>Volume: 100%</measure-text>
+      <tooltip-id>nav2vol</tooltip-id>
+      <mapping>percent</mapping>
+      <property>Hansajet/NAV/nav2_Volume</property>
+    </binding>
+   </hovered>
+ </animation>
 
-  <!-- COMM Frequency display -->
+<!-- COMM Frequency display -->
   <animation>
     <type>textranslate</type>
     <object-name>Comm10M</object-name>
-    <property alias="/params/comm-frq"/>
+    <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
     <step>10</step>
     <factor>0.01</factor>
     <bias>0.0001</bias>
@@ -939,7 +389,7 @@
  <animation>
     <type>textranslate</type>
     <object-name>Comm1M</object-name>
-    <property alias="/params/comm-frq"/>
+    <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
     <step>1</step>
     <factor>0.1</factor>
     <bias>0.0001</bias>
@@ -953,7 +403,7 @@
  <animation>
     <type>textranslate</type>
     <object-name>Comm100k</object-name>
-    <property alias="/params/comm-frq"/>
+    <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
     <step>0.1</step>
     <factor>1</factor>
     <bias>0.0001</bias>
@@ -967,7 +417,7 @@
  <animation>
     <type>textranslate</type>
     <object-name>Comm10k</object-name>
-    <property alias="/params/comm-frq"/>
+    <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
     <step>0.01</step>
     <factor>10</factor>
     <bias>0.0001</bias>
@@ -976,12 +426,12 @@
       <y>1</y>
       <z>0</z>
     </axis>
-  </animation>
+ </animation>
 
  <animation>
     <type>textranslate</type>
     <object-name>Comm1k</object-name>
-    <property alias="/params/comm-frq"/>
+    <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
     <step>0.001</step>
     <factor>100</factor>
     <bias>0.0001</bias>
@@ -990,13 +440,13 @@
       <y>1</y>
       <z>0</z>
     </axis>
-  </animation>
+ </animation>
 
   <!-- NAV Frequency display -->
  <animation>
     <type>textranslate</type>
     <object-name>Nav10M</object-name>
-    <property alias="/params/nav-frq"/>
+    <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
     <step>10</step>
     <factor>0.01</factor>
     <bias>0.0001</bias>
@@ -1010,7 +460,7 @@
  <animation>
     <type>textranslate</type>
     <object-name>Nav1M</object-name>
-    <property alias="/params/nav-frq"/>
+    <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
     <step>1</step>
     <factor>0.1</factor>
     <bias>0.0001</bias>
@@ -1024,7 +474,7 @@
  <animation>
     <type>textranslate</type>
     <object-name>Nav100k</object-name>
-    <property alias="/params/nav-frq"/>
+    <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
     <step>0.1</step>
     <factor>1</factor>
     <bias>0.0001</bias>
@@ -1038,7 +488,7 @@
  <animation>
     <type>textranslate</type>
     <object-name>Nav10k</object-name>
-    <property alias="/params/nav-frq"/>
+    <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
     <step>0.01</step>
     <factor>10</factor>
     <bias>0.0001</bias>

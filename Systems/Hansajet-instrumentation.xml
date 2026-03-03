@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <airspeed-indicator>
+    <name>airspeed-indicator</name>
+    <number>0</number>
+    <total-pressure>systems/pitot[0]/total-pressure-inhg</total-pressure>
+    <static-pressure>systems/static[0]/pressure-inhg</static-pressure>
+    <has-overspeed-indicator>1</has-overspeed-indicator>
+    <ias-limit>320.0</ias-limit>
+    <mach-limit>0.76</mach-limit>
+    <alt-threshold>25000</alt-threshold>
+  </airspeed-indicator>
+
+  <airspeed-indicator>
+    <name>airspeed-indicator</name>
+    <number>1</number>
+    <total-pressure>systems/pitot[1]/total-pressure-inhg</total-pressure>
+    <static-pressure>systems/static[1]/pressure-inhg</static-pressure>
+    <has-overspeed-indicator>1</has-overspeed-indicator>
+    <ias-limit>320.0</ias-limit>
+    <mach-limit>0.76</mach-limit>
+    <alt-threshold>25000</alt-threshold>
+  </airspeed-indicator>
+
+  <altimeter>
+    <name>altimeter</name>
+    <number>0</number>
+    <static-pressure>systems/static[0]/pressure-inhg</static-pressure>
+  </altimeter>
+
+  <altimeter>
+    <name>altimeter</name>
+    <number>1</number>
+    <static-pressure>systems/static[1]/pressure-inhg</static-pressure>
+  </altimeter>
+
+  <clock>
+    <name>clock</name>
+    <number>0</number>
+  </clock>
+
+<!--Collins 618M-1A Nr.1-->
+  <comm-radio>
+    <name>comm</name>
+    <number>0</number>
+    <eight-point-three>0</eight-point-three>
+    <full-duplex>0</full-duplex>
+  </comm-radio>
+
+<!--Collins 618M-1A Nr.2-->
+  <comm-radio>
+    <name>comm</name>
+    <number>1</number>
+    <eight-point-three>0</eight-point-three>
+    <full-duplex>0</full-duplex>
+  </comm-radio>
+
+  <vertical-speed-indicator>
+    <name>vertical-speed-indicator</name>
+    <number>0</number>
+    <static-pressure>systems/static[0]/pressure-inhg</static-pressure>
+  </vertical-speed-indicator>
+
+  <vertical-speed-indicator>
+    <name>vertical-speed-indicator</name>
+    <number>1</number>
+    <static-pressure>systems/static[1]/pressure-inhg</static-pressure>
+  </vertical-speed-indicator>
+
+  <attitude-indicator>
+    <name>attitude-indicator</name>
+    <number>0</number>
+    <suction>instrumentation/attitude-indicator[0]/power</suction>
+  </attitude-indicator>
+
+  <attitude-indicator>
+    <name>attitude-indicator</name>
+    <number>1</number>
+    <suction>instrumentation/attitude-indicator[1]/power</suction>
+  </attitude-indicator>
+
+  <!--heading-indicator>
+    <name>heading-indicator</name>
+    <number>0</number>
+    <power-norm>instrumentation/heading-indicator/power</power-norm>
+  </heading-indicator-->
+
+  <slip-skid-ball>
+    <name>slip-skid-ball</name>
+    <number>0</number>
+  </slip-skid-ball>
+
+  <turn-indicator>
+    <name>turn-indicator</name>
+    <number>0</number>
+  </turn-indicator>
+
+  <slip-skid-ball>
+    <name>slip-skid-ball</name>
+    <number>1</number>
+  </slip-skid-ball>
+
+  <turn-indicator>
+    <name>turn-indicator</name>
+    <number>1</number>
+  </turn-indicator>
+
+  <nav-radio>
+    <name>nav</name>
+    <number>0</number>
+  </nav-radio>
+
+  <nav-radio>
+    <name>nav</name>
+    <number>1</number>
+  </nav-radio>
+
+  <adf>
+    <name>adf</name>
+    <number>0</number>
+    <!--power-supply>/systems/electrical/outputs/adf</power-supply-->
+  </adf>
+
+  <adf>
+    <name>adf</name>
+    <number>1</number>
+    <power-supply>/systems/electrical/outputs/adf</power-supply>
+  </adf>
+
+
+  <adf>
+    <name>adf2</name>
+    <number>0</number>
+    <power-supply>/systems/electrical/outputs/adf</power-supply>
+  </adf>
+
+  <adf>
+    <name>adf2</name>
+    <number>1</number>
+    <power-supply>/systems/electrical/outputs/adf</power-supply>
+  </adf>
+
+  <dme>
+    <name>dme</name>
+    <number>0</number>
+  </dme>
+
+  <marker-beacon>
+    <name>marker-beacon</name>
+    <number>0</number>
+  </marker-beacon>
+
+  <marker-beacon>
+    <name>marker-beacon</name>
+    <number>1</number>
+  </marker-beacon>
+
+</PropertyList>
